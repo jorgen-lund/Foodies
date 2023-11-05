@@ -2,7 +2,6 @@ import React from 'react';
 import {
   Image,
   ImageSourcePropType,
-  SafeAreaView,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -16,7 +15,7 @@ interface FoodCourtCardProps {
 
 const FoodCourtCard = (props: FoodCourtCardProps) => {
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <TouchableOpacity>
         <View style={styles.imageView}>
           <Image source={props.image} style={styles.image} />
@@ -25,7 +24,7 @@ const FoodCourtCard = (props: FoodCourtCardProps) => {
           </View>
         </View>
       </TouchableOpacity>
-    </SafeAreaView>
+    </View>
   );
 };
 
