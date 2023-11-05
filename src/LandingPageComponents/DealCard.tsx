@@ -1,13 +1,12 @@
 import React from 'react';
 import {SafeAreaView, Text} from 'react-native';
-import LandingPage from './src/LandingPage';
 
-function App(): JSX.Element {
+const DealCard = () => {
   return (
     <SafeAreaView>
-      <LandingPage />
+      <Text>Insert Dish on sale</Text>
     </SafeAreaView>
   );
-}
+};
 
-export default App;
+export default DealCard;
