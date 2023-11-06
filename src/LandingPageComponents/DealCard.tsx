@@ -2,7 +2,7 @@ import React from 'react';
 import {
   Image,
   ImageSourcePropType,
-  ScrollView,
+  StyleSheet,
   Text,
   TouchableOpacity,
   View,
@@ -16,22 +16,16 @@ interface DealCardProps {
 
 const DealCard = (props: DealCardProps) => {
   return (
-    <View style={{paddingLeft: 20}}>
+    <View style={[styles.container]}>
       <TouchableOpacity>
         <View>
-          <Image
-            style={{width: 140, height: 110, borderRadius: 10}}
-            source={props.image}></Image>
-          <View style={{alignItems: 'center'}}>
-            <Text style={{fontSize: 12, fontFamily: 'Suwannaphum-bold'}}>
+          <Image style={[styles.image]} source={props.image}></Image>
+          <View style={[styles.textContainer]}>
+            <Text style={[styles.countryText]}>
               {props.country}
             </Text>
             <Text
-              style={{
-                fontFamily: 'Suwannaphum-bold',
-                fontSize: 14,
-                marginTop: -6,
-              }}>
+              style={[styles.dishText]}>
               {props.dishName}
             </Text>
           </View>
@@ -40,5 +34,29 @@ const DealCard = (props: DealCardProps) => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    paddingLeft: 20,
+    marginBottom: 10,
+  },
+  image: {
+    width: 130,
+    height: 100,
+    borderRadius: 10,
+  },
+  textContainer: {
+    alignItems: 'center',
+  },
+  countryText: {
+    fontSize: 10,
+    fontFamily: 'Suwannaphum-bold',
+  },
+  dishText: {
+    fontFamily: 'Suwannaphum-bold',
+    fontSize: 12,
+    marginTop: -6,
+  },
+});
 
 export default DealCard;

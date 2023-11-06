@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
   },
   imageView: {
     width: '90%',
-    height: 60,
+    height: 70,
     justifyContent: 'center',
     alignSelf: 'center',
   },
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     ...StyleSheet.absoluteFillObject,
     width: '100%',
     height: '100%',
-    borderRadius: 20,
+    borderRadius: 10,
   },
   text: {
     color: 'white',

@@ -1,31 +1,35 @@
 import React from 'react';
-import { StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 
-interface SectionTextProps{
-    text: string,
-    backgroundColor: string,
+interface SectionTextProps {
+  text: string;
+  backgroundColor: string;
 }
 
 const SectionText = (props: SectionTextProps) => {
-    return(
-        <View style={{flexDirection: 'row', alignItems: 'center'}}>
-        <View style={[styles.line, {backgroundColor: props.backgroundColor}]}></View>
-        <Text style={[styles.text]}>{props.text}</Text>
-        <View style={[styles.line, {backgroundColor: props.backgroundColor}]}></View>
-      </View>
-    )
-}
+  return (
+    <View style={[styles.container]}>
+      <View
+        style={[styles.line, {backgroundColor: props.backgroundColor}]}></View>
+      <Text style={[styles.text]}>{props.text}</Text>
+      <View
+        style={[styles.line, {backgroundColor: props.backgroundColor}]}></View>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
-    line: {
-      flex: 1,
-      height: 2,
-      marginHorizontal: 10,
-    },
-    text: {
-      fontFamily: "Suwannaphum-Regular",
-      marginHorizontal: 10,
-    }
-  });
+  container: {flexDirection: 'row', alignItems: 'center', paddingBottom: 10},
+  line: {
+    flex: 1,
+    height: 2,
+    marginHorizontal: 20,
+  },
+  text: {
+    fontFamily: 'Suwannaphum-Bold',
+    fontSize: 12,
+    marginHorizontal: 8,
+  },
+});
 
-  export default SectionText
+export default SectionText;
