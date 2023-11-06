@@ -1,0 +1,25 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/Suwannaphum/Suwannaphum-Black.ttf",
+      "sha1": "93010c54a39d493b77516fb0566d51ad07c69dd7"
+    },
+    {
+      "path": "assets/fonts/Suwannaphum/Suwannaphum-Bold.ttf",
+      "sha1": "a02b43fdc707f19443121291a31df407a434c1ff"
+    },
+    {
+      "path": "assets/fonts/Suwannaphum/Suwannaphum-Light.ttf",
+      "sha1": "4a51aae7a8309a39066e64bf6b8cad63674cd866"
+    },
+    {
+      "path": "assets/fonts/Suwannaphum/Suwannaphum-Regular.ttf",
+      "sha1": "a79a24c9e9b0f419b4826d3d59cb64256cacd4dc"
+    },
+    {
+      "path": "assets/fonts/Suwannaphum/Suwannaphum-Thin.ttf",
+      "sha1": "2db34542a7ec28703fffaf3bf317ec542cefda88"
+    }
+  ]
+}

@@ -9,10 +9,15 @@
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* FoodiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* FoodiesTests.m */; };
 		0C80B921A6F3F58F76C31292 /* libPods-Foodies.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-Foodies.a */; };
+		0EFCF14855354F58B0060EF8 /* Suwannaphum-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B4FDC0DBEDD46769DB30CC2 /* Suwannaphum-Bold.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		23C24C9F30794E7A9500DA37 /* Suwannaphum-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9512D7121C2A407ABD7F7CEF /* Suwannaphum-Light.ttf */; };
+		38688AC6E7A94258AF11F734 /* Suwannaphum-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D4DA7797596E40129AEC2594 /* Suwannaphum-Black.ttf */; };
+		7293883409844F7795FB862B /* Suwannaphum-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7357A642E6514AFDA169563B /* Suwannaphum-Regular.ttf */; };
 		7699B88040F8A987B510C191 /* libPods-Foodies-FoodiesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-Foodies-FoodiesTests.a */; };
+		7D4E7A397B3747F88B7A1F2D /* Suwannaphum-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 369320BFC1984272915ADA17 /* Suwannaphum-Thin.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -37,12 +42,17 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Foodies/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Foodies/main.m; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-Foodies-FoodiesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Foodies-FoodiesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		369320BFC1984272915ADA17 /* Suwannaphum-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Suwannaphum-Thin.ttf"; path = "../assets/fonts/Suwannaphum/Suwannaphum-Thin.ttf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-Foodies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foodies.debug.xcconfig"; path = "Target Support Files/Pods-Foodies/Pods-Foodies.debug.xcconfig"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-Foodies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foodies.release.xcconfig"; path = "Target Support Files/Pods-Foodies/Pods-Foodies.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-Foodies-FoodiesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foodies-FoodiesTests.debug.xcconfig"; path = "Target Support Files/Pods-Foodies-FoodiesTests/Pods-Foodies-FoodiesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-Foodies.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Foodies.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7357A642E6514AFDA169563B /* Suwannaphum-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Suwannaphum-Regular.ttf"; path = "../assets/fonts/Suwannaphum/Suwannaphum-Regular.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Foodies/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-Foodies-FoodiesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foodies-FoodiesTests.release.xcconfig"; path = "Target Support Files/Pods-Foodies-FoodiesTests/Pods-Foodies-FoodiesTests.release.xcconfig"; sourceTree = "<group>"; };
+		9512D7121C2A407ABD7F7CEF /* Suwannaphum-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Suwannaphum-Light.ttf"; path = "../assets/fonts/Suwannaphum/Suwannaphum-Light.ttf"; sourceTree = "<group>"; };
+		9B4FDC0DBEDD46769DB30CC2 /* Suwannaphum-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Suwannaphum-Bold.ttf"; path = "../assets/fonts/Suwannaphum/Suwannaphum-Bold.ttf"; sourceTree = "<group>"; };
+		D4DA7797596E40129AEC2594 /* Suwannaphum-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Suwannaphum-Black.ttf"; path = "../assets/fonts/Suwannaphum/Suwannaphum-Black.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -122,6 +132,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				F93B8795D34348A782647477 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -146,6 +157,19 @@
 				89C6BE57DB24E9ADA2F236DE /* Pods-Foodies-FoodiesTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F93B8795D34348A782647477 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D4DA7797596E40129AEC2594 /* Suwannaphum-Black.ttf */,
+				9B4FDC0DBEDD46769DB30CC2 /* Suwannaphum-Bold.ttf */,
+				9512D7121C2A407ABD7F7CEF /* Suwannaphum-Light.ttf */,
+				7357A642E6514AFDA169563B /* Suwannaphum-Regular.ttf */,
+				369320BFC1984272915ADA17 /* Suwannaphum-Thin.ttf */,
+			);
+			name = Resources;
+			path = "";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,6 +268,11 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				38688AC6E7A94258AF11F734 /* Suwannaphum-Black.ttf in Resources */,
+				0EFCF14855354F58B0060EF8 /* Suwannaphum-Bold.ttf in Resources */,
+				23C24C9F30794E7A9500DA37 /* Suwannaphum-Light.ttf in Resources */,
+				7293883409844F7795FB862B /* Suwannaphum-Regular.ttf in Resources */,
+				7D4E7A397B3747F88B7A1F2D /* Suwannaphum-Thin.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
