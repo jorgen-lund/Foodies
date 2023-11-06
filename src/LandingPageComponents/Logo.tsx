@@ -20,7 +20,7 @@ const Logo = () => {
 
 const styles = StyleSheet.create({
   container: {
-    height: '30%',
+    height: '28%',
   },
   blackBackgroundContainer: {
     alignItems: 'center',
@@ -28,17 +28,19 @@ const styles = StyleSheet.create({
     backgroundColor: 'black',
     transform: [{skewY: '10deg'}],
     height: '130%',
-    top: height * -0.1,
+    top: height * -0.13,
   },
   header: {
     color: '#ED6232',
-    fontSize: 18,
+    fontSize: 20,
     transform: [{skewY: '-10deg'}],
     fontFamily: 'Suwannaphum-Regular',
+    marginBottom: -12,
   },
   logoView: {
     transform: [{skewY: '-10deg'}],
     marginBottom: 10,
+    paddingLeft: 10,
   },
 });
 
