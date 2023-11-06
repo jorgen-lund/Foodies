@@ -18,7 +18,7 @@ const DealCard = (props: DealCardProps) => {
   return (
     <View style={[styles.container]}>
       <TouchableOpacity>
-          <Image style={[styles.image]} source={props.image}></Image>
+        <Image style={[styles.image]} source={props.image}></Image>
       </TouchableOpacity>
       <View style={[styles.textContainer]}>
         <Text style={[styles.countryText]}>{props.country}</Text>

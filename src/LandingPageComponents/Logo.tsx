@@ -1,7 +1,7 @@
 import React from 'react';
 import {Dimensions, StyleSheet, Text, View} from 'react-native';
 import {SvgXml} from 'react-native-svg';
-import foodCartIcon from '../foodCartIcon';
+import foodCartIcon from './foodCartIcon';
 
 const {height} = Dimensions.get('window');
 
@@ -11,7 +11,7 @@ const Logo = () => {
       <View style={[styles.blackBackgroundContainer]}>
         <Text style={[styles.header]}>FOODIES</Text>
         <View style={[styles.logoView]}>
-          <SvgXml xml={foodCartIcon} width="90" height="90" />
+          <SvgXml xml={foodCartIcon} width="80" height="80" />
         </View>
       </View>
     </View>
@@ -27,8 +27,8 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     backgroundColor: 'black',
     transform: [{skewY: '10deg'}],
-    height: '130%',
-    top: height * -0.13,
+    height: '250%',
+    top: height * -0.34,
   },
   header: {
     color: '#ED6232',
