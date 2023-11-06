@@ -31,7 +31,7 @@ const FoodCourtCard = (props: FoodCourtCardProps) => {
 const styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
-    marginTop: 20,
+    paddingBottom: 20,
   },
   imageView: {
     width: '90%',
@@ -47,9 +47,9 @@ const styles = StyleSheet.create({
   },
   text: {
     color: 'white',
-    fontSize: 24,
-    fontWeight: 'bold',
+    fontSize: 20,
     textAlign: 'center',
+    fontFamily: "Suwannaphum-Black",
   },
 });
 
