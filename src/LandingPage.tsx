@@ -1,8 +1,9 @@
 import React from 'react';
-import {SafeAreaView, ScrollView, Text} from 'react-native';
+import {SafeAreaView, ScrollView} from 'react-native';
 import DealCard from './LandingPageComponents/DealCard';
 import FoodCourtCard from './LandingPageComponents/FoodCourtCard';
 import Logo from './LandingPageComponents/Logo';
+import SectionText from './LandingPageComponents/SectionText';
 
 const italyBooth = require('../images/italyBooth.png');
 const indianBooth = require('../images/indianBooth.png');
@@ -16,6 +17,7 @@ const LandingPage = () => {
   return (
     <SafeAreaView>
       <Logo />
+      <SectionText text={'DEALS'} backgroundColor={'#ED6232'} />
       <ScrollView horizontal={true}>
         <DealCard
           image={pastaCarbonara}
@@ -33,6 +35,7 @@ const LandingPage = () => {
           dishName={'Enchiladas'}
         />
       </ScrollView>
+      <SectionText text={'FOOD COURTS'} backgroundColor={'#32BDED'} />
       <FoodCourtCard country={'Italian'} image={italyBooth} />
       <FoodCourtCard country={'Indian'} image={indianBooth} />
       <FoodCourtCard country={'Mexican'} image={mexicanBooth} />
