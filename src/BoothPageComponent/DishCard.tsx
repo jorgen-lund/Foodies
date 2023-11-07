@@ -1,16 +1,8 @@
 import React, {useState} from 'react';
-import {
-  Image,
-  ImageSourcePropType,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-  Switch,
-} from 'react-native';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import {Image, ImageSourcePropType, StyleSheet, Text, View} from 'react-native';
 import DishInformation from './dishCardComponents/DishInformation';
-import DishButtons from './dishCardComponents/DishButtons';
+import Extras from './dishCardComponents/Extras';
+import DishButton from './dishCardComponents/DishButton';
 
 interface DishCardProps {
   image: ImageSourcePropType;
@@ -18,19 +10,27 @@ interface DishCardProps {
   description: string;
   allergies: string;
   price: number;
+  // Also, add a dict down, one with extraName and price
+  // And one with adaptDescription and price
 }
 
 const DishCard = (props: DishCardProps) => {
-  const [isExpanded, setIsExpanded] = useState(false);
-  const [isSelected, setSelection] = useState(false);
+  const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
   const handleEditPress = () => {
-    setIsExpanded(!isExpanded);
+    setIsExpanded(true);
+  };
+
+  const dynamicTopCardStyle = {
+    ...styles.topCardContainer,
+    borderRadius: isExpanded ? 0 : 8,
+    borderTopLeftRadius: 8,
+    borderTopRightRadius: 8,
   };
 
   return (
     <View>
-      <View style={[styles.cardContainer]}>
+      <View style={dynamicTopCardStyle}>
         <View style={[styles.imageContainer]}>
           <Image source={props.image} style={[styles.image]} />
         </View>
@@ -41,33 +41,44 @@ const DishCard = (props: DishCardProps) => {
             allergies={props.allergies}
           />
           <View style={[styles.priceAndButtonsContainer]}>
-            <Text style={[styles.priceText]}>{props.price} Kr</Text>
-            <DishButtons handleEditPress={handleEditPress} />
+            <Text style={[styles.priceText]}>{props.price} kr</Text>
+            {!isExpanded && (
+              <>
+                <View style={[styles.dishButtonContainer]}>
+                  <DishButton
+                    handleEditPress={handleEditPress}
+                    MaterialIconName={'edit'}
+                  />
+                  <DishButton MaterialIconName={'add-shopping-cart'} />
+                </View>
+              </>
+            )}
           </View>
         </View>
       </View>
-      {isExpanded && (
-        <View>
-          <Text>Legg til ekstra:</Text>
-        </View>
-      )}
+      {isExpanded && <Extras setIsExpanded={setIsExpanded} />}
     </View>
   );
 };
 
-{
-}
 const styles = StyleSheet.create({
-  cardContainer: {
+  topCardContainer: {
     flexDirection: 'row',
     backgroundColor: '#F1F0F0',
     marginHorizontal: 20,
-    height: 160,
     alignItems: 'center',
-    borderRadius: 8,
     marginTop: 20,
   },
-  imageContainer: {marginLeft: 10},
+  expanded: {
+    borderTopLeftRadius: 8,
+    borderTopRightRadius: 8,
+    borderBottomLeftRadius: 0,
+    borderBottomRightRadius: 0,
+  },
+  collapsed: {
+    borderRadius: 8,
+  },
+  imageContainer: {margin: 10},
   image: {
     width: 140,
     height: 140,
@@ -87,6 +98,11 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     height: 50,
+  },
+  dishButtonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    width: '60%',
   },
 });
 

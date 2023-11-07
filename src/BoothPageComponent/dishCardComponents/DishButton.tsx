@@ -4,31 +4,25 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 interface DishButtonProps {
   handleEditPress?: () => void;
+  handleAddToCart?: () => void;
+  handleCloseEdit?: () => void;
+  MaterialIconName: string;
 }
 
-const DishButtons = (props: DishButtonProps) => {
+const DishButton = (props: DishButtonProps) => {
+  const onPressHandler =
+    props.handleAddToCart || props.handleEditPress || props.handleCloseEdit;
+
   return (
-    <View style={[styles.iconsContainer]}>
+    <TouchableOpacity onPress={onPressHandler}>
       <View style={[styles.buttonContainer]}>
-        <TouchableOpacity onPress={props.handleEditPress}>
-          <MaterialIcons name={'edit'} size={28} />
-        </TouchableOpacity>
+        <MaterialIcons name={props.MaterialIconName} size={28} />
       </View>
-      <View style={[styles.buttonContainer]}>
-        <TouchableOpacity>
-          <MaterialIcons name={'add-shopping-cart'} size={28} />
-        </TouchableOpacity>
-      </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
 const styles = StyleSheet.create({
-  iconsContainer: {
-    flexDirection: 'row',
-    width: 100,
-    justifyContent: 'space-around',
-  },
   buttonContainer: {
     alignContent: 'space-between',
     alignItems: 'center',
@@ -47,4 +41,4 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
 });
-export default DishButtons;
+export default DishButton;
