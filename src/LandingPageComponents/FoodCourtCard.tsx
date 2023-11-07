@@ -11,12 +11,13 @@ import {
 interface FoodCourtCardProps {
   country: string;
   image: ImageSourcePropType;
+  onPress?: () => void;
 }
 
 const FoodCourtCard = (props: FoodCourtCardProps) => {
   return (
     <View style={styles.container}>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={props.onPress}>
         <View style={styles.imageView}>
           <Image source={props.image} style={styles.image} />
           <View>
@@ -49,7 +50,7 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 20,
     textAlign: 'center',
-    fontFamily: "Suwannaphum-Black",
+    fontFamily: 'Suwannaphum-Black',
   },
 });
 

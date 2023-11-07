@@ -12,12 +12,13 @@ interface DealCardProps {
   image: ImageSourcePropType;
   country: string;
   dishName: string;
+  onPress?: () => void;
 }
 
 const DealCard = (props: DealCardProps) => {
   return (
     <View style={[styles.container]}>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={props.onPress}>
         <Image style={[styles.image]} source={props.image}></Image>
       </TouchableOpacity>
       <View style={[styles.textContainer]}>
