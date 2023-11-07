@@ -4,18 +4,25 @@ import DealCard from './LandingPageComponents/DealCard';
 import FoodCourtCard from './LandingPageComponents/FoodCourtCard';
 import Logo from './LandingPageComponents/Logo';
 import SectionText from './LandingPageComponents/SectionText';
+import { useNavigation } from '@react-navigation/native';
+import { RootNavigationProp } from './navigations/navigationTypes';
 
 const italyBooth = require('../images/italyBooth.png');
 const indianBooth = require('../images/indianBooth.png');
 const mexicanBooth = require('../images/mexicanBooth.png');
-
 const pastaCarbonara = require('../images/pastaCarbonara.png');
 const tikkaMasala = require('../images/tikkaMasala.jpeg');
 const enchiladas = require('../images/enchiladas.jpeg');
 
 const LandingPage = () => {
+
+  const navigation = useNavigation<RootNavigationProp>();
+
+  const goToBooth = () => navigation.navigate('RestaurantPage');
+
+  
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{backgroundColor: "white"}}>
       <ScrollView>
         <Logo />
         <SectionText text={'DEALS'} backgroundColor={'#ED6232'} />
@@ -39,7 +46,7 @@ const LandingPage = () => {
           </ScrollView>
         </View>
         <SectionText text={'FOOD COURTS'} backgroundColor={'#32BDED'} />
-        <FoodCourtCard country={'Italian'} image={italyBooth} />
+        <FoodCourtCard country={'Italian'} image={italyBooth} onPress={goToBooth}/>
         <FoodCourtCard country={'Indian'} image={indianBooth} />
         <FoodCourtCard country={'Mexican'} image={mexicanBooth} />
       </ScrollView>
