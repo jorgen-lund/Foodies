@@ -20,7 +20,7 @@ const ShopppingCartItem = (props: ShopppingCartItemProps) => {
   };
 
   const decreaseAmount = () => {
-    if (amount > 0) { 
+    if (amount > 0) {
       const newAmount = amount - 1;
       setAmount(newAmount);
       setPrice(newAmount * basePrice);
@@ -66,8 +66,8 @@ const styles = StyleSheet.create({
   },
   dishText: {
     fontSize: 20,
+    fontWeight: 'bold',
     alignSelf: 'center',
-    fontFamily: 'Suwannaphum-Bold',
   },
   toggleAmountContainer: {
     flexDirection: 'row',
@@ -82,8 +82,8 @@ const styles = StyleSheet.create({
   priceText: {
     paddingHorizontal: 15,
     fontSize: 16,
-    fontFamily: 'Suwannaphum-Regular',
-    marginTop: -15,
+    marginTop: -10,
+    paddingBottom: 5,
   },
 });
 export default ShopppingCartItem;
