@@ -20,7 +20,7 @@ const BoothDescription = () => {
 
 const styles = StyleSheet.create({
   infoContainer: {
-    height: 100,
+    height: 170,
     justifyContent: 'center',
   },
   image: {

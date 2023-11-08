@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-evenly",
         backgroundColor: "#ED6232",
-        height: 90,
+        height: 60,
         alignContent: "center",
         alignItems: "center",
     },

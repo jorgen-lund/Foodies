@@ -20,9 +20,8 @@ const LandingPage = () => {
 
   const goToBooth = () => navigation.navigate('RestaurantPage');
 
-  
   return (
-    <SafeAreaView style={{backgroundColor: "white"}}>
+    <SafeAreaView style={{backgroundColor: "white", flex: 1}}>
       <ScrollView>
         <Logo />
         <SectionText text={'DEALS'} backgroundColor={'#ED6232'} />
@@ -45,7 +44,7 @@ const LandingPage = () => {
             />
           </ScrollView>
         </View>
-        <SectionText text={'FOOD COURTS'} backgroundColor={'#32BDED'} />
+        <SectionText text={'FOOD BOOTHS'} backgroundColor={'#32BDED'} />
         <FoodCourtCard country={'Italian'} image={italyBooth} onPress={goToBooth}/>
         <FoodCourtCard country={'Indian'} image={indianBooth} />
         <FoodCourtCard country={'Mexican'} image={mexicanBooth} />

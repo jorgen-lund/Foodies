@@ -1,7 +1,8 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import LandingPage from '../LandingPage';
-import IonIcons from 'react-native-vector-icons/Ionicons';
+import FeatherIcons from "react-native-vector-icons/Feather"
+import ShoppingCartPage from '../ShoppingCartPage';
 
 const Tab = createBottomTabNavigator();
 
@@ -19,12 +20,27 @@ function BottomNavigator() {
         name="HOME"
         component={LandingPage}
         options={{
-          tabBarLabel: 'Home',
+          tabBarLabel: '',
           tabBarActiveTintColor: 'black',
           tabBarIcon: ({focused}) => (
-            <IonIcons
-              name={'home-outline'}
+            <FeatherIcons
+              name={'home'}
               size={30}
+              color={focused ? '#ED6232' : 'black'}
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="ShoppingCart"
+        component={ShoppingCartPage}
+        options={{
+          tabBarLabel: '',
+          tabBarActiveTintColor: 'black',
+          tabBarIcon: ({focused}) => (
+            <FeatherIcons
+              name={'shopping-cart'}
+              size={25}
               color={focused ? '#ED6232' : 'black'}
             />
           ),

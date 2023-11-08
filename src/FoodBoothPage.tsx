@@ -6,6 +6,7 @@ import Categories from './BoothPageComponent/Categories';
 import DishCard from './BoothPageComponent/DishCard';
 
 const pizzaDiavola = require('../images/pizzaDiavola.jpeg');
+const pastaCarbonara = require('../images/pastaCarbonara.png');
 
 const FoodBoothPage = () => {
   return (
@@ -24,13 +25,13 @@ const FoodBoothPage = () => {
           price={160}
         />
         <DishCard
-          image={pizzaDiavola}
-          name={'Diavola'}
+          image={pastaCarbonara}
+          name={'Pasta Carbonara'}
           description={
-            'Den kjente spicy italienske pizzaen med salami, nduja og løk'
+            'Italiensk klassiker med egg, ost, pancetta og svart pepper.'
           }
-          allergies={'Allergener: Gluten & Laktose'}
-          price={160}
+          allergies={'Allergener: Gluten, Egg & Laktose'}
+          price={150}
         />
         <DishCard
           image={pizzaDiavola}
