@@ -3,13 +3,12 @@ import {SafeAreaView, ScrollView, StyleSheet, Text, View} from 'react-native';
 import FeatherIcons from 'react-native-vector-icons/Feather';
 import ShoppingCartItem from './shoppingCartComponents/ShoppingCartItem';
 import OrderInfo from './shoppingCartComponents/OrderInfo';
+import PageHeader from './PageHeader';
 
 const ShoppingCartPage = () => {
   return (
     <SafeAreaView style={[styles.outerContainer]}>
-      <View style={[styles.container]}>
-        <Text style={[styles.text]}>Din ordre</Text>
-      </View>
+      <PageHeader headerText={'Your order'} />
       <ScrollView>
         <View style={[styles.innerContainer]}>
           <View style={[styles.waitingTimeContainer]}>
@@ -31,19 +30,6 @@ const styles = StyleSheet.create({
   outerContainer: {
     flex: 1,
     backgroundColor: 'white',
-  },
-  container: {
-    flexDirection: 'row',
-    justifyContent: 'space-evenly',
-    backgroundColor: '#ED6232',
-    height: 80,
-    alignItems: 'flex-end',
-    paddingHorizontal: 20,
-  },
-  text: {
-    fontFamily: 'Suwannaphum-Bold',
-    fontSize: 22,
-    color: 'white',
   },
   waitingTimeText: {
     fontFamily: 'Suwannaphum-Bold',

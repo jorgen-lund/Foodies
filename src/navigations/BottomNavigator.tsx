@@ -2,7 +2,9 @@ import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import LandingPage from '../LandingPage';
 import FeatherIcons from "react-native-vector-icons/Feather"
+import IonIcons from "react-native-vector-icons/Ionicons"
 import ShoppingCartPage from '../ShoppingCartPage';
+import ReceiptPage from '../ReceiptPage';
 
 const Tab = createBottomTabNavigator();
 
@@ -40,6 +42,21 @@ function BottomNavigator() {
           tabBarIcon: ({focused}) => (
             <FeatherIcons
               name={'shopping-cart'}
+              size={25}
+              color={focused ? '#ED6232' : 'black'}
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Receipts"
+        component={ReceiptPage}
+        options={{
+          tabBarLabel: '',
+          tabBarActiveTintColor: 'black',
+          tabBarIcon: ({focused}) => (
+            <IonIcons
+              name={'receipt-outline'}
               size={25}
               color={focused ? '#ED6232' : 'black'}
             />
