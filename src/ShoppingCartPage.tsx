@@ -5,8 +5,8 @@ import ShoppingCartItem from './shoppingCartComponents/ShoppingCartItem';
 
 const ShoppingCartPage = () => {
   return (
-    <SafeAreaView>
-      <ScrollView>
+    <SafeAreaView style={[styles.outerContainer]}>
+      <ScrollView >
         <View style={[styles.container]}>
           <Text style={[styles.text]}>Din ordre</Text>
         </View>
@@ -19,6 +19,7 @@ const ShoppingCartPage = () => {
           </View>
         </View>
         <ShoppingCartItem dishName={'Diavola'} price={160} amount={1} />
+        <ShoppingCartItem dishName={'Pasta Bolognese'} price={150} amount={1} />
       </ScrollView>
     </SafeAreaView>
   );
@@ -32,6 +33,10 @@ const styles = StyleSheet.create({
     height: 80,
     alignItems: 'flex-end',
     paddingHorizontal: 20,
+  },
+  outerContainer: {
+    flex: 1,
+    backgroundColor: "white"
   },
   text: {
     fontFamily: 'Suwannaphum-Bold',

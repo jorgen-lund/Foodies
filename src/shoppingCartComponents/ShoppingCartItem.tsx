@@ -1,12 +1,5 @@
-import React from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import React, {useState} from 'react';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import FeatherIcons from 'react-native-vector-icons/Feather';
 
 interface ShopppingCartItemProps {
@@ -16,19 +9,39 @@ interface ShopppingCartItemProps {
 }
 
 const ShopppingCartItem = (props: ShopppingCartItemProps) => {
+  const [price, setPrice] = useState(props.price);
+  const [amount, setAmount] = useState(props.amount);
+  const basePrice = props.price;
+
+  const increaseAmount = () => {
+    const newAmount = amount + 1;
+    setAmount(newAmount);
+    setPrice(basePrice * newAmount);
+  };
+
+  const decreaseAmount = () => {
+    if (amount > 0) { 
+      const newAmount = amount - 1;
+      setAmount(newAmount);
+      setPrice(newAmount * basePrice);
+    }
+  };
+
   return (
     <View style={[styles.itemContainer]}>
       <View>
         <View style={[styles.dishAndAmountContainer]}>
           <Text style={[styles.dishText]}>{props.dishName}</Text>
           <View style={[styles.toggleAmountContainer]}>
-            <TouchableOpacity>
+            {/* Will use increaseAmount here to increase the amount of a dish being ordered */}
+            <TouchableOpacity onPress={decreaseAmount}>
               <View style={[styles.increaseButtonSize]}>
                 <FeatherIcons name={'minus-circle'} size={25} />
               </View>
             </TouchableOpacity>
-            <Text style={[styles.dishText]}>{props.amount}</Text>
-            <TouchableOpacity>
+            <Text style={[styles.dishText]}>{amount}</Text>
+            {/* Will use decreaseAmount here to decrease the amount of a dish being ordered */}
+            <TouchableOpacity onPress={increaseAmount}>
               <View style={[styles.increaseButtonSize]}>
                 <FeatherIcons name={'plus-circle'} size={25} />
               </View>
@@ -36,7 +49,7 @@ const ShopppingCartItem = (props: ShopppingCartItemProps) => {
           </View>
         </View>
       </View>
-      <Text style={[styles.priceText]}>{props.price} kr</Text>
+      <Text style={[styles.priceText]}>{price} kr</Text>
     </View>
   );
 };
