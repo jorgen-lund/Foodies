@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontFamily: 'Suwannaphum-Bold',
-    fontSize: 12,
+    fontSize: 14,
     marginHorizontal: 8,
   },
 });

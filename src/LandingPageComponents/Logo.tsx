@@ -20,15 +20,15 @@ const Logo = () => {
 
 const styles = StyleSheet.create({
   container: {
-    height: '28%',
+    height: '25%',
   },
   blackBackgroundContainer: {
     alignItems: 'center',
     justifyContent: 'flex-end',
     backgroundColor: 'black',
     transform: [{skewY: '10deg'}],
-    height: '250%',
-    top: height * -0.34,
+    height: 200,
+    top: -60,
   },
   header: {
     color: '#ED6232',

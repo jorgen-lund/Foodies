@@ -43,12 +43,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   countryText: {
-    fontSize: 10,
+    fontSize: 12,
     fontFamily: 'Suwannaphum-bold',
   },
   dishText: {
     fontFamily: 'Suwannaphum-bold',
-    fontSize: 12,
+    fontSize: 14,
     marginTop: -6,
   },
 });
