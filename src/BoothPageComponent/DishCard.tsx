@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
-import {Image, ImageSourcePropType, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, View} from 'react-native';
 import DishInformation from './dishCardComponents/DishInformation';
 import Extras from './dishCardComponents/Extras';
 import DishButton from './dishCardComponents/DishButton';
 
 interface DishCardProps {
-  image: ImageSourcePropType;
+  imageUrl: string;
   name: string;
   description: string;
   allergies: string;
@@ -27,12 +27,13 @@ const DishCard = (props: DishCardProps) => {
     borderTopLeftRadius: 8,
     borderTopRightRadius: 8,
   };
+  console.log(props.imageUrl)
 
   return (
     <View>
       <View style={dynamicTopCardStyle}>
         <View style={[styles.imageContainer]}>
-          <Image source={props.image} style={[styles.image]} />
+          <Image source={{uri: props.imageUrl}} style={[styles.image]} />
         </View>
         <View style={[styles.rightHalfContainer]}>
           <DishInformation

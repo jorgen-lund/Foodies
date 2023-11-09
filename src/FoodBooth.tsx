@@ -16,7 +16,7 @@ interface FoodBoothProps {
 }
 
 interface DishCardProps {
-  image: ImageSourcePropType;
+  imageUrl: string;
   name: string;
   description: string;
   allergies: string;
@@ -43,7 +43,7 @@ const FoodBooth = (props: FoodBoothProps) => {
         {dishes.map((dish: DishCardProps, index: number) => (
           <DishCard
             key={index}
-            image={dish.image}
+            imageUrl={dish.imageUrl}
             name={dish.name}
             description={dish.description}
             allergies={dish.allergies}

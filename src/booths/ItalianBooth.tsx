@@ -1,10 +1,12 @@
 import React from 'react';
 import {SafeAreaView} from 'react-native';
 import FoodBooth from '../FoodBooth';
+import data from "../../data/data.json"
 
-const italyBooth = require('../images/italyBooth.png');
+const italyBooth = require('../../images/italyBooth.png');
 
 const ItalianBoothPage = () => {
+  const italianDishes = data.booths.italian.dishes
   return (
     <SafeAreaView>
       <FoodBooth
@@ -16,7 +18,7 @@ const ItalianBoothPage = () => {
         category2={'Pizza'}
         category3={'Pasta'}
         category4="Dessert"
-        dishes={[]}
+        dishes={italianDishes}
       />
     </SafeAreaView>
   );

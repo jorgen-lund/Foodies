@@ -1,0 +1,92 @@
+{
+  "booths": {
+    "italian": {
+      "dishes": [
+        {
+          "id": 1,
+          "name": "Pizza Diavola",
+          "description": "Spicy Italian pizza with salami, 'nduja and onion",
+          "allergies": "Allergens: Gluten & Lactose",
+          "price": 160,
+          "imageUrl": "https://res.cloudinary.com/norgesgruppen/images/c_scale,dpr_auto,f_auto,q_auto:eco,w_1600/axcdfcfmyahxjmmj99pe/pizza-diavola"
+        },
+        {
+          "id": 2,
+          "name": "Pasta Carbonara",
+          "description": "Italian classic with eggs, cheese, pancetta, and black pepper",
+          "allergies": "Allergens: Gluten, Egg & Lactose",
+          "price": 150,
+          "imageUrl": "https://res.cloudinary.com/norgesgruppen/images/c_scale,dpr_auto,f_auto,q_auto:eco,w_auto/b4golm8sdghdq1vzivxz/klassisk-pasta-carbonara"
+        },
+        {
+          "id": 3,
+          "name": "Pizza Margherita",
+          "description": "simple margherita pizza with tomato sauce, leaves and cheese",
+          "allergies": "Allergenes: Gluten & Lactose",
+          "price": 120,
+          "imageUrl": "https://www.westend61.de/images/0000794547pw/pizza-margherita-and-cherry-tomatoes-on-dark-ground-KSWF01826.jpg"
+        },
+        {
+          "id": 4,
+          "name": "Pizza Capricciosa",
+          "description": "Elegant pizza with tomato sauce, ham, mushrooms and cheese",
+          "allergies": "Allergenes: Gluten & Lactose",
+          "price": 140,
+          "imageUrl": "https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX58416205.jpg"
+        },
+        {
+          "id": 5,
+          "name": "Pasta Bolognese",
+          "description": "Exquisite al dente pasta adorned with a velvety, slow-cooked tomato sauce and succulent minced meats.",
+          "allergies": "Allergenes: Gluten & Lactose",
+          "price": 140,
+          "imageUrl": "https://res.cloudinary.com/norgesgruppen/images/c_scale,dpr_auto,f_auto,q_auto:eco,w_1600/m54yfcc8pq399znzcxvg/spaghetti-bolognese-med-oksekraft-og-soltorket-tomat"
+        },
+        {
+          "id": 6,
+          "name": "Pasta Alfredo",
+          "description": "A harmonious blend of pasta, butter, rich cream, Parmesan, garlic, and seasonings.",
+          "allergies": "Allergenes: Gluten & Lactose",
+          "price": 160,
+          "imageUrl": "https://thumbs.dreamstime.com/b/chicken-alfredo-tagliatelle-greens-cream-sauce-dark-background-fettuccine-meal-created-generative-ai-chicken-288562793.jpg"
+        },
+        {
+          "id": 7,
+          "name": "Tiramisu",
+          "description": "A luscious dessert made with layers of coffee-soaked ladyfingers and mascarpone cheese.",
+          "allergies": "Allergenes: Egg & Lactose",
+          "price": 90,
+          "imageUrl": "https://thumbs.dreamstime.com/b/composition-tiramisu-cake-table-against-dark-background-149960331.jpg"
+        },
+        {
+          "id": 8,
+          "name": "Panna Cotta",
+          "description": " Italian elegance in a dessert, featuring a silky custard infused with vanilla, set and served with berry compote.",
+          "allergies": "Allergenes: Lactose",
+          "price": 80,
+          "imageUrl": "https://static.vecteezy.com/system/resources/previews/026/516/205/large_2x/delicious-panna-cotta-dark-background-with-empty-space-for-text-free-photo.jpg"
+        },
+        {
+          "id": 9,
+          "name": "Pistachio Gelato",
+          "description": "Italian frozen delight, boasting dense, intense flavors, and a creamy texture. A delightful frozen treat.",
+          "allergies": "Allergenes: Lactose & Nuts",
+          "price": 90,
+          "imageUrl": "https://www.thespruceeats.com/thmb/1hMONqXtqNqINhWjtQtJ2_-zwAM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/SES-no-churn-pistachio-ice-cream-recipe-5-ingredients-7488379-hero-01-1224d2ae3f424d5dbde94c471136e157.jpg"
+        }
+      ]
+    },
+    "indian": {
+      "dishes": [
+        {
+          "id": 1,
+          "name": "Pizza Diavola",
+          "description": "Spicy Italian pizza with salami, 'nduja and onion",
+          "allergies": "Allergens: Gluten & Lactose",
+          "price": 160,
+          "imageUrl": "https://res.cloudinary.com/norgesgruppen/images/c_scale,dpr_auto,f_auto,q_auto:eco,w_1600/axcdfcfmyahxjmmj99pe/pizza-diavola"
+        }
+      ]
+    }
+  }
+}

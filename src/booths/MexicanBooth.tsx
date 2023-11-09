@@ -2,7 +2,7 @@ import React from 'react';
 import {SafeAreaView} from 'react-native';
 import FoodBooth from '../FoodBooth';
 
-const mexicanBooth = require('../images/mexicanBooth.png');
+const mexicanBooth = require('../../images/mexicanBooth.png');
 
 const MexicanBooth = () => {
   return (
