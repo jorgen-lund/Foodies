@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
 const Categories = () => {
   return (
@@ -26,26 +21,26 @@ const Categories = () => {
 };
 
 const styles = StyleSheet.create({
-    categoryContainer: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      marginHorizontal: 20,
-      marginTop: 10,
-      borderTopWidth: 2,
-      borderBottomWidth: 2,
-      borderColor: '#32BDED',
-    },
-    text: {
-      fontFamily: 'Suwannaphum-Bold',
-      fontSize: 11,
-    },
-    button: {
-      width: 80,
-      height: 40,
-      justifyContent: "center",
-      alignItems: "center",
-    },
-  });
+  categoryContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginHorizontal: 20,
+    marginTop: 10,
+    borderTopWidth: 2,
+    borderBottomWidth: 2,
+    borderColor: '#32BDED',
+  },
+  text: {
+    fontFamily: 'Suwannaphum-Bold',
+    fontSize: 11,
+  },
+  button: {
+    width: 80,
+    height: 40,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+});
 
 export default Categories;

@@ -3,8 +3,8 @@ import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
 interface CheckboxItemProps {
-  itemName: string,
-  price: number,
+  itemName: string;
+  price: number;
 }
 
 const CheckboxItem = (props: CheckboxItemProps) => {
@@ -20,7 +20,7 @@ const CheckboxItem = (props: CheckboxItemProps) => {
         lineWidth={2}
       />
       <Text>{props.itemName}</Text>
-      <Text style={{fontSize: 16, fontWeight: "500"}}>{props.price} kr</Text>
+      <Text style={{fontSize: 16, fontWeight: '500'}}>{props.price} kr</Text>
     </View>
   );
 };
@@ -28,12 +28,12 @@ const CheckboxItem = (props: CheckboxItemProps) => {
 const styles = StyleSheet.create({
   extraItemContainer: {
     flexDirection: 'row',
-    justifyContent: "space-between",
-    alignItems: "center",
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   textSize: {
     fontSize: 14,
-  }
+  },
 });
 
 export default CheckboxItem;

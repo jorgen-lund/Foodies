@@ -1,8 +1,8 @@
 import React from 'react';
-import {SafeAreaView, ScrollView, StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 
 interface PageHeaderProp {
-    headerText: string,
+  headerText: string;
 }
 
 const PageHeader = (props: PageHeaderProp) => {
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-evenly',
     backgroundColor: '#ED6232',
-    height: 80,
+    height: 70,
     alignItems: 'flex-end',
     paddingHorizontal: 20,
   },
