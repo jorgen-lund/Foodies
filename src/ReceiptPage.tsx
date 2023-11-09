@@ -9,7 +9,7 @@ const ReceiptPage = () => {
       <PageHeader headerText={'Order History'} />
       <View style={[styles.currentOrderContainer]}>
         <Text style={[styles.sectionHeader]}>Active order</Text>
-        <Receipt id={1998} date={'8.nov.23 19:33'} totalCost={160} />
+        <Receipt id={1998} date={'8.nov.23 19:33'} totalCost={310} />
       </View>
 
     </SafeAreaView>
