@@ -1,18 +1,21 @@
 import React from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, ImageSourcePropType, StyleSheet, Text, View} from 'react-native';
 
-const italyBooth = require('../../images/italyBooth.png');
+interface BoothDescriptionProps {
+  boothName: string;
+  boothImage: ImageSourcePropType;
+  boothDescription: string;
+}
 
-const BoothDescription = () => {
+const BoothDescription = (props: BoothDescriptionProps) => {
   return (
     <View>
       <View style={[styles.infoContainer]}>
-        <Image source={italyBooth} style={[styles.image]} />
-        <Text style={[styles.name]}>Italian</Text>
+        <Image source={props.boothImage} style={[styles.image]} />
+        <Text style={[styles.name]}>{props.boothName}</Text>
       </View>
       <Text style={[styles.description]}>
-        Serverer mat fra min families autentiske italienske oppskrifter gjennom
-        generasjoner. Hver rett lages med kjærlighet.
+        {props.boothDescription}
       </Text>
     </View>
   );

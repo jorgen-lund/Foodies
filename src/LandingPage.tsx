@@ -17,7 +17,9 @@ const enchiladas = require('../images/enchiladas.jpeg');
 const LandingPage = () => {
   const navigation = useNavigation<RootNavigationProp>();
 
-  const goToBooth = () => navigation.navigate('RestaurantPage');
+  const goToItalianBooth = () => navigation.navigate('ItalianBooth');
+  const goToIndianBooth = () => navigation.navigate('IndianBooth');
+  const goToMexicanBooth = () => navigation.navigate('MexicanBooth');
 
   return (
     <SafeAreaView style={{backgroundColor: 'white', flex: 1}}>
@@ -47,10 +49,18 @@ const LandingPage = () => {
         <FoodCourtCard
           country={'Italian'}
           image={italyBooth}
-          onPress={goToBooth}
+          onPress={goToItalianBooth}
         />
-        <FoodCourtCard country={'Indian'} image={indianBooth} />
-        <FoodCourtCard country={'Mexican'} image={mexicanBooth} />
+        <FoodCourtCard
+          country={'Indian'}
+          image={indianBooth}
+          onPress={goToIndianBooth}
+        />
+        <FoodCourtCard
+          country={'Mexican'}
+          image={mexicanBooth}
+          onPress={goToMexicanBooth}
+        />
       </ScrollView>
     </SafeAreaView>
   );

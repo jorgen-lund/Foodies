@@ -1,5 +1,10 @@
 import React from 'react';
-import {SafeAreaView, ScrollView, StyleSheet} from 'react-native';
+import {
+  ImageSourcePropType,
+  ScrollView,
+  StyleSheet,
+  View,
+} from 'react-native';
 import BoothNavbar from './BoothPageComponent/BoothNavbar';
 import BoothDescription from './BoothPageComponent/BoothDescription';
 import Categories from './BoothPageComponent/Categories';
@@ -7,43 +12,55 @@ import DishCard from './BoothPageComponent/DishCard';
 
 const pizzaDiavola = require('../images/pizzaDiavola.jpeg');
 const pastaCarbonara = require('../images/pastaCarbonara.png');
+const italyBooth = require('../images/italyBooth.png');
 
-const FoodBoothPage = () => {
+interface FoodBoothPageProps {
+  boothName: string;
+  boothImage: ImageSourcePropType;
+  boothDescription: string;
+  category2: string;
+  category3: string;
+  category4?: string;
+  dishes: DishCardProps[];
+}
+
+interface DishCardProps {
+  image: ImageSourcePropType;
+  name: string;
+  description: string;
+  allergies: string;
+  price: number;
+}
+
+const FoodBoothPage = (props: FoodBoothPageProps) => {
+  const {dishes = []} = props;
+
   return (
-    <SafeAreaView style={{backgroundColor: 'white'}}>
+    <View style={{backgroundColor: 'white'}}>
       <ScrollView>
         <BoothNavbar />
-        <BoothDescription />
-        <Categories />
-        <DishCard
-          image={pizzaDiavola}
-          name={'Diavola'}
-          description={
-            'Den kjente spicy italienske pizzaen med salami, nduja og løk'
-          }
-          allergies={'Allergener: Gluten & Laktose'}
-          price={160}
+        <BoothDescription
+          boothName={props.boothName}
+          boothImage={props.boothImage}
+          boothDescription={props.boothDescription}
         />
-        <DishCard
-          image={pastaCarbonara}
-          name={'Pasta Carbonara'}
-          description={
-            'Italiensk klassiker med egg, ost, pancetta og svart pepper.'
-          }
-          allergies={'Allergener: Gluten, Egg & Laktose'}
-          price={150}
+        <Categories
+          category2={props.category2}
+          category3={props.category3}
+          {...(props.category4 ? {category4: props.category4} : {})}
         />
-        <DishCard
-          image={pizzaDiavola}
-          name={'Diavola'}
-          description={
-            'Den kjente spicy italienske pizzaen med salami, nduja og løk'
-          }
-          allergies={'Allergener: Gluten & Laktose'}
-          price={160}
-        />
+        {dishes.map((dish: DishCardProps, index: number) => (
+          <DishCard
+            key={index}
+            image={dish.image}
+            name={dish.name}
+            description={dish.description}
+            allergies={dish.allergies}
+            price={dish.price}
+          />
+        ))}
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 };
 

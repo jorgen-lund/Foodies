@@ -1,21 +1,29 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
-const Categories = () => {
+interface CategoriesProps {
+  category2: string;
+  category3: string;
+  category4?: string;
+}
+
+const Categories = (props: CategoriesProps) => {
   return (
     <View style={[styles.categoryContainer]}>
       <TouchableOpacity style={[styles.button]}>
         <Text style={[styles.text]}>Populære</Text>
       </TouchableOpacity>
       <TouchableOpacity style={[styles.button]}>
-        <Text style={[styles.text]}>Pizza</Text>
+        <Text style={[styles.text]}>{props.category2}</Text>
       </TouchableOpacity>
       <TouchableOpacity style={[styles.button]}>
-        <Text style={[styles.text]}>Pasta</Text>
+        <Text style={[styles.text]}>{props.category3}</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={[styles.button]}>
-        <Text style={[styles.text]}>Dessert</Text>
-      </TouchableOpacity>
+      {props.category4 && (
+        <TouchableOpacity style={[styles.button]}>
+          <Text style={[styles.text]}>{props.category4}</Text>
+        </TouchableOpacity>
+      )}
     </View>
   );
 };

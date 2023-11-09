@@ -10,7 +10,7 @@ interface DishCardProps {
   description: string;
   allergies: string;
   price: number;
-  // Also, add a dict down, one with extraName and price
+  // Also, add a dict down, one with extraName and price (or 2d array?)
   // And one with adaptDescription and price
 }
 

@@ -2,7 +2,9 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import BottomNavigator from './src/navigations/BottomNavigator';
-import FoodBoothPage from './src/FoodBoothPage';
+import ItalianBooth from './src/ItalianBooth';
+import IndianBooth from './src/IndianBooth';
+import MexicanBooth from './src/MexicanBooth';
 
 const Stack = createNativeStackNavigator();
 
@@ -16,7 +18,9 @@ function App(): JSX.Element {
           headerTitleStyle: {fontFamily: 'Suwannaphum-Regular', fontSize: 18},
         }}>
         <Stack.Screen name="FOODIES" component={BottomNavigator} />
-        <Stack.Screen name="RestaurantPage" component={FoodBoothPage} />
+        <Stack.Screen name="ItalianBooth" component={ItalianBooth} />
+        <Stack.Screen name="IndianBooth" component={IndianBooth} />
+        <Stack.Screen name="MexicanBooth" component={MexicanBooth} />
       </Stack.Navigator>
     </NavigationContainer>
   );
