@@ -1,20 +1,11 @@
 import React from 'react';
-import {
-  ImageSourcePropType,
-  ScrollView,
-  StyleSheet,
-  View,
-} from 'react-native';
+import {ImageSourcePropType, ScrollView, StyleSheet, View} from 'react-native';
 import BoothNavbar from './BoothPageComponent/BoothNavbar';
 import BoothDescription from './BoothPageComponent/BoothDescription';
 import Categories from './BoothPageComponent/Categories';
 import DishCard from './BoothPageComponent/DishCard';
 
-const pizzaDiavola = require('../images/pizzaDiavola.jpeg');
-const pastaCarbonara = require('../images/pastaCarbonara.png');
-const italyBooth = require('../images/italyBooth.png');
-
-interface FoodBoothPageProps {
+interface FoodBoothProps {
   boothName: string;
   boothImage: ImageSourcePropType;
   boothDescription: string;
@@ -32,7 +23,7 @@ interface DishCardProps {
   price: number;
 }
 
-const FoodBoothPage = (props: FoodBoothPageProps) => {
+const FoodBooth = (props: FoodBoothProps) => {
   const {dishes = []} = props;
 
   return (
@@ -66,4 +57,4 @@ const FoodBoothPage = (props: FoodBoothPageProps) => {
 
 const styles = StyleSheet.create({});
 
-export default FoodBoothPage;
+export default FoodBooth;

@@ -1,13 +1,13 @@
 import React from 'react';
 import {SafeAreaView} from 'react-native';
-import FoodBoothPage from './FoodBoothPage';
+import FoodBooth from '../FoodBooth';
 
 const mexicanBooth = require('../images/mexicanBooth.png');
 
 const MexicanBooth = () => {
   return (
     <SafeAreaView>
-      <FoodBoothPage
+      <FoodBooth
         boothName={'Mexican'}
         boothImage={mexicanBooth}
         boothDescription={

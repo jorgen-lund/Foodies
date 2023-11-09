@@ -2,9 +2,9 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import BottomNavigator from './src/navigations/BottomNavigator';
-import ItalianBooth from './src/ItalianBooth';
-import IndianBooth from './src/IndianBooth';
-import MexicanBooth from './src/MexicanBooth';
+import ItalianBooth from './src/booths/ItalianBooth';
+import IndianBooth from './src/booths/IndianBooth';
+import MexicanBooth from './src/booths/MexicanBooth';
 
 const Stack = createNativeStackNavigator();
 
