@@ -3,16 +3,7 @@ import {Image, StyleSheet, Text, View} from 'react-native';
 import DishInformation from './dishCardComponents/DishInformation';
 import Extras from './dishCardComponents/Extras';
 import DishButton from './dishCardComponents/DishButton';
-
-interface DishCardProps {
-  imageUrl: string;
-  name: string;
-  description: string;
-  allergies: string;
-  price: number;
-  // Also, add a dict down, one with extraName and price (or 2d array?)
-  // And one with adaptDescription and price
-}
+import { DishCardProps } from '../interfaces/interfaces';
 
 const DishCard = (props: DishCardProps) => {
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
@@ -27,7 +18,6 @@ const DishCard = (props: DishCardProps) => {
     borderTopLeftRadius: 8,
     borderTopRightRadius: 8,
   };
-  console.log(props.imageUrl)
 
   return (
     <View>
