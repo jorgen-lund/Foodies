@@ -11,7 +11,6 @@ const ReceiptPage = () => {
       <ScrollView>
         <View style={[styles.currentOrderContainer]}>
           <Text style={[styles.sectionHeader]}>Active order</Text>
-          <SectionText backgroundColor={'lightgrey'} />
           <Receipt
             id={1998}
             date={'8.nov.23 19:33'}
@@ -22,8 +21,6 @@ const ReceiptPage = () => {
         </View>
         <View style={[styles.currentOrderContainer]}>
           <Text style={[styles.sectionHeader]}>Previous orders</Text>
-          <SectionText backgroundColor={'lightgrey'} />
-
           <Receipt
             id={2023}
             date={'4.nov.23 15:02'}
