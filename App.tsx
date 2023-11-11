@@ -16,6 +16,7 @@ function App(): JSX.Element {
           headerStyle: {backgroundColor: 'black'},
           headerTintColor: 'black',
           headerTitleStyle: {fontFamily: 'Suwannaphum-Regular', fontSize: 18},
+          animation: 'none',
         }}>
         <Stack.Screen name="FOODIES" component={BottomNavigator} />
         <Stack.Screen name="ItalianBooth" component={ItalianBooth} />

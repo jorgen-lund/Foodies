@@ -1,23 +1,43 @@
+import {useNavigation} from '@react-navigation/native';
 import React from 'react';
-import {
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {RootNavigationProp} from '../navigations/navigationTypes';
+import BoothNavbarButton from './BoothNavbarButton';
 
-const BoothNavbar = () => {
+interface BoothNavbarProps {
+  activeBoothName: string;
+}
+
+const BoothNavbar = (props: BoothNavbarProps) => {
+  const navigation = useNavigation<RootNavigationProp>();
+
+  const goToItalianBooth = () => {
+    navigation.navigate('ItalianBooth');
+  };
+  const goToIndianBooth = () => {
+    navigation.navigate('IndianBooth');
+  };
+  const goToMexicanBooth = () => {
+    navigation.navigate('MexicanBooth');
+  };
+
   return (
     <View style={[styles.container]}>
-      <TouchableOpacity>
-        <Text style={[styles.text]}>Italiensk</Text>
-      </TouchableOpacity>
-      <TouchableOpacity>
-        <Text style={[styles.text]}>Indisk</Text>
-      </TouchableOpacity>
-      <TouchableOpacity>
-        <Text style={[styles.text]}>Meksikansk</Text>
-      </TouchableOpacity>
+      <BoothNavbarButton
+        onPress={goToItalianBooth}
+        boothName={'Italian'}
+        activeBoothName={props.activeBoothName}
+      />
+      <BoothNavbarButton
+        onPress={goToIndianBooth}
+        boothName={'Indian'}
+        activeBoothName={props.activeBoothName}
+      />
+      <BoothNavbarButton
+        onPress={goToMexicanBooth}
+        boothName={'Mexican'}
+        activeBoothName={props.activeBoothName}
+      />
     </View>
   );
 };
@@ -29,10 +49,6 @@ const styles = StyleSheet.create({
     height: 60,
     alignContent: 'center',
     alignItems: 'center',
-  },
-  text: {
-    fontFamily: 'Suwannaphum-Bold',
-    fontSize: 17,
   },
 });
 export default BoothNavbar;

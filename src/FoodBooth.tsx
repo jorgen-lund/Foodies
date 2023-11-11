@@ -30,7 +30,7 @@ const FoodBooth = (props: FoodBoothProps) => {
   return (
     <View style={{backgroundColor: 'white'}}>
       <ScrollView>
-        <BoothNavbar />
+        <BoothNavbar activeBoothName={props.boothName} />
         <BoothDescription
           boothName={props.boothName}
           boothImage={props.boothImage}

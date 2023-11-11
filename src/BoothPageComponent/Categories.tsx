@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
     borderTopWidth: 2,
     borderBottomWidth: 2,
     borderColor: '#32BDED',
-  }
+  },
 });
 
 export default Categories;

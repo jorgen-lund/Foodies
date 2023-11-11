@@ -7,6 +7,7 @@ const italyBooth = require('../../images/italyBooth.png');
 
 const ItalianBoothPage = () => {
   const italianDishes = data.booths.italian.dishes;
+
   return (
     <SafeAreaView>
       <FoodBooth
