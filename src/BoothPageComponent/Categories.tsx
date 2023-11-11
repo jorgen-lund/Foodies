@@ -1,8 +1,11 @@
-import React from 'react';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import React, {useState} from 'react';
+import {StyleSheet, View} from 'react-native';
 import {CategoriesProps} from '../interfaces/interfaces';
+import CategoryButton from './CategoryButton';
 
 const Categories = (props: CategoriesProps) => {
+  const [activeCategory, setActiveCategory] = useState('All');
+
   const resetCategoryStates = () => {
     props.setShowCategory1(false);
     props.setShowCategory2(false);
@@ -14,6 +17,7 @@ const Categories = (props: CategoriesProps) => {
 
   const choosenCategory = (name: string) => {
     resetCategoryStates();
+    setActiveCategory(name);
     if (name === props.category1) {
       props.setShowCategory1(true);
     } else if (name === props.category2) {
@@ -24,30 +28,30 @@ const Categories = (props: CategoriesProps) => {
       props.setShowAll(true);
     }
   };
-  
+
   return (
     <View style={[styles.categoryContainer]}>
-      <TouchableOpacity
-        style={[styles.button]}
-        onPress={() => choosenCategory('All')}>
-        <Text style={[styles.text]}>All</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={[styles.button]}
-        onPress={() => choosenCategory(props.category1)}>
-        <Text style={[styles.text]}>{props.category1}</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={[styles.button]}
-        onPress={() => choosenCategory(props.category2)}>
-        <Text style={[styles.text]}>{props.category2}</Text>
-      </TouchableOpacity>
+      <CategoryButton
+        onPress={() => choosenCategory('All')}
+        isActive={activeCategory === 'All'}
+        categoryName={'All'}
+      />
+      <CategoryButton
+        onPress={() => choosenCategory(props.category1)}
+        isActive={activeCategory === props.category1}
+        categoryName={props.category1}
+      />
+      <CategoryButton
+        onPress={() => choosenCategory(props.category2)}
+        isActive={activeCategory === props.category2}
+        categoryName={props.category2}
+      />
       {props.category3 && (
-        <TouchableOpacity
-          style={[styles.button]}
-          onPress={() => props.category3 && choosenCategory(props.category3)}>
-          <Text style={[styles.text]}>{props.category3}</Text>
-        </TouchableOpacity>
+        <CategoryButton
+          onPress={() => choosenCategory(props.category3!)}
+          isActive={activeCategory === props.category3}
+          categoryName={props.category3}
+        />
       )}
     </View>
   );
@@ -63,17 +67,7 @@ const styles = StyleSheet.create({
     borderTopWidth: 2,
     borderBottomWidth: 2,
     borderColor: '#32BDED',
-  },
-  text: {
-    fontFamily: 'Suwannaphum-Bold',
-    fontSize: 11,
-  },
-  button: {
-    width: 80,
-    height: 40,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
+  }
 });
 
 export default Categories;

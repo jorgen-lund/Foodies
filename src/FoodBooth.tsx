@@ -37,6 +37,10 @@ const FoodBooth = (props: FoodBoothProps) => {
           boothDescription={props.boothDescription}
         />
         <Categories
+          showAll={true}
+          showCategory1={false}
+          showCategory2={false}
+          showCategory3={false}
           setShowAll={setShowAll}
           setShowCategory1={setShowCategory1}
           setShowCategory2={setShowCategory2}

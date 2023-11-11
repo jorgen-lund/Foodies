@@ -8,7 +8,6 @@ export interface FoodBoothProps {
   category2: string;
   category3?: string;
   dishes: DishCardProps[];
-  
 }
 
 export interface DishCardProps {
@@ -18,7 +17,7 @@ export interface DishCardProps {
   description: string;
   allergies: string;
   price: number;
-  category: string,
+  category: string;
 }
 
 export interface CategoriesProps {
@@ -29,4 +28,14 @@ export interface CategoriesProps {
   setShowCategory1: React.Dispatch<React.SetStateAction<boolean>>;
   setShowCategory2: React.Dispatch<React.SetStateAction<boolean>>;
   setShowCategory3?: React.Dispatch<React.SetStateAction<boolean>>;
+  showAll: boolean;
+  showCategory1: boolean;
+  showCategory2: boolean;
+  showCategory3: boolean;
+}
+
+export interface CategoryButtonProps {
+  onPress: () => void;
+  isActive: boolean;
+  categoryName: string;
 }
