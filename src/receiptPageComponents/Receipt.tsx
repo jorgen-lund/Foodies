@@ -1,8 +1,7 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import ReceiptOrder from './ReceiptOrder';
 import ReceiptTop from './ReceiptTop';
-import ReceiptMid from './ReceiptMid';
 
 interface ReceiptProps {
   id: number;
@@ -10,33 +9,43 @@ interface ReceiptProps {
   date: string;
   totalCost: number;
   isActive: boolean;
+  // Takes in a list of dish objects I guess is the best solution
 }
 
 const Receipt = (props: ReceiptProps) => {
-  const [receiptColor, setReceiptColor] = useState('#F1F0F0');
-  const [textColor, setTextColor] = useState('black');
-  const [borderColor, setBorderColor] = useState('grey');
+  let recipeColor = '#F1F0F0';
+  let textColor = 'black';
+  let borderColor = 'grey';
 
-    useEffect(() => {
-      if (props.isActive) {
-        setReceiptColor('#32BDED');
-        setTextColor('white');
-        setBorderColor('white');
-      }
-    }, [])
+  if (props.isActive) {
+    recipeColor = '#32BDED';
+    textColor = 'white';
+    borderColor = 'white';
+  }
 
   return (
     <View
       style={[
         styles.receiptContainer,
-        {backgroundColor: receiptColor, borderColor: borderColor},
+        {backgroundColor: recipeColor, borderColor: borderColor},
       ]}>
       <ReceiptTop id={props.id} isActive={props.isActive} waitingTime={9} />
-      <ReceiptMid
-        textColor={textColor}
-        borderColor={borderColor}
-        date={props.date}
-        totalCost={props.totalCost} isActive={props.isActive}      />
+      <View style={[styles.receiptMidContainer]}>
+        <View
+          style={[styles.receiptMidInnerContainer, {borderColor: borderColor}]}>
+          <Text style={[styles.receiptText, {color: textColor}]}>Date:</Text>
+          <Text style={[styles.receiptText, {color: textColor}]}>
+            {props.date}
+          </Text>
+        </View>
+        <View
+          style={[styles.receiptMidInnerContainer, {borderColor: borderColor}]}>
+          <Text style={[styles.receiptText, {color: textColor}]}>Cost:</Text>
+          <Text style={[styles.receiptText, {color: textColor}]}>
+            NOK {props.totalCost},-
+          </Text>
+        </View>
+      </View>
       <ReceiptOrder
         amount={1}
         dish={'Pasta Bolognese'}
@@ -57,7 +66,25 @@ const styles = StyleSheet.create({
   receiptContainer: {
     backgroundColor: '#32BDED',
     borderRadius: 5,
+    borderWidth: 0.17,
     marginBottom: 20,
+  },
+  receiptText: {
+    fontFamily: 'Suwannaphum-Bold',
+    color: 'white',
+    fontSize: 16,
+  },
+  receiptMidContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    marginBottom: 5,
+  },
+  receiptMidInnerContainer: {
+    borderStyle: 'dashed',
+    // Change inner border color here.
+    borderWidth: 1.5,
+    alignItems: 'center',
+    width: '50.6%',
   },
 });
 export default Receipt;
