@@ -14,9 +14,9 @@ const DishButton = (props: DishButtonProps) => {
     props.handleAddToCart || props.handleEditPress || props.handleCloseEdit;
 
   return (
-    <TouchableOpacity onPress={onPressHandler}>
+    <TouchableOpacity onPress={onPressHandler} style={[styles.buttonIncrease]}>
       <View style={[styles.buttonContainer]}>
-        <MaterialIcons name={props.MaterialIconName} size={28} />
+        <MaterialIcons name={props.MaterialIconName} size={28} color={"white"}/>
       </View>
     </TouchableOpacity>
   );
@@ -27,11 +27,11 @@ const styles = StyleSheet.create({
     alignContent: 'space-between',
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 50,
-    height: 40,
-    width: 40,
+    borderRadius: 10,
+    height: 35,
+    width: 35,
     shadowColor: '#000',
-    backgroundColor: 'white',
+    backgroundColor: '#ED6232',
     shadowOffset: {
       width: 0,
       height: 2,
@@ -39,6 +39,12 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 2,
     elevation: 5,
+  },
+  buttonIncrease: {
+    flex: 1,
+    height: 60,
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
 export default DishButton;

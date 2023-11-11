@@ -17,7 +17,7 @@ const CategoryButton = (props: CategoryButtonProps) => {
 const styles = StyleSheet.create({
   text: {
     fontFamily: 'Suwannaphum-Bold',
-    fontSize: 13,
+    fontSize: 14,
   },
   activeText: {
     color: '#ED6232',
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
   },
   button: {
-    width: 80,
+    flex: 1,
     height: 40,
     justifyContent: 'center',
     alignItems: 'center',
