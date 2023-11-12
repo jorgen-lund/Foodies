@@ -9,7 +9,29 @@
           "allergies": "Allergens: Gluten & Lactose",
           "price": 160,
           "imageUrl": "https://res.cloudinary.com/norgesgruppen/images/c_scale,dpr_auto,f_auto,q_auto:eco,w_1600/axcdfcfmyahxjmmj99pe/pizza-diavola",
-          "category": "Pizza"
+          "category": "Pizza",
+          "extraItems": [
+            {
+              "name": "Parmegiano",
+              "category": "Extras",
+              "price": 15
+            },
+            {
+              "name": "Ruccola",
+              "category": "Extras",
+              "price": 10
+            },
+            {
+              "name": "Extra salami",
+              "category": "Extras",
+              "price": 20
+            },
+            {
+              "name": "Glutenfree",
+              "category": "Adapt",
+              "price": 30
+            }
+          ]
         },
         {
           "id": 4,
@@ -18,7 +40,19 @@
           "allergies": "Allergens: Gluten, Egg & Lactose",
           "price": 150,
           "imageUrl": "https://res.cloudinary.com/norgesgruppen/images/c_scale,dpr_auto,f_auto,q_auto:eco,w_auto/b4golm8sdghdq1vzivxz/klassisk-pasta-carbonara",
-          "category": "Pasta"
+          "category": "Pasta",
+          "extraItems": [
+            {
+              "name": "Parmegiano",
+              "category": "Extras",
+              "price": 30
+            },
+            {
+              "name": "Glutenfree",
+              "category": "Adapt",
+              "price": 20
+            }
+          ]
         },
         {
           "id": 2,

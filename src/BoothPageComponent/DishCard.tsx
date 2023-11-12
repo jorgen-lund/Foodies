@@ -3,13 +3,17 @@ import {Image, StyleSheet, Text, View} from 'react-native';
 import DishInformation from './dishCardComponents/DishInformation';
 import Extras from './dishCardComponents/Extras';
 import DishButton from './dishCardComponents/DishButton';
-import { DishCardProps } from '../interfaces/interfaces';
+import {DishCardProps} from '../interfaces/interfaces';
 
 const DishCard = (props: DishCardProps) => {
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
+  const checkIfExtras = () => {
+    return props.extraItems !== undefined ? true : false;
+  };
+
   const handleEditPress = () => {
-    setIsExpanded(true);
+    checkIfExtras() && setIsExpanded(true);
   };
 
   const dynamicTopCardStyle = {
@@ -18,7 +22,6 @@ const DishCard = (props: DishCardProps) => {
     borderTopLeftRadius: 8,
     borderTopRightRadius: 8,
   };
-
   return (
     <View>
       <View style={dynamicTopCardStyle}>
@@ -34,20 +37,22 @@ const DishCard = (props: DishCardProps) => {
           <View style={[styles.priceAndButtonsContainer]}>
             <Text style={[styles.priceText]}>{props.price} kr</Text>
             {!isExpanded && (
-              <>
-                <View style={[styles.dishButtonContainer]}>
+              <View style={[styles.dishButtonContainer]}>
+                {checkIfExtras() && (
                   <DishButton
                     handleEditPress={handleEditPress}
                     MaterialIconName={'edit'}
                   />
-                  <DishButton MaterialIconName={'add-shopping-cart'} />
-                </View>
-              </>
+                )}
+                <DishButton MaterialIconName={'add-shopping-cart'} />
+              </View>
             )}
           </View>
         </View>
       </View>
-      {isExpanded && <Extras setIsExpanded={setIsExpanded} />}
+      {isExpanded && checkIfExtras() && (
+        <Extras setIsExpanded={setIsExpanded} extraItems={props.extraItems!} />
+      )}
     </View>
   );
 };

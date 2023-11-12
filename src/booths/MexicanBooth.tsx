@@ -13,9 +13,9 @@ const MexicanBooth = () => {
         boothDescription={
           'I vår meksikanske booth kan du forvente en autentisk matopplevelse, hvor hver bit er en smaksopplevelse som transporterer deg rett til Mexico.'
         }
-        category2={'Taco'}
-        category3={'Burriots'}
-        category4={'Enchiladas'}
+        category1={'Taco'}
+        category2={'Burriots'}
+        category3={'Enchiladas'}
         dishes={[]}
       />
     </SafeAreaView>

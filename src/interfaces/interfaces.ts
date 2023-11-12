@@ -10,6 +10,12 @@ export interface FoodBoothProps {
   dishes: DishCardProps[];
 }
 
+export interface ExtraItemProps {
+  category: string,
+  name: string,
+  price: number,
+}
+
 export interface DishCardProps {
   id: number;
   imageUrl: string;
@@ -18,6 +24,7 @@ export interface DishCardProps {
   allergies: string;
   price: number;
   category: string;
+  extraItems?: ExtraItemProps[];
 }
 
 export interface CategoriesProps {

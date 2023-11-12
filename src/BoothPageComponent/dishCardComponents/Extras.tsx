@@ -1,26 +1,36 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import ExtraItem from './CheckboxItem';
 import DishButton from './DishButton';
+import {ExtraItemProps} from '../../interfaces/interfaces';
 
 interface ExtrasProps {
   setIsExpanded: React.Dispatch<React.SetStateAction<boolean>>;
+  extraItems: ExtraItemProps[];
 }
 
-const Extras = ({setIsExpanded}: ExtrasProps) => {
+const Extras = (props: ExtrasProps) => {
   const handleCloseEdit = () => {
-    setIsExpanded(false);
+    props.setIsExpanded(false);
   };
 
+  const extrasList = props.extraItems.filter(item => item.category === "Extras");
+  const adaptList = props.extraItems.filter(item => item.category === "Adapt");
+  
   return (
     <View style={[styles.outerContainer]}>
       <View style={[styles.innerContainer]}>
         <View style={[styles.separatorLine]}></View>
         <View style={[styles.extrasContainer]}>
           <Text style={[styles.addExtraText]}>Legg til ekstra:</Text>
-          <ExtraItem itemName={'Parmegiano'} price={20} />
+          {extrasList.map((item: ExtraItemProps, index: number) => (
+            <ExtraItem key={index} itemName={item.name} price={item.price} />
+          ))}
+
           <Text style={[styles.addExtraText]}>Tilpass:</Text>
-          <ExtraItem itemName={'Glutenfree'} price={30} />
+          {adaptList.map((item: ExtraItemProps, index: number) => (
+            <ExtraItem key={index}itemName={item.name} price={item.price} />
+          ))}
         </View>
         <View style={[styles.outerButtonContainer]}>
           <View style={[styles.innerButtonContainer]}>
@@ -45,9 +55,11 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: 10,
   },
   innerContainer: {
-    paddingHorizontal: 10,
+    marginHorizontal: 10,
     flexDirection: 'row',
     flex: 1,
+    borderTopWidth: 1,
+    borderColor: '#32BDED',
   },
   separatorLine: {
     borderTopWidth: 2,

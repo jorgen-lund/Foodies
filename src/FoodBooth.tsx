@@ -60,7 +60,8 @@ const FoodBooth = (props: FoodBoothProps) => {
             price={dish.price}
             id={dish.id}
             category={dish.category}
-          />
+            extraItems={dish.extraItems}
+          /> 
         ))}
       </ScrollView>
     </View>
