@@ -48,7 +48,7 @@ const ReceiptTop = (props: ReceiptTopProps) => {
             </View>
           </View>
           <View>
-            <MaterialIcons name={'pot-mix-outline'} color={'white'} size={42} />
+            <MaterialIcons name={'timer-sand'} color={'white'} size={42} />
           </View>
         </View>
       ) : (

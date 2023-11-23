@@ -11,40 +11,42 @@ interface ReceiptMidProps {
 
 const ReceiptMid = (props: ReceiptMidProps) => {
   return (
-    <View style={[styles.receiptMidContainer]}>
+    <View>
       <View
-        style={[
-          styles.receiptMidInnerContainer,
-          props.isActive ? styles.dashedBorder : styles.solidBorderLeft,
-        ]}>
-        <Text style={[styles.receiptText, {color: props.textColor}]}>
-          Date:
-        </Text>
-        <Text style={[styles.receiptText, {color: props.textColor}]}>
-          {props.date}
-        </Text>
+        style={[styles.dashedLine,props.isActive ? 
+        {borderColor: 'white'} : {borderColor: 'black'},]}>
+      </View>
+      <View style={[styles.receiptMidContainer]}>
+        <View style={[styles.receiptMidInnerContainer]}>
+          <Text style={[styles.receiptText, {color: props.textColor}]}>
+            Date:
+          </Text>
+          <Text style={[styles.receiptText, {color: props.textColor}]}>
+            {props.date}
+          </Text>
+        </View>
+        <View
+          style={[styles.dashedLine,props.isActive ? 
+          {borderColor: 'white'} : {borderColor: 'black'},]}>
+        </View>
+        <View style={[styles.receiptMidInnerContainer]}>
+          <Text style={[styles.receiptText, {color: props.textColor}]}>
+            Cost:
+          </Text>
+          <Text style={[styles.receiptText, {color: props.textColor}]}>
+            NOK {props.totalCost},-
+          </Text>
+        </View>
       </View>
       <View
-        style={[
-          styles.receiptMidInnerContainer,
-          props.isActive ? styles.dashedBorder : styles.solidBorderRight,
-        ]}>
-        <Text style={[styles.receiptText, {color: props.textColor}]}>
-          Cost:
-        </Text>
-        <Text style={[styles.receiptText, {color: props.textColor}]}>
-          NOK {props.totalCost},-
-        </Text>
+        style={[styles.dashedLine,props.isActive ? 
+        {borderColor: 'white'} : {borderColor: 'black'},]}>
       </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  receiptContainer: {
-    backgroundColor: '#32BDED',
-    marginBottom: 20,
-  },
   receiptText: {
     fontFamily: 'Suwannaphum-Bold',
     color: 'white',
@@ -53,30 +55,16 @@ const styles = StyleSheet.create({
   receiptMidContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    marginBottom: 5,
   },
   receiptMidInnerContainer: {
     alignItems: 'center',
-    width: '50.6%',
+    flex: 2,
+    marginBottom: 5
   },
-  dashedBorder: {
+  dashedLine: {
+    borderWidth: 0.9,
     borderStyle: 'dashed',
-    borderWidth: 1.5,
-    borderColor: 'white',
-  },
-  solidBorderLeft: {
-    borderWidth: 0.6,
-    borderLeftColor: "white",
-    borderTopColor: "grey",
-    borderBottomColor: "grey",
-    borderRightColor: "grey",
-  },
-  solidBorderRight: {
-    borderWidth: 0.6,
-    borderLeftColor: "#F1F0F0",
-    borderTopColor: "grey",
-    borderBottomColor: "grey",
-    borderRightColor: "white",
+    
   },
 });
 
