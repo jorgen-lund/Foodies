@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import {ScrollView, StyleSheet, View} from 'react-native';
-import BoothNavbar from './BoothPageComponent/BoothNavbar';
-import BoothDescription from './BoothPageComponent/BoothDescription';
-import Categories from './BoothPageComponent/Categories';
-import DishCard from './BoothPageComponent/DishCard';
-import {DishCardProps, FoodBoothProps} from './interfaces/interfaces';
+import BoothNavbar from '../components/BoothPageComponents/BoothNavbar';
+import BoothDescription from '../components/BoothPageComponents/BoothDescription';
+import Categories from '../components/BoothPageComponents/Categories';
+import DishCard from '../components/BoothPageComponents/DishCard';
+import {DishCardProps, FoodBoothProps} from '../interfaces/interfaces';
 
 const FoodBooth = (props: FoodBoothProps) => {
   const {dishes = [], category1, category2, category3} = props;

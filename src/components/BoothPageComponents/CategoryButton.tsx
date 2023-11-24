@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import { CategoryButtonProps } from '../interfaces/interfaces';
+import { CategoryButtonProps } from '../../interfaces/interfaces';
 
 const CategoryButton = (props: CategoryButtonProps) => {
   return (

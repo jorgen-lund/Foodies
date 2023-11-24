@@ -1,7 +1,7 @@
 import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import {RootNavigationProp} from '../navigations/navigationTypes';
+import {RootNavigationProp} from '../../navigationFiles/navigationTypes';
 import BoothNavbarButton from './BoothNavbarButton';
 
 interface BoothNavbarProps {

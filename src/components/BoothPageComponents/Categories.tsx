@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {StyleSheet, View} from 'react-native';
-import {CategoriesProps} from '../interfaces/interfaces';
+import {CategoriesProps} from '../../interfaces/interfaces';
 import CategoryButton from './CategoryButton';
 
 const Categories = (props: CategoriesProps) => {

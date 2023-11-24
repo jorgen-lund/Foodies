@@ -3,7 +3,7 @@ import {Image, StyleSheet, Text, View} from 'react-native';
 import DishInformation from './dishCardComponents/DishInformation';
 import Extras from './dishCardComponents/Extras';
 import DishButton from './dishCardComponents/DishButton';
-import {DishCardProps} from '../interfaces/interfaces';
+import {DishCardProps} from '../../interfaces/interfaces';
 
 const DishCard = (props: DishCardProps) => {
   const [isExpanded, setIsExpanded] = useState<boolean>(false);

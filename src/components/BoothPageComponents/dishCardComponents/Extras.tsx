@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import ExtraItem from './CheckboxItem';
 import DishButton from './DishButton';
-import {ExtraItemProps} from '../../interfaces/interfaces';
+import {ExtraItemProps} from '../../../interfaces/interfaces';
 
 interface ExtrasProps {
   setIsExpanded: React.Dispatch<React.SetStateAction<boolean>>;

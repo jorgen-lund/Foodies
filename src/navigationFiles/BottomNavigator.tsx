@@ -1,10 +1,10 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import LandingPage from '../LandingPage';
+import LandingPage from '../pages/LandingPage';
 import FeatherIcons from 'react-native-vector-icons/Feather';
 import IonIcons from 'react-native-vector-icons/Ionicons';
-import ShoppingCartPage from '../ShoppingCartPage';
-import ReceiptPage from '../ReceiptPage';
+import ShoppingCartPage from '../pages/ShoppingCartPage';
+import ReceiptPage from '../pages/ReceiptPage';
 
 const Tab = createBottomTabNavigator();
 

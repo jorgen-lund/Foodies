@@ -1,9 +1,9 @@
 import React from 'react';
 import {SafeAreaView, ScrollView, StyleSheet, Text, View} from 'react-native';
 import FeatherIcons from 'react-native-vector-icons/Feather';
-import ShoppingCartItem from './shoppingCartComponents/ShoppingCartItem';
-import OrderInfo from './shoppingCartComponents/OrderInfo';
-import PageHeader from './PageHeader';
+import ShoppingCartItem from '../components/shoppingCartComponents/ShoppingCartItem';
+import OrderInfo from '../components/shoppingCartComponents/OrderInfo';
+import PageHeader from '../components/PageHeader';
 
 const ShoppingCartPage = () => {
   return (
@@ -18,6 +18,7 @@ const ShoppingCartPage = () => {
             </Text>
           </View>
         </View>
+        {/*Here I have to map over the state list which is in redux, along with the extras*/}
         <ShoppingCartItem dishName={'Diavola'} price={160} amount={1} />
         <ShoppingCartItem dishName={'Pasta Bolognese'} price={150} amount={1} />
       </ScrollView>

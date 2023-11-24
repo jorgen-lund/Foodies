@@ -1,6 +1,6 @@
 import React from 'react';
 import {SafeAreaView} from 'react-native';
-import FoodBooth from '../FoodBooth';
+import FoodBooth from './FoodBooth';
 import data from '../../data/data.json';
 
 const indianBooth = require('../../images/indianBooth.png');

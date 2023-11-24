@@ -1,8 +1,8 @@
 import React from 'react';
 import {SafeAreaView, ScrollView, StyleSheet, Text, View} from 'react-native';
-import PageHeader from './PageHeader';
-import Receipt from './receiptPageComponents/Receipt';
-import SectionText from './LandingPageComponents/SectionText';
+import PageHeader from '../components/PageHeader';
+import Receipt from '../components/receiptPageComponents/Receipt';
+import SectionText from '../components/LandingPageComponents/SectionText';
 
 const ReceiptPage = () => {
   return (

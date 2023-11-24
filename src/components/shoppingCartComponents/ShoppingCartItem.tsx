@@ -33,14 +33,12 @@ const ShopppingCartItem = (props: ShopppingCartItemProps) => {
         <View style={[styles.dishAndAmountContainer]}>
           <Text style={[styles.dishText]}>{props.dishName}</Text>
           <View style={[styles.toggleAmountContainer]}>
-            {/* Will use increaseAmount here to increase the amount of a dish being ordered */}
             <TouchableOpacity onPress={decreaseAmount}>
               <View style={[styles.increaseButtonSize]}>
                 <FeatherIcons name={'minus-circle'} size={25} />
               </View>
             </TouchableOpacity>
             <Text style={[styles.dishText]}>{amount}</Text>
-            {/* Will use decreaseAmount here to decrease the amount of a dish being ordered */}
             <TouchableOpacity onPress={increaseAmount}>
               <View style={[styles.increaseButtonSize]}>
                 <FeatherIcons name={'plus-circle'} size={25} />
