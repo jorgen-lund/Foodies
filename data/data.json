@@ -14,7 +14,7 @@
             {
               "name": "Parmegiano",
               "category": "Extras",
-              "price": 15
+              "price": 10
             },
             {
               "name": "Ruccola",
@@ -27,9 +27,14 @@
               "price": 20
             },
             {
-              "name": "Glutenfree",
+              "name": "Make glutenfree ",
               "category": "Adapt",
-              "price": 30
+              "price": 20
+            },
+            {
+              "name": "Use Whole Wheat",
+              "category": "Adapt",
+              "price": 20
             }
           ]
         },
@@ -45,12 +50,22 @@
             {
               "name": "Parmegiano",
               "category": "Extras",
-              "price": 30
+              "price": 10
             },
             {
-              "name": "Glutenfree",
+              "name": "Make glutenfree",
               "category": "Adapt",
               "price": 20
+            },
+            {
+              "name": "Extra Pancetta",
+              "category": "Extras",
+              "price": 15
+            },
+            {
+              "name": "Crushed Red Pepper",
+              "category": "Extras",
+              "price": 5
             }
           ]
         },
@@ -61,7 +76,34 @@
           "allergies": "Allergenes: Gluten & Lactose",
           "price": 120,
           "imageUrl": "https://www.westend61.de/images/0000794547pw/pizza-margherita-and-cherry-tomatoes-on-dark-ground-KSWF01826.jpg",
-          "category": "Pizza"
+          "category": "Pizza",
+          "extraItems": [
+            {
+              "name": "Fresh Basil",
+              "category": "Extras",
+              "price": 5
+            },
+            {
+              "name": "Buffalo Mozzarella",
+              "category": "Extras",
+              "price": 20
+            },
+            {
+              "name": "Cherry Tomatoes",
+              "category": "Extras",
+              "price": 10
+            },
+            {
+              "name": "Make glutenfree",
+              "category": "Adapt",
+              "price": 20
+            },
+            {
+              "name": "Use Whole Wheat",
+              "category": "Adapt",
+              "price": 20
+            }
+          ]
         },
         {
           "id": 6,
@@ -70,7 +112,29 @@
           "allergies": "Allergenes: Gluten & Lactose",
           "price": 160,
           "imageUrl": "https://thumbs.dreamstime.com/b/chicken-alfredo-tagliatelle-greens-cream-sauce-dark-background-fettuccine-meal-created-generative-ai-chicken-288562793.jpg",
-          "category": "Pasta"
+          "category": "Pasta",
+          "extraItems": [
+            {
+              "name": "Grilled Chicken",
+              "category": "Extras",
+              "price": 30
+            },
+            {
+              "name": "Sauteed Mushrooms",
+              "category": "Extras",
+              "price": 15
+            },
+            {
+              "name": "Make glutenfree",
+              "category": "Adapt",
+              "price": 20
+            },
+            {
+              "name": "Extra Parmesan",
+              "category": "Extras",
+              "price": 10
+            }
+          ]
         },
         {
           "id": 3,
@@ -79,7 +143,34 @@
           "allergies": "Allergenes: Gluten & Lactose",
           "price": 140,
           "imageUrl": "https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX58416205.jpg",
-          "category": "Pizza"
+          "category": "Pizza",
+          "extraItems": [
+            {
+              "name": "Artichokes",
+              "category": "Extras",
+              "price": 15
+            },
+            {
+              "name": "Black Olives",
+              "category": "Extras",
+              "price": 10
+            },
+            {
+              "name": "Anchovies",
+              "category": "Extras",
+              "price": 20
+            },
+            {
+              "name": "Use Whole Wheat",
+              "category": "Adapt",
+              "price": 20
+            },
+            {
+              "name": "Make glutenfree",
+              "category": "Adapt",
+              "price": 20
+            }
+          ]
         },
         {
           "id": 5,
@@ -88,7 +179,29 @@
           "allergies": "Allergenes: Gluten & Lactose",
           "price": 140,
           "imageUrl": "https://res.cloudinary.com/norgesgruppen/images/c_scale,dpr_auto,f_auto,q_auto:eco,w_1600/m54yfcc8pq399znzcxvg/spaghetti-bolognese-med-oksekraft-og-soltorket-tomat",
-          "category": "Pasta"
+          "category": "Pasta",
+          "extraItems": [
+            {
+              "name": "Extra Mince Meat",
+              "category": "Extras",
+              "price": 25
+            },
+            {
+              "name": "Fresh Basil",
+              "category": "Extras",
+              "price": 5
+            },
+            {
+              "name": "Parmesan Cheese",
+              "category": "Extras",
+              "price": 10
+            },
+            {
+              "name": "Make glutenfree",
+              "category": "Adapt",
+              "price": 20
+            }
+          ]
         },
         {
           "id": 7,
@@ -97,7 +210,24 @@
           "allergies": "Allergenes: Egg & Lactose",
           "price": 90,
           "imageUrl": "https://thumbs.dreamstime.com/b/composition-tiramisu-cake-table-against-dark-background-149960331.jpg",
-          "category": "Dessert"
+          "category": "Dessert",
+          "extraItems": [
+            {
+              "name": "Extra Mascarpone",
+              "category": "Extras",
+              "price": 20
+            },
+            {
+              "name": "Chocolate Shavings",
+              "category": "Extras",
+              "price": 10
+            },
+            {
+              "name": "Raspberry Sauce",
+              "category": "Extras",
+              "price": 15
+            }
+          ]
         },
         {
           "id": 8,
@@ -106,7 +236,24 @@
           "allergies": "Allergenes: Lactose",
           "price": 80,
           "imageUrl": "https://static.vecteezy.com/system/resources/previews/026/516/205/large_2x/delicious-panna-cotta-dark-background-with-empty-space-for-text-free-photo.jpg",
-          "category": "Dessert"
+          "category": "Dessert",
+          "extraItems": [
+            {
+              "name": "Mixed Berry Compote",
+              "category": "Extras",
+              "price": 15
+            },
+            {
+              "name": "Caramel Drizzle",
+              "category": "Extras",
+              "price": 10
+            },
+            {
+              "name": "Crushed Pistachios",
+              "category": "Extras",
+              "price": 10
+            }
+          ]
         },
         {
           "id": 9,
@@ -115,20 +262,565 @@
           "allergies": "Allergenes: Lactose & Nuts",
           "price": 90,
           "imageUrl": "https://www.thespruceeats.com/thmb/1hMONqXtqNqINhWjtQtJ2_-zwAM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/SES-no-churn-pistachio-ice-cream-recipe-5-ingredients-7488379-hero-01-1224d2ae3f424d5dbde94c471136e157.jpg",
-          "category": "Dessert"
+          "category": "Dessert",
+          "extraItems": [
+            {
+              "name": "Extra Scoop",
+              "category": "Extras",
+              "price": 15
+            },
+            {
+              "name": "Whipped Cream",
+              "category": "Extras",
+              "price": 5
+            },
+            {
+              "name": "Chocolate Sauce",
+              "category": "Extras",
+              "price": 10
+            }
+          ]
         }
       ]
     },
     "indian": {
       "dishes": [
         {
+          "id": 1,
+          "name": "Chicken Tikka Masala",
+          "description": "Rich, creamy curry with marinated grilled chicken in a tomato sauce, seasoned with garam masala.",
+          "allergies": "Allergens: Dairy & Nuts",
+          "price": 180,
+          "imageUrl": "https://as2.ftcdn.net/v2/jpg/03/13/35/73/1000_F_313357375_eI3nubCLdKLGOIbgNU6oDurVWg0u7j4b.jpg",
+          "category": "Curry",
+          "extraItems": [
+            {
+              "name": "Extra Chicken",
+              "category": "Extras",
+              "price": 20
+            },
+            {
+              "name": "Paneer",
+              "category": "Extras",
+              "price": 15
+            },
+            {
+              "name": "Spicy Level Hot",
+              "category": "Adapt",
+              "price": 5
+            },
+            {
+              "name": "Dairy-free",
+              "category": "Adapt",
+              "price": 25
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "name": "Tandoori Chicken",
+          "description": "Chicken marinated in yogurt and spices, cooked in a tandoor oven for a smoky flavor.",
+          "allergies": "Allergens: Dairy",
+          "price": 170,
+          "imageUrl": "https://thumbs.dreamstime.com/b/tandoori-chicken-tikka-served-onion-lime-selective-focus-generative-ai-271554935.jpg",
+          "category": "Tandoori",
+          "extraItems": [
+            {
+              "name": "Extra Chicken",
+              "category": "Extras",
+              "price": 20
+            },
+            {
+              "name": "Lemon Wedges",
+              "category": "Extras",
+              "price": 5
+            },
+            {
+              "name": "Mint Yogurt Sauce",
+              "category": "Extras",
+              "price": 10
+            },
+            {
+              "name": "Spicy Level Hot",
+              "category": "Adapt",
+              "price": 5
+            }
+          ]
+        },
+        {
+          "id": 7,
+          "name": "Garlic Naan",
+          "description": "Soft and fluffy naan bread topped with fresh garlic and coriander, brushed with butter.",
+          "allergies": "Allergens: Gluten, Dairy",
+          "price": 40,
+          "imageUrl": "https://t4.ftcdn.net/jpg/06/09/58/09/360_F_609580941_U8W4KuzYJ9w70Fxg9ZByT5F3Q9AIVmBq.jpg",
+          "category": "Naan",
+          "extraItems": [
+            {
+              "name": "Extra Garlic",
+              "category": "Extras",
+              "price": 5
+            },
+            {
+              "name": "Chili Flakes",
+              "category": "Extras",
+              "price": 5
+            },
+            {
+              "name": "Gluten-free Option",
+              "category": "Adapt",
+              "price": 10
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Palak Paneer",
+          "description": "Flavorful spinach and mustard greens curry with paneer, seasoned with fenugreek and cumin.",
+          "allergies": "Allergens: Dairy",
+          "price": 150,
+          "imageUrl": "https://img.freepik.com/premium-photo/delicious-indian-palak-paneer-seen-from-black-background-generative-ia_209190-3438.jpg",
+          "category": "Curry",
+          "extraItems": [
+            {
+              "name": "Extra Paneer",
+              "category": "Extras",
+              "price": 15
+            },
+            {
+              "name": "Chicken",
+              "category": "Extras",
+              "price": 20
+            },
+            {
+              "name": "Vegan Tofu",
+              "category": "Extras",
+              "price": 15
+            },
+            {
+              "name": "Spicy Level Hot",
+              "category": "Adapt",
+              "price": 5
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "name": "Lamb Rogan Josh",
+          "description": "Robust curry with tender lamb in a sauce of yogurt and Kashmiri spices.",
+          "allergies": "Allergens: Dairy",
+          "price": 200,
+          "imageUrl": "https://thumbs.dreamstime.com/b/rogan-josh-black-matte-plate-294608689.jpg",
+          "category": "Curry",
+          "extraItems": [
+            {
+              "name": "Extra Lamb",
+              "category": "Extras",
+              "price": 25
+            },
+            {
+              "name": "Mild Spice",
+              "category": "Adapt",
+              "price": 0
+            },
+            {
+              "name": "Aloo (Potatoes)",
+              "category": "Extras",
+              "price": 10
+            },
+            {
+              "name": "Spicy Level Hot",
+              "category": "Adapt",
+              "price": 5
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "name": "Paneer Tikka",
+          "description": "Cubes of paneer marinated in spices and grilled in a tandoor, served with vegetables.",
+          "allergies": "Allergens: Dairy",
+          "price": 120,
+          "imageUrl": "https://us.123rf.com/450wm/kravtzov/kravtzov1910/kravtzov191000067/135463772-schezwan-paneer-in-black-bowl-at-dark-slate-background-schezwan-paneer-is-indo-chinese-cuisine-dish.jpg?ver=6",
+          "category": "Tandoori",
+          "extraItems": [
+            {
+              "name": "Extra Paneer",
+              "category": "Extras",
+              "price": 15
+            },
+            {
+              "name": "Mixed Grill Vegetables",
+              "category": "Extras",
+              "price": 10
+            },
+            {
+              "name": "Spicy Level Hot",
+              "category": "Adapt",
+              "price": 5
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "name": "Tandoori Prawns",
+          "description": "Jumbo prawns marinated in a blend of yogurt and tandoori spices, grilled to perfection.",
+          "allergies": "Allergens: Dairy & Shellfish",
+          "price": 190,
+          "imageUrl": "https://img.freepik.com/premium-photo/plate-prawns-with-black-background_398492-4375.jpg",
+          "category": "Tandoori",
+          "extraItems": [
+            {
+              "name": "Extra Prawns",
+              "category": "Extras",
+              "price": 25
+            },
+            {
+              "name": "Garlic Butter",
+              "category": "Extras",
+              "price": 10
+            },
+            {
+              "name": "Mint Chutney",
+              "category": "Extras",
+              "price": 10
+            },
+            {
+              "name": "Lemon Rice",
+              "category": "Extras",
+              "price": 15
+            },
+            {
+              "name": "Spicy Level Hot",
+              "category": "Adapt",
+              "price": 5
+            }
+          ]
+        },
+        {
+          "id": 8,
+          "name": "Butter Naan",
+          "description": "Classic naan bread, soft and pillowy, brushed generously with melted butter.",
+          "allergies": "Allergens: Gluten, Dairy",
+          "price": 35,
+          "imageUrl": "https://img.freepik.com/premium-photo/plate-naan-bread-with-black-background_925459-461.jpg",
+          "category": "Naan",
+          "extraItems": [
+            {
+              "name": "Whole Wheat",
+              "category": "Adapt",
+              "price": 5
+            },
+            {
+              "name": "Gluten-free Option",
+              "category": "Adapt",
+              "price": 10
+            }
+          ]
+        },
+        {
           "id": 9,
-          "name": "Pistachio Gelato",
-          "description": "Italian frozen delight, boasting dense, intense flavors, and a creamy texture. A delightful frozen treat.",
-          "allergies": "Allergenes: Lactose & Nuts",
-          "price": 90,
-          "imageUrl": "https://www.thespruceeats.com/thmb/1hMONqXtqNqINhWjtQtJ2_-zwAM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/SES-no-churn-pistachio-ice-cream-recipe-5-ingredients-7488379-hero-01-1224d2ae3f424d5dbde94c471136e157.jpg",
-          "category": "dessert"
+          "name": "Peshwari Naan",
+          "description": "Sweet naan filled with a mixture of nuts and raisins, a perfect accompaniment to spicy curries.",
+          "allergies": "Allergens: Gluten, Nuts",
+          "price": 50,
+          "imageUrl": "https://food-images.files.bbci.co.uk/food/recipes/peshwari_naan_11201_16x9.jpg",
+          "category": "Naan",
+          "extraItems": [
+            {
+              "name": "Extra Nuts",
+              "category": "Extras",
+              "price": 10
+            },
+            {
+              "name": "Gluten-free Option",
+              "category": "Adapt",
+              "price": 10
+            }
+          ]
+        }
+      ]
+    },
+    "mexican": {
+      "dishes": [
+        {
+          "id": 1,
+          "name": "Taco Al Pastor",
+          "description": "Soft corn tortillas filled with marinated pork, pineapple, cilantro, and onions",
+          "allergies": "Allergens: Gluten",
+          "price": 120,
+          "imageUrl": "https://iamafoodblog.b-cdn.net/wp-content/uploads/2021/05/al-pastor-3507w.jpg",
+          "category": "Taco",
+          "extraItems": [
+            {
+              "name": "Guacamole",
+              "category": "Extras",
+              "price": 20
+            },
+            {
+              "name": "Sour Cream",
+              "category": "Extras",
+              "price": 15
+            },
+            {
+              "name": "Extra Pineapple",
+              "category": "Extras",
+              "price": 10
+            },
+            {
+              "name": "Gluten-Free Tortilla",
+              "category": "Adapt",
+              "price": 25
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Burrito de Carne Asada",
+          "description": "Grilled steak burrito with rice, beans, cheese, and pico de gallo wrapped in a large flour tortilla",
+          "allergies": "Allergens: Gluten, Lactose",
+          "price": 150,
+          "imageUrl": "https://www.comedera.com/wp-content/uploads/2023/07/shutterstock_311800970.jpg",
+          "category": "Burrito",
+          "extraItems": [
+            {
+              "name": "Extra Steak",
+              "category": "Extras",
+              "price": 40
+            },
+            {
+              "name": "Guacamole",
+              "category": "Extras",
+              "price": 20
+            },
+            {
+              "name": "Sour Cream",
+              "category": "Extras",
+              "price": 15
+            },
+            {
+              "name": "Whole Wheat Tortilla",
+              "category": "Adapt",
+              "price": 25
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "name": "Taco de Carnitas",
+          "description": "Slow-cooked pork served in soft corn tortillas with salsa verde and chopped onions",
+          "allergies": "Allergens: Gluten",
+          "price": 130,
+          "imageUrl": "https://whatsgabycooking.com/wp-content/uploads/2019/03/All-Clad-__-Carnitas-Tacos-580x870-1.jpg",
+          "category": "Taco",
+          "extraItems": [
+            {
+              "name": "Extra Pork",
+              "category": "Extras",
+              "price": 30
+            },
+            {
+              "name": "Pickled Jalapenos",
+              "category": "Extras",
+              "price": 15
+            },
+            {
+              "name": "Cheese",
+              "category": "Extras",
+              "price": 20
+            },
+            {
+              "name": "Gluten-Free Tortilla",
+              "category": "Adapt",
+              "price": 25
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "name": "Enchiladas Verdes",
+          "description": "Corn tortillas filled with shredded chicken, topped with green tomatillo sauce, melted cheese, and sour cream",
+          "allergies": "Allergens: Gluten, Lactose",
+          "price": 145,
+          "imageUrl": "https://www.panningtheglobe.com/wp-content/uploads/2014/08/Enchiladas-Verdes-2-web.jpg",
+          "category": "Enchiladas",
+          "extraItems": [
+            {
+              "name": "Extra Chicken",
+              "category": "Extras",
+              "price": 30
+            },
+            {
+              "name": "Vegan Cheese",
+              "category": "Extras",
+              "price": 20
+            },
+            {
+              "name": "Avocado Slices",
+              "category": "Extras",
+              "price": 25
+            },
+            {
+              "name": "Gluten-Free Tortilla",
+              "category": "Adapt",
+              "price": 25
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "name": "Enchiladas Rojas",
+          "description": "Enchiladas with red chili sauce, filled with cheese and onions, served with refried beans and rice",
+          "allergies": "Allergens: Gluten, Lactose",
+          "price": 135,
+          "imageUrl": "https://img.hellofresh.com/f_auto,fl_lossy,q_auto,w_1200/hellofresh_s3/image/black-bean-enchiladas-rojas-4022b07e.jpg",
+          "category": "Enchiladas",
+          "extraItems": [
+            {
+              "name": "Extra Cheese",
+              "category": "Extras",
+              "price": 20
+            },
+            {
+              "name": "Shredded Beef",
+              "category": "Extras",
+              "price": 35
+            },
+            {
+              "name": "Sour Cream",
+              "category": "Extras",
+              "price": 15
+            },
+            {
+              "name": "Gluten-Free Tortilla",
+              "category": "Adapt",
+              "price": 25
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "name": "Burrito Vegetariano",
+          "description": "Vegetarian burrito filled with grilled vegetables, black beans, rice, and cheese in a flour tortilla",
+          "allergies": "Allergens: Gluten, Lactose",
+          "price": 130,
+          "imageUrl": "https://mejorconsalud.as.com/wp-content/uploads/2015/04/burrito.jpg",
+          "category": "Burrito",
+          "extraItems": [
+            {
+              "name": "Tofu",
+              "category": "Extras",
+              "price": 25
+            },
+            {
+              "name": "Vegan Cheese",
+              "category": "Extras",
+              "price": 20
+            },
+            {
+              "name": "Extra Veggies",
+              "category": "Extras",
+              "price": 15
+            },
+            {
+              "name": "Gluten-Free Tortilla",
+              "category": "Adapt",
+              "price": 30
+            }
+          ]
+        },
+        {
+          "id": 7,
+          "name": "Taco de Pescado",
+          "description": "Beer-battered fish tacos with cabbage slaw and chipotle mayo in flour tortillas",
+          "allergies": "Allergens: Gluten, Seafood",
+          "price": 140,
+          "imageUrl": "https://mexicali.it/wp-content/uploads/2021/04/Tacos-de-pescado.jpeg",
+          "category": "Taco",
+          "extraItems": [
+            {
+              "name": "Extra Fish",
+              "category": "Extras",
+              "price": 35
+            },
+            {
+              "name": "Avocado Slices",
+              "category": "Extras",
+              "price": 25
+            },
+            {
+              "name": "Spicy Mayo",
+              "category": "Extras",
+              "price": 15
+            },
+            {
+              "name": "Gluten-Free Batter",
+              "category": "Adapt",
+              "price": 30
+            }
+          ]
+        },
+        {
+          "id": 8,
+          "name": "Enchiladas Suizas",
+          "description": "Corn tortillas filled with shredded chicken, topped with creamy green sauce and melted Swiss cheese",
+          "allergies": "Allergens: Gluten, Lactose",
+          "price": 155,
+          "imageUrl": "https://www.sonomacutrer.com/wp-content/uploads/2018/06/enchaladas-540-1024x665.jpg",
+          "category": "Enchiladas",
+          "extraItems": [
+            {
+              "name": "Extra Chicken",
+              "category": "Extras",
+              "price": 30
+            },
+            {
+              "name": "Vegan Cheese",
+              "category": "Extras",
+              "price": 20
+            },
+            {
+              "name": "Jalapenos",
+              "category": "Extras",
+              "price": 15
+            },
+            {
+              "name": "Gluten-Free Tortilla",
+              "category": "Adapt",
+              "price": 25
+            }
+          ]
+        },
+        {
+          "id": 9,
+          "name": "Burrito de Pollo",
+          "description": "Chicken burrito with Mexican rice, refried beans, lettuce, and salsa wrapped in a flour tortilla",
+          "allergies": "Allergens: Gluten",
+          "price": 140,
+          "imageUrl": "https://us.123rf.com/450wm/studioaccendo/studioaccendo2307/studioaccendo230745987/209764418-mexican-burritos-wraps-with-chicken-lettuce-and-tomato-on-black-background.jpg",
+          "category": "Burrito",
+          "extraItems": [
+            {
+              "name": "Extra Chicken",
+              "category": "Extras",
+              "price": 35
+            },
+            {
+              "name": "Avocado",
+              "category": "Extras",
+              "price": 25
+            },
+            {
+              "name": "Hot Sauce",
+              "category": "Extras",
+              "price": 10
+            },
+            {
+              "name": "Gluten-Free Tortilla",
+              "category": "Adapt",
+              "price": 30
+            }
+          ]
         }
       ]
     }

@@ -15,8 +15,9 @@ const IndianBooth = () => {
         boothDescription={
           'Din port til den fantastiske verden av autentisk indisk smak og krydder! Fra det øyeblikket du kommer innom vår bod vil du føle at du har trådt inn i en smakfull oase.'
         }
-        category1={'Forretter'}
-        category2={'Hovedretter'}
+        category1={'Curry'}
+        category2={'Tandoori'}
+        category3={'Naan'}
         dishes={indianDishes}
       />
     </SafeAreaView>
