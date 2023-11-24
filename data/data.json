@@ -12,26 +12,31 @@
           "category": "Pizza",
           "extraItems": [
             {
+              "id": 1,
               "name": "Parmegiano",
               "category": "Extras",
               "price": 10
             },
             {
+              "id": 2,
               "name": "Ruccola",
               "category": "Extras",
               "price": 10
             },
             {
+              "id": 3,
               "name": "Extra salami",
               "category": "Extras",
               "price": 20
             },
             {
+              "id": 4,
               "name": "Make glutenfree ",
               "category": "Adapt",
               "price": 20
             },
             {
+              "id": 5,
               "name": "Use Whole Wheat",
               "category": "Adapt",
               "price": 20
@@ -48,21 +53,25 @@
           "category": "Pasta",
           "extraItems": [
             {
+              "id": 1,
               "name": "Parmegiano",
               "category": "Extras",
               "price": 10
             },
             {
+              "id": 2,
               "name": "Make glutenfree",
               "category": "Adapt",
               "price": 20
             },
             {
+              "id": 3,
               "name": "Extra Pancetta",
               "category": "Extras",
               "price": 15
             },
             {
+              "id": 4,
               "name": "Crushed Red Pepper",
               "category": "Extras",
               "price": 5
@@ -79,26 +88,31 @@
           "category": "Pizza",
           "extraItems": [
             {
+              "id": 1,
               "name": "Fresh Basil",
               "category": "Extras",
               "price": 5
             },
             {
+              "id": 2,
               "name": "Buffalo Mozzarella",
               "category": "Extras",
               "price": 20
             },
             {
+              "id": 3,
               "name": "Cherry Tomatoes",
               "category": "Extras",
               "price": 10
             },
             {
+              "id": 4,
               "name": "Make glutenfree",
               "category": "Adapt",
               "price": 20
             },
             {
+              "id": 5,
               "name": "Use Whole Wheat",
               "category": "Adapt",
               "price": 20
@@ -115,21 +129,25 @@
           "category": "Pasta",
           "extraItems": [
             {
+              "id": 1,
               "name": "Grilled Chicken",
               "category": "Extras",
               "price": 30
             },
             {
+              "id": 2,
               "name": "Sauteed Mushrooms",
               "category": "Extras",
               "price": 15
             },
             {
+              "id": 3,
               "name": "Make glutenfree",
               "category": "Adapt",
               "price": 20
             },
             {
+              "id": 4,
               "name": "Extra Parmesan",
               "category": "Extras",
               "price": 10
@@ -146,26 +164,31 @@
           "category": "Pizza",
           "extraItems": [
             {
+              "id": 1,
               "name": "Artichokes",
               "category": "Extras",
               "price": 15
             },
             {
+              "id": 2,
               "name": "Black Olives",
               "category": "Extras",
               "price": 10
             },
             {
+              "id": 3,
               "name": "Anchovies",
               "category": "Extras",
               "price": 20
             },
             {
+              "id": 4,
               "name": "Use Whole Wheat",
               "category": "Adapt",
               "price": 20
             },
             {
+              "id": 5,
               "name": "Make glutenfree",
               "category": "Adapt",
               "price": 20
@@ -182,21 +205,25 @@
           "category": "Pasta",
           "extraItems": [
             {
+              "id": 1,
               "name": "Extra Mince Meat",
               "category": "Extras",
               "price": 25
             },
             {
+              "id": 2,
               "name": "Fresh Basil",
               "category": "Extras",
               "price": 5
             },
             {
+              "id": 3,
               "name": "Parmesan Cheese",
               "category": "Extras",
               "price": 10
             },
             {
+              "id": 4,
               "name": "Make glutenfree",
               "category": "Adapt",
               "price": 20
@@ -213,16 +240,19 @@
           "category": "Dessert",
           "extraItems": [
             {
+              "id": 1,
               "name": "Extra Mascarpone",
               "category": "Extras",
               "price": 20
             },
             {
+              "id": 2,
               "name": "Chocolate Shavings",
               "category": "Extras",
               "price": 10
             },
             {
+              "id": 3,
               "name": "Raspberry Sauce",
               "category": "Extras",
               "price": 15
@@ -239,16 +269,19 @@
           "category": "Dessert",
           "extraItems": [
             {
+              "id": 1,
               "name": "Mixed Berry Compote",
               "category": "Extras",
               "price": 15
             },
             {
+              "id": 2,
               "name": "Caramel Drizzle",
               "category": "Extras",
               "price": 10
             },
             {
+              "id": 3,
               "name": "Crushed Pistachios",
               "category": "Extras",
               "price": 10
@@ -265,16 +298,19 @@
           "category": "Dessert",
           "extraItems": [
             {
+              "id": 1,
               "name": "Extra Scoop",
               "category": "Extras",
               "price": 15
             },
             {
+              "id": 2,
               "name": "Whipped Cream",
               "category": "Extras",
               "price": 5
             },
             {
+              "id": 3,
               "name": "Chocolate Sauce",
               "category": "Extras",
               "price": 10
@@ -295,21 +331,25 @@
           "category": "Curry",
           "extraItems": [
             {
+              "id": 1,
               "name": "Extra Chicken",
               "category": "Extras",
               "price": 20
             },
             {
+              "id": 2,
               "name": "Paneer",
               "category": "Extras",
               "price": 15
             },
             {
+              "id": 3,
               "name": "Spicy Level Hot",
               "category": "Adapt",
               "price": 5
             },
             {
+              "id": 4,
               "name": "Dairy-free",
               "category": "Adapt",
               "price": 25
@@ -326,21 +366,25 @@
           "category": "Tandoori",
           "extraItems": [
             {
+              "id": 1,
               "name": "Extra Chicken",
               "category": "Extras",
               "price": 20
             },
             {
+              "id": 2,
               "name": "Lemon Wedges",
               "category": "Extras",
               "price": 5
             },
             {
+              "id": 3,
               "name": "Mint Yogurt Sauce",
               "category": "Extras",
               "price": 10
             },
             {
+              "id": 4,
               "name": "Spicy Level Hot",
               "category": "Adapt",
               "price": 5
@@ -357,16 +401,19 @@
           "category": "Naan",
           "extraItems": [
             {
+              "id": 1,
               "name": "Extra Garlic",
               "category": "Extras",
               "price": 5
             },
             {
+              "id": 2,
               "name": "Chili Flakes",
               "category": "Extras",
               "price": 5
             },
             {
+              "id": 3,
               "name": "Gluten-free Option",
               "category": "Adapt",
               "price": 10
@@ -383,21 +430,25 @@
           "category": "Curry",
           "extraItems": [
             {
+              "id": 1,
               "name": "Extra Paneer",
               "category": "Extras",
               "price": 15
             },
             {
+              "id": 2,
               "name": "Chicken",
               "category": "Extras",
               "price": 20
             },
             {
+              "id": 3,
               "name": "Vegan Tofu",
               "category": "Extras",
               "price": 15
             },
             {
+              "id": 4,
               "name": "Spicy Level Hot",
               "category": "Adapt",
               "price": 5
@@ -414,21 +465,25 @@
           "category": "Curry",
           "extraItems": [
             {
+              "id": 1,
               "name": "Extra Lamb",
               "category": "Extras",
               "price": 25
             },
             {
+              "id": 2,
               "name": "Mild Spice",
               "category": "Adapt",
               "price": 0
             },
             {
+              "id": 3,
               "name": "Aloo (Potatoes)",
               "category": "Extras",
               "price": 10
             },
             {
+              "id": 4,
               "name": "Spicy Level Hot",
               "category": "Adapt",
               "price": 5
@@ -445,16 +500,19 @@
           "category": "Tandoori",
           "extraItems": [
             {
+              "id": 1,
               "name": "Extra Paneer",
               "category": "Extras",
               "price": 15
             },
             {
+              "id": 2,
               "name": "Mixed Grill Vegetables",
               "category": "Extras",
               "price": 10
             },
             {
+              "id": 3,
               "name": "Spicy Level Hot",
               "category": "Adapt",
               "price": 5
@@ -471,26 +529,31 @@
           "category": "Tandoori",
           "extraItems": [
             {
+              "id": 1,
               "name": "Extra Prawns",
               "category": "Extras",
               "price": 25
             },
             {
+              "id": 2,
               "name": "Garlic Butter",
               "category": "Extras",
               "price": 10
             },
             {
+              "id": 3,
               "name": "Mint Chutney",
               "category": "Extras",
               "price": 10
             },
             {
+              "id": 4,
               "name": "Lemon Rice",
               "category": "Extras",
               "price": 15
             },
             {
+              "id": 5,
               "name": "Spicy Level Hot",
               "category": "Adapt",
               "price": 5
@@ -507,11 +570,13 @@
           "category": "Naan",
           "extraItems": [
             {
+              "id": 1,
               "name": "Whole Wheat",
               "category": "Adapt",
               "price": 5
             },
             {
+              "id": 2,
               "name": "Gluten-free Option",
               "category": "Adapt",
               "price": 10
@@ -528,11 +593,13 @@
           "category": "Naan",
           "extraItems": [
             {
+              "id": 1,
               "name": "Extra Nuts",
               "category": "Extras",
               "price": 10
             },
             {
+              "id": 2,
               "name": "Gluten-free Option",
               "category": "Adapt",
               "price": 10
@@ -553,21 +620,25 @@
           "category": "Taco",
           "extraItems": [
             {
+              "id": 1,
               "name": "Guacamole",
               "category": "Extras",
               "price": 20
             },
             {
+              "id": 2,
               "name": "Sour Cream",
               "category": "Extras",
               "price": 15
             },
             {
+              "id": 3,
               "name": "Extra Pineapple",
               "category": "Extras",
               "price": 10
             },
             {
+              "id": 4,
               "name": "Gluten-Free Tortilla",
               "category": "Adapt",
               "price": 25
@@ -584,21 +655,25 @@
           "category": "Burrito",
           "extraItems": [
             {
+              "id": 1,
               "name": "Extra Steak",
               "category": "Extras",
               "price": 40
             },
             {
+              "id": 2,
               "name": "Guacamole",
               "category": "Extras",
               "price": 20
             },
             {
+              "id": 3,
               "name": "Sour Cream",
               "category": "Extras",
               "price": 15
             },
             {
+              "id": 4,
               "name": "Whole Wheat Tortilla",
               "category": "Adapt",
               "price": 25
@@ -615,21 +690,25 @@
           "category": "Taco",
           "extraItems": [
             {
+              "id": 1,
               "name": "Extra Pork",
               "category": "Extras",
               "price": 30
             },
             {
+              "id": 2,
               "name": "Pickled Jalapenos",
               "category": "Extras",
               "price": 15
             },
             {
+              "id": 3,
               "name": "Cheese",
               "category": "Extras",
               "price": 20
             },
             {
+              "id": 4,
               "name": "Gluten-Free Tortilla",
               "category": "Adapt",
               "price": 25
@@ -646,21 +725,25 @@
           "category": "Enchiladas",
           "extraItems": [
             {
+              "id": 1,
               "name": "Extra Chicken",
               "category": "Extras",
               "price": 30
             },
             {
+              "id": 2,
               "name": "Vegan Cheese",
               "category": "Extras",
               "price": 20
             },
             {
+              "id": 3,
               "name": "Avocado Slices",
               "category": "Extras",
               "price": 25
             },
             {
+              "id": 4,
               "name": "Gluten-Free Tortilla",
               "category": "Adapt",
               "price": 25
@@ -677,21 +760,25 @@
           "category": "Enchiladas",
           "extraItems": [
             {
+              "id": 1,
               "name": "Extra Cheese",
               "category": "Extras",
               "price": 20
             },
             {
+              "id": 2,
               "name": "Shredded Beef",
               "category": "Extras",
               "price": 35
             },
             {
+              "id": 3,
               "name": "Sour Cream",
               "category": "Extras",
               "price": 15
             },
             {
+              "id": 4,
               "name": "Gluten-Free Tortilla",
               "category": "Adapt",
               "price": 25
@@ -708,21 +795,25 @@
           "category": "Burrito",
           "extraItems": [
             {
+              "id": 1,
               "name": "Tofu",
               "category": "Extras",
               "price": 25
             },
             {
+              "id": 2,
               "name": "Vegan Cheese",
               "category": "Extras",
               "price": 20
             },
             {
+              "id": 3,
               "name": "Extra Veggies",
               "category": "Extras",
               "price": 15
             },
             {
+              "id": 4,
               "name": "Gluten-Free Tortilla",
               "category": "Adapt",
               "price": 30
@@ -739,21 +830,25 @@
           "category": "Taco",
           "extraItems": [
             {
+              "id": 1,
               "name": "Extra Fish",
               "category": "Extras",
               "price": 35
             },
             {
+              "id": 2,
               "name": "Avocado Slices",
               "category": "Extras",
               "price": 25
             },
             {
+              "id": 3,
               "name": "Spicy Mayo",
               "category": "Extras",
               "price": 15
             },
             {
+              "id": 4,
               "name": "Gluten-Free Batter",
               "category": "Adapt",
               "price": 30
@@ -770,21 +865,25 @@
           "category": "Enchiladas",
           "extraItems": [
             {
+              "id": 1,
               "name": "Extra Chicken",
               "category": "Extras",
               "price": 30
             },
             {
+              "id": 2,
               "name": "Vegan Cheese",
               "category": "Extras",
               "price": 20
             },
             {
+              "id": 3,
               "name": "Jalapenos",
               "category": "Extras",
               "price": 15
             },
             {
+              "id": 4,
               "name": "Gluten-Free Tortilla",
               "category": "Adapt",
               "price": 25
@@ -801,21 +900,25 @@
           "category": "Burrito",
           "extraItems": [
             {
+              "id": 1,
               "name": "Extra Chicken",
               "category": "Extras",
               "price": 35
             },
             {
+              "id": 2,
               "name": "Avocado",
               "category": "Extras",
               "price": 25
             },
             {
+              "id": 3,
               "name": "Hot Sauce",
               "category": "Extras",
               "price": 10
             },
             {
+              "id": 4,
               "name": "Gluten-Free Tortilla",
               "category": "Adapt",
               "price": 30
