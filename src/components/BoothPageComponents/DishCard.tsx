@@ -1,11 +1,15 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
 import DishInformation from './dishCardComponents/DishInformation';
 import Extras from './dishCardComponents/Extras';
 import DishButton from './dishCardComponents/DishButton';
 import {DishCardProps} from '../../interfaces/interfaces';
+import {useDispatch, useSelector} from 'react-redux';
+import {addItem} from '../../redux/shoppingCartSlice';
 
 const DishCard = (props: DishCardProps) => {
+  const dispatch = useDispatch();
+
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
   const checkIfExtras = () => {
@@ -16,12 +20,23 @@ const DishCard = (props: DishCardProps) => {
     checkIfExtras() && setIsExpanded(true);
   };
 
+  const handleAddToCart = () => {
+    const order = {
+      id: props.id,
+      name: props.name,
+      price: props.price,
+      amount: 1,
+    };
+    dispatch(addItem(order));
+  };
+
   const dynamicTopCardStyle = {
     ...styles.topCardContainer,
     borderRadius: isExpanded ? 0 : 8,
     borderTopLeftRadius: 8,
     borderTopRightRadius: 8,
   };
+
   return (
     <View>
       <View style={dynamicTopCardStyle}>
@@ -44,7 +59,10 @@ const DishCard = (props: DishCardProps) => {
                     MaterialIconName={'edit'}
                   />
                 )}
-                <DishButton MaterialIconName={'add-shopping-cart'} />
+                <DishButton
+                  MaterialIconName={'add-shopping-cart'}
+                  handleAddToCart={handleAddToCart}
+                />
               </View>
             )}
           </View>

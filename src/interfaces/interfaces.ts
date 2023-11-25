@@ -11,9 +11,9 @@ export interface FoodBoothProps {
 }
 
 export interface ExtraItemProps {
-  category: string,
-  name: string,
-  price: number,
+  category: string;
+  name: string;
+  price: number;
 }
 
 export interface DishCardProps {
@@ -45,4 +45,11 @@ export interface CategoryButtonProps {
   onPress: () => void;
   isActive: boolean;
   categoryName: string;
+}
+
+export interface ShopppingCartItemProps {
+  id: number;
+  dishName: string;
+  price: number;
+  amount: number;
 }

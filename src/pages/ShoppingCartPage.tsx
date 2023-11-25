@@ -1,11 +1,20 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {SafeAreaView, ScrollView, StyleSheet, Text, View} from 'react-native';
 import FeatherIcons from 'react-native-vector-icons/Feather';
 import ShoppingCartItem from '../components/shoppingCartComponents/ShoppingCartItem';
 import OrderInfo from '../components/shoppingCartComponents/OrderInfo';
 import PageHeader from '../components/PageHeader';
+import {useSelector} from 'react-redux';
 
 const ShoppingCartPage = () => {
+  const shoppingCart = useSelector(state => state.shoppingCart);
+  console.log(shoppingCart)
+
+  useEffect(() => {
+    console.log('Shopping Cart Contents:', shoppingCart);
+  }, [shoppingCart]);
+
+
   return (
     <SafeAreaView style={[styles.outerContainer]}>
       <PageHeader headerText={'Your order'} />
@@ -19,8 +28,15 @@ const ShoppingCartPage = () => {
           </View>
         </View>
         {/*Here I have to map over the state list which is in redux, along with the extras*/}
-        <ShoppingCartItem dishName={'Diavola'} price={160} amount={1} />
-        <ShoppingCartItem dishName={'Pasta Bolognese'} price={150} amount={1} />
+        {shoppingCart.map((item) => (
+          <ShoppingCartItem
+            id={item.id}
+            key={item.id}
+            dishName={item.name}
+            price={item.price}
+            amount={item.amount}
+          />
+        ))}
       </ScrollView>
       <OrderInfo />
     </SafeAreaView>

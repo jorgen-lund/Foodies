@@ -1,17 +1,18 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import FeatherIcons from 'react-native-vector-icons/Feather';
-
-interface ShopppingCartItemProps {
-  dishName: string;
-  price: number;
-  amount: number;
-}
+import { ShopppingCartItemProps } from '../../interfaces/interfaces';
 
 const ShopppingCartItem = (props: ShopppingCartItemProps) => {
   const [price, setPrice] = useState(props.price);
   const [amount, setAmount] = useState(props.amount);
   const basePrice = props.price;
+
+  useEffect(() => {
+    setAmount(props.amount);
+    setPrice(props.price * amount);
+  }, [props.amount, props.price]);
+  
 
   const increaseAmount = () => {
     const newAmount = amount + 1;
