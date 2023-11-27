@@ -47,7 +47,7 @@ export interface CategoryButtonProps {
   categoryName: string;
 }
 
-export interface ShopppingCartItemProps {
+export interface ShoppingCartItemProps {
   id: number;
   dishName: string;
   price: number;

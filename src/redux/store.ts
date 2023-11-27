@@ -1,8 +1,11 @@
-import { configureStore } from '@reduxjs/toolkit'
-import shoppingCartSlice from './shoppingCartSlice'
+import {configureStore} from '@reduxjs/toolkit';
+import shoppingCartSlice from './shoppingCartSlice';
 
-export default configureStore({
-    reducer: {
-        shoppingCart: shoppingCartSlice,
-    },
-})
+const store = configureStore({
+  reducer: {
+    shoppingCart: shoppingCartSlice,
+  },
+});
+
+export default store;
+export type shoppingCartState = ReturnType<typeof store.getState>

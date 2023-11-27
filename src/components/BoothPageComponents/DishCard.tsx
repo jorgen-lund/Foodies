@@ -1,10 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
 import DishInformation from './dishCardComponents/DishInformation';
 import Extras from './dishCardComponents/Extras';
 import DishButton from './dishCardComponents/DishButton';
 import {DishCardProps} from '../../interfaces/interfaces';
-import {useDispatch, useSelector} from 'react-redux';
+import {useDispatch} from 'react-redux';
 import {addItem} from '../../redux/shoppingCartSlice';
 
 const DishCard = (props: DishCardProps) => {

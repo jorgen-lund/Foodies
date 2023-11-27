@@ -1,30 +1,27 @@
 import React, {useEffect, useState} from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import FeatherIcons from 'react-native-vector-icons/Feather';
-import { ShopppingCartItemProps } from '../../interfaces/interfaces';
+import {ShoppingCartItemProps} from '../../interfaces/interfaces';
+import {useSelector, useDispatch} from 'react-redux';
+import {decrementItem, incrementItem} from '../../redux/shoppingCartSlice';
+import {shoppingCartState} from '../../redux/store';
 
-const ShopppingCartItem = (props: ShopppingCartItemProps) => {
-  const [price, setPrice] = useState(props.price);
-  const [amount, setAmount] = useState(props.amount);
-  const basePrice = props.price;
+const ShopppingCartItem = (props: ShoppingCartItemProps) => {
+  const dispatch = useDispatch();
 
-  useEffect(() => {
-    setAmount(props.amount);
-    setPrice(props.price * amount);
-  }, [props.amount, props.price]);
-  
+  const item = useSelector((state: shoppingCartState) =>
+    state.shoppingCart.find(item => item.id === props.id),
+  );
+  const amount = item ? item.amount : 0;
+  const price = item ? item.price : 0;
 
   const increaseAmount = () => {
-    const newAmount = amount + 1;
-    setAmount(newAmount);
-    setPrice(basePrice * newAmount);
+    dispatch(incrementItem({id: props.id}));
   };
 
   const decreaseAmount = () => {
-    if (amount > 0) {
-      const newAmount = amount - 1;
-      setAmount(newAmount);
-      setPrice(newAmount * basePrice);
+    if (amount > 1) {
+      dispatch(decrementItem({id: props.id}));
     }
   };
 
