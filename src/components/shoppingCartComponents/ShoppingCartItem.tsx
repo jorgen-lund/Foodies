@@ -54,7 +54,7 @@ const ShopppingCartItem = (props: ShoppingCartItemProps) => {
             name={'minuscircleo'}
             size={25}
             color={'black'}
-            onPress={increaseAmount}
+            onPress={decreaseAmount}
             isRemoveButton={false}
           />
           <Text style={[styles.text, {alignSelf: 'center'}]}>{amount}</Text>
@@ -62,7 +62,7 @@ const ShopppingCartItem = (props: ShoppingCartItemProps) => {
             name={'pluscircleo'}
             size={25}
             color={'black'}
-            onPress={decreaseAmount}
+            onPress={increaseAmount}
             isRemoveButton={false}
           />
         </View>
