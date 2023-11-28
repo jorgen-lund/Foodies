@@ -1,11 +1,14 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import FeatherIcons from 'react-native-vector-icons/Feather';
-import AntDesignIcons from 'react-native-vector-icons/AntDesign';
+import {StyleSheet, Text, View} from 'react-native';
 import {ShoppingCartItemProps} from '../../interfaces/interfaces';
 import {useSelector, useDispatch} from 'react-redux';
-import {decrementItem, incrementItem, removeItem} from '../../redux/shoppingCartSlice';
+import {
+  decrementItem,
+  incrementItem,
+  removeItem,
+} from '../../redux/shoppingCartSlice';
 import {shoppingCartState} from '../../redux/store';
+import ShoppingItemButton from './ShoppingItemButton';
 
 const ShopppingCartItem = (props: ShoppingCartItemProps) => {
   const dispatch = useDispatch();
@@ -27,74 +30,66 @@ const ShopppingCartItem = (props: ShoppingCartItemProps) => {
   };
 
   const removeDish = () => {
-    dispatch(removeItem({id: props.id}))
-  }
+    dispatch(removeItem({id: props.id}));
+  };
 
   return (
     <View style={[styles.itemContainer]}>
-      <View style={{}}>
-        <View style={[styles.dishAndAmountContainer]}>
-          <View style={{flexDirection: 'row'}}>
-            <TouchableOpacity onPress={removeDish}>
-              <View
-                style={[styles.increaseButtonSize, {alignItems: 'flex-start'}]}>
-                <AntDesignIcons
-                  name={'closecircleo'}
-                  size={25}
-                  color={'black'}
-                />
-              </View>
-            </TouchableOpacity>
-            <Text style={[styles.dishText]}>{props.dishName}</Text>
-          </View>
-          <View style={[styles.toggleAmountContainer]}>
-            <TouchableOpacity onPress={decreaseAmount}>
-              <View style={[styles.increaseButtonSize]}>
-                <FeatherIcons name={'minus-circle'} size={25} />
-              </View>
-            </TouchableOpacity>
-            <Text style={[styles.dishText]}>{amount}</Text>
-            <TouchableOpacity onPress={increaseAmount}>
-              <View style={[styles.increaseButtonSize]}>
-                <FeatherIcons name={'plus-circle'} size={25} />
-              </View>
-            </TouchableOpacity>
-          </View>
+      <View style={{width: '10%'}}>
+        <ShoppingItemButton
+          name={'closecircle'}
+          size={20}
+          color={'red'}
+          onPress={removeDish}
+          isRemoveButton={true}
+        />
+      </View>
+      <View style={{width: '65%'}}>
+        <Text style={[styles.text]}>{props.dishName}</Text>
+        <Text>{price} kr</Text>
+      </View>
+      <View style={{width: '25%'}}>
+        <View style={[styles.toggleAmountContainer]}>
+          <ShoppingItemButton
+            name={'minuscircleo'}
+            size={25}
+            color={'black'}
+            onPress={increaseAmount}
+            isRemoveButton={false}
+          />
+          <Text style={[styles.text, {alignSelf: 'center'}]}>{amount}</Text>
+          <ShoppingItemButton
+            name={'pluscircleo'}
+            size={25}
+            color={'black'}
+            onPress={decreaseAmount}
+            isRemoveButton={false}
+          />
         </View>
       </View>
-      <Text style={[styles.priceText]}>{price} kr</Text>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  itemContainer: {marginHorizontal: 20, borderBottomWidth: 1},
+  itemContainer: {
+    marginHorizontal: 20,
+    borderBottomWidth: 1,
+    paddingVertical: 10,
+    flexDirection: 'row',
+  },
   dishAndAmountContainer: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
     height: 50,
     alignItems: 'center',
     alignContent: 'center',
   },
-  dishText: {
+  text: {
     fontSize: 20,
     fontWeight: 'bold',
-    alignSelf: 'center',
   },
   toggleAmountContainer: {
     flexDirection: 'row',
-  },
-  increaseButtonSize: {
-    justifyContent: 'center',
-    height: 40,
-    width: 40,
-    alignItems: 'center',
-  },
-  priceText: {
-    paddingHorizontal: 15,
-    fontSize: 16,
-    marginTop: -10,
-    paddingBottom: 5,
   },
 });
 export default ShopppingCartItem;

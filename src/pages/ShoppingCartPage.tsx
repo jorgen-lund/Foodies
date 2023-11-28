@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {SafeAreaView, ScrollView, StyleSheet, Text, View} from 'react-native';
 import FeatherIcons from 'react-native-vector-icons/Feather';
 import ShoppingCartItem from '../components/shoppingCartComponents/ShoppingCartItem';
@@ -10,11 +10,6 @@ import { Order } from '../redux/shoppingCartSlice';
 
 const ShoppingCartPage = () => {
   const shoppingCart = useSelector((state: shoppingCartState) => state.shoppingCart);
-
-  useEffect(() => {
-    console.log('Shopping Cart Contents:', shoppingCart);
-  }, [shoppingCart]);
-
 
   return (
     <SafeAreaView style={[styles.outerContainer]}>

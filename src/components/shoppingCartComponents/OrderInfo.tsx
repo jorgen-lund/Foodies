@@ -2,16 +2,16 @@ import CheckBox from '@react-native-community/checkbox';
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import FeatherIcons from 'react-native-vector-icons/Feather';
-import { useSelector } from 'react-redux';
-import { shoppingCartState } from '../../redux/store';
+import {useSelector} from 'react-redux';
+import {shoppingCartState} from '../../redux/store';
 
 const OrderInfo = () => {
   const shoppingCart = useSelector((state: shoppingCartState) => state.shoppingCart);
 
   /**Calculates the total price of the cart.
    * reduce() iterates over every item in the cart, and adds its price to the total.
-   * The 0 means that it should display zero when the cart is empty. 
-  */
+   * The 0 means that it should display zero when the cart is empty.
+   */
   const totalPrice = shoppingCart.reduce((total, item) => total + item.price, 0);
 
   return (
@@ -29,7 +29,9 @@ const OrderInfo = () => {
         <Text style={[styles.takeAwayText]}>Takeaway</Text>
       </View>
       <View style={[styles.totalPriceContainer]}>
-        <Text style={[styles.totalPriceText]}>Total price: {totalPrice} kr</Text>
+        <Text style={[styles.totalPriceText]}>
+          Total price: {totalPrice} kr
+        </Text>
       </View>
       <TouchableOpacity>
         <View style={[styles.buttonContainer]}>
@@ -61,15 +63,15 @@ const styles = StyleSheet.create({
     borderBlockColor: '#32BDED',
   },
   totalPriceText: {
-    fontWeight: "bold",
+    fontWeight: 'bold',
     fontSize: 20,
     marginVertical: 5,
   },
   buttonContainer: {
     backgroundColor: '#ED6232',
     flexDirection: 'row',
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
     marginHorizontal: 20,
     borderRadius: 10,
     height: 70,
