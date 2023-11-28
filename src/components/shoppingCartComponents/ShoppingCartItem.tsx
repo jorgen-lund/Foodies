@@ -1,9 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import FeatherIcons from 'react-native-vector-icons/Feather';
+import AntDesignIcons from 'react-native-vector-icons/AntDesign';
 import {ShoppingCartItemProps} from '../../interfaces/interfaces';
 import {useSelector, useDispatch} from 'react-redux';
-import {decrementItem, incrementItem} from '../../redux/shoppingCartSlice';
+import {decrementItem, incrementItem, removeItem} from '../../redux/shoppingCartSlice';
 import {shoppingCartState} from '../../redux/store';
 
 const ShopppingCartItem = (props: ShoppingCartItemProps) => {
@@ -25,11 +26,27 @@ const ShopppingCartItem = (props: ShoppingCartItemProps) => {
     }
   };
 
+  const removeDish = () => {
+    dispatch(removeItem({id: props.id}))
+  }
+
   return (
     <View style={[styles.itemContainer]}>
-      <View>
+      <View style={{}}>
         <View style={[styles.dishAndAmountContainer]}>
-          <Text style={[styles.dishText]}>{props.dishName}</Text>
+          <View style={{flexDirection: 'row'}}>
+            <TouchableOpacity onPress={removeDish}>
+              <View
+                style={[styles.increaseButtonSize, {alignItems: 'flex-start'}]}>
+                <AntDesignIcons
+                  name={'closecircleo'}
+                  size={25}
+                  color={'black'}
+                />
+              </View>
+            </TouchableOpacity>
+            <Text style={[styles.dishText]}>{props.dishName}</Text>
+          </View>
           <View style={[styles.toggleAmountContainer]}>
             <TouchableOpacity onPress={decreaseAmount}>
               <View style={[styles.increaseButtonSize]}>
@@ -54,7 +71,6 @@ const styles = StyleSheet.create({
   itemContainer: {marginHorizontal: 20, borderBottomWidth: 1},
   dishAndAmountContainer: {
     flexDirection: 'row',
-    paddingHorizontal: 15,
     justifyContent: 'space-between',
     height: 50,
     alignItems: 'center',
@@ -67,12 +83,11 @@ const styles = StyleSheet.create({
   },
   toggleAmountContainer: {
     flexDirection: 'row',
-    justifyContent: 'space-around',
   },
   increaseButtonSize: {
     justifyContent: 'center',
-    height: 50,
-    width: 50,
+    height: 40,
+    width: 40,
     alignItems: 'center',
   },
   priceText: {

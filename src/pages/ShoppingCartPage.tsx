@@ -5,10 +5,11 @@ import ShoppingCartItem from '../components/shoppingCartComponents/ShoppingCartI
 import OrderInfo from '../components/shoppingCartComponents/OrderInfo';
 import PageHeader from '../components/PageHeader';
 import {useSelector} from 'react-redux';
+import {shoppingCartState} from '../redux/store';
+import { Order } from '../redux/shoppingCartSlice';
 
 const ShoppingCartPage = () => {
-  const shoppingCart = useSelector(state => state.shoppingCart);
-  console.log(shoppingCart)
+  const shoppingCart = useSelector((state: shoppingCartState) => state.shoppingCart);
 
   useEffect(() => {
     console.log('Shopping Cart Contents:', shoppingCart);
@@ -28,7 +29,7 @@ const ShoppingCartPage = () => {
           </View>
         </View>
         {/*Here I have to map over the state list which is in redux, along with the extras*/}
-        {shoppingCart.map((item) => (
+        {shoppingCart.map((item: Order) => (
           <ShoppingCartItem
             id={item.id}
             key={item.id}

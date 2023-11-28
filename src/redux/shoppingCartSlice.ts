@@ -2,7 +2,7 @@ import {PayloadAction, createSlice} from '@reduxjs/toolkit';
 import {ExtraItemProps} from '../interfaces/interfaces';
 import {shoppingCartState} from './store';
 
-interface Order {
+export interface Order {
   id: number;
   name: string;
   price: number;
@@ -29,8 +29,8 @@ export const shoppingCartSlice = createSlice({
       }
     },
 
-    removeItem: (state, action: PayloadAction<number>) => {
-      return state.filter(item => item.id !== action.payload);
+    removeItem: (state, action: PayloadAction<{id: number}>) => {
+      return state.filter(item => item.id !== action.payload.id);
     },
 
     incrementItem: (state, action: PayloadAction<{id: number}>) => {
