@@ -17,9 +17,12 @@ const enchiladas = require('../../images/enchiladas.jpeg');
 const LandingPage = () => {
   const navigation = useNavigation<RootNavigationProp>();
 
-  const goToItalianBooth = () => navigation.navigate('ItalianBooth');
-  const goToIndianBooth = () => navigation.navigate('IndianBooth');
-  const goToMexicanBooth = () => navigation.navigate('MexicanBooth');
+  const goToItalianBooth = () =>
+    navigation.navigate('BoothNavigator', {screen: 'ItalianBooth'});
+  const goToIndianBooth = () =>
+    navigation.navigate('BoothNavigator', {screen: 'IndianBooth'});
+  const goToMexicanBooth = () =>
+    navigation.navigate('BoothNavigator', {screen: 'MexicanBooth'});
 
   return (
     <SafeAreaView style={{backgroundColor: 'white', flex: 1}}>

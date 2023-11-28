@@ -1,6 +1,6 @@
 import {useNavigation} from '@react-navigation/native';
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import {RootNavigationProp} from '../../navigationFiles/navigationTypes';
 import BoothNavbarButton from './BoothNavbarButton';
 
@@ -11,15 +11,12 @@ interface BoothNavbarProps {
 const BoothNavbar = (props: BoothNavbarProps) => {
   const navigation = useNavigation<RootNavigationProp>();
 
-  const goToItalianBooth = () => {
-    navigation.navigate('ItalianBooth');
-  };
-  const goToIndianBooth = () => {
-    navigation.navigate('IndianBooth');
-  };
-  const goToMexicanBooth = () => {
-    navigation.navigate('MexicanBooth');
-  };
+  const goToItalianBooth = () =>
+    navigation.navigate('BoothNavigator', {screen: 'ItalianBooth'});
+  const goToIndianBooth = () =>
+    navigation.navigate('BoothNavigator', {screen: 'IndianBooth'});
+  const goToMexicanBooth = () =>
+    navigation.navigate('BoothNavigator', {screen: 'MexicanBooth'});
 
   return (
     <View style={[styles.container]}>

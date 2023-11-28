@@ -1,14 +1,13 @@
 import React from 'react';
-import NavigatorIndex from './src/navigationFiles/navigatorIndex';
-import { Provider } from 'react-redux';
+import {Provider} from 'react-redux';
 import store from './src/redux/store';
-
+import BottomNavigator from './src/navigationFiles/BottomNavigator';
 
 function App(): JSX.Element {
   return (
     <Provider store={store}>
-      <NavigatorIndex />
-      </Provider>
+      <BottomNavigator />
+    </Provider>
   );
 }
 export default App;
