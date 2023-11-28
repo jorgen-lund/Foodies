@@ -7,10 +7,22 @@ import ShoppingCartPage from '../pages/ShoppingCartPage';
 import ReceiptPage from '../pages/ReceiptPage';
 import BoothNavigator from './BoothNavigator';
 import {NavigationContainer} from '@react-navigation/native';
+import {useSelector} from 'react-redux';
+import {Text, View} from 'react-native';
+import {shoppingCartState} from '../redux/store';
 
 const Tab = createBottomTabNavigator();
 
 const BottomNavigator = () => {
+  const shoppingCart = useSelector(
+    (state: shoppingCartState) => state.shoppingCart,
+  );
+
+  const totalItems = shoppingCart.reduce(
+    (total, item) => total + item.amount,
+    0,
+  );
+  
   return (
     <NavigationContainer>
       <Tab.Navigator
@@ -48,11 +60,33 @@ const BottomNavigator = () => {
             tabBarLabel: '',
             tabBarActiveTintColor: 'black',
             tabBarIcon: ({focused}) => (
-              <FeatherIcons
-                name={'shopping-cart'}
-                size={25}
-                color={focused ? '#ED6232' : 'black'}
-              />
+              <View style={{flexDirection: 'row'}}>
+                <FeatherIcons
+                  name={'shopping-cart'}
+                  size={25}
+                  color={focused ? '#ED6232' : 'black'}
+                />
+                {totalItems > 0 && (
+                  <View
+                    style={{
+                      height: 22,
+                      width: 22,
+                      backgroundColor: 'red',
+                      borderRadius: 50,
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                    }}>
+                    <Text
+                      style={{
+                        color: 'white',
+                        fontWeight: 'bold',
+                        fontSize: 14,
+                      }}>
+                      {totalItems}
+                    </Text>
+                  </View>
+                )}
+              </View>
             ),
           }}
         />
