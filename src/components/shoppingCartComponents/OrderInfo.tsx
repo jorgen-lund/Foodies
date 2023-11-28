@@ -1,9 +1,19 @@
 import CheckBox from '@react-native-community/checkbox';
-import React, {useState} from 'react';
+import React from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import FeatherIcons from 'react-native-vector-icons/Feather';
+import { useSelector } from 'react-redux';
+import { shoppingCartState } from '../../redux/store';
 
 const OrderInfo = () => {
+  const shoppingCart = useSelector((state: shoppingCartState) => state.shoppingCart);
+
+  /**Calculates the total price of the cart.
+   * reduce() iterates over every item in the cart, and adds its price to the total.
+   * The 0 means that it should display zero when the cart is empty. 
+  */
+  const totalPrice = shoppingCart.reduce((total, item) => total + item.price, 0);
+
   return (
     <View style={[styles.outerContainer]}>
       <View style={[styles.takeAwayContainer]}>
@@ -19,7 +29,7 @@ const OrderInfo = () => {
         <Text style={[styles.takeAwayText]}>Takeaway</Text>
       </View>
       <View style={[styles.totalPriceContainer]}>
-        <Text style={[styles.totalPriceText]}>Total price: 150 kr</Text>
+        <Text style={[styles.totalPriceText]}>Total price: {totalPrice} kr</Text>
       </View>
       <TouchableOpacity>
         <View style={[styles.buttonContainer]}>
