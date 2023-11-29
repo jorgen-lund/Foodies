@@ -1,14 +1,14 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
+import {useTranslation} from 'react-i18next';
 
-interface PageHeaderProp {
-  headerText: string;
-}
+/* A reusable header used for shoppingCartPage and receiptPage */
+const PageHeader = ({headerText}: {headerText: string}) => {
+  const {t} = useTranslation();
 
-const PageHeader = (props: PageHeaderProp) => {
   return (
     <View style={[styles.container]}>
-      <Text style={[styles.text]}>{props.headerText}</Text>
+      <Text style={[styles.text]}>{t(headerText)}</Text>
     </View>
   );
 };

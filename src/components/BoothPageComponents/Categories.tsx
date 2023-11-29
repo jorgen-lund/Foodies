@@ -2,8 +2,10 @@ import React, {useState} from 'react';
 import {StyleSheet, View} from 'react-native';
 import {CategoriesProps} from '../../interfaces/interfaces';
 import CategoryButton from './CategoryButton';
+import { useTranslation } from 'react-i18next';
 
 const Categories = (props: CategoriesProps) => {
+  const {t} = useTranslation();
   const [activeCategory, setActiveCategory] = useState('All');
 
   const resetCategoryStates = () => {
@@ -34,7 +36,7 @@ const Categories = (props: CategoriesProps) => {
       <CategoryButton
         onPress={() => choosenCategory('All')}
         isActive={activeCategory === 'All'}
-        categoryName={'All'}
+        categoryName={t('All')}
       />
       <CategoryButton
         onPress={() => choosenCategory(props.category1)}

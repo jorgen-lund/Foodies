@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-
+import { useTranslation } from 'react-i18next';
 interface ReceiptMidProps {
   textColor: string;
   borderColor: string;
@@ -10,6 +10,8 @@ interface ReceiptMidProps {
 }
 
 const ReceiptMid = (props: ReceiptMidProps) => {
+  const {t} = useTranslation();
+
   return (
     <View>
       <View
@@ -19,7 +21,7 @@ const ReceiptMid = (props: ReceiptMidProps) => {
       <View style={[styles.receiptMidContainer]}>
         <View style={[styles.receiptMidInnerContainer]}>
           <Text style={[styles.receiptText, {color: props.textColor}]}>
-            Date:
+            {t("Date")}:
           </Text>
           <Text style={[styles.receiptText, {color: props.textColor}]}>
             {props.date}
@@ -31,7 +33,7 @@ const ReceiptMid = (props: ReceiptMidProps) => {
         </View>
         <View style={[styles.receiptMidInnerContainer]}>
           <Text style={[styles.receiptText, {color: props.textColor}]}>
-            Cost:
+            {t("Cost")}:
           </Text>
           <Text style={[styles.receiptText, {color: props.textColor}]}>
             NOK {props.totalCost},-

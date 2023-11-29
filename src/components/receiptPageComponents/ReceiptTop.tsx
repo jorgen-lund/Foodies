@@ -2,7 +2,7 @@ import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import IonIcons from 'react-native-vector-icons/Ionicons';
-
+import { useTranslation } from 'react-i18next';
 interface ReceiptTopProps {
   id: number;
   waitingTime: number;
@@ -10,6 +10,8 @@ interface ReceiptTopProps {
 }
 
 const ReceiptTop = (props: ReceiptTopProps) => {
+  const {t} = useTranslation();
+
   let textColor = 'black';
 
   if (props.isActive) {
@@ -19,14 +21,14 @@ const ReceiptTop = (props: ReceiptTopProps) => {
   return (
     <View style={[styles.receiptTopContainer]}>
       <Text style={[styles.receiptText, {fontSize: 18, color: textColor}]}>
-        Order ID: #{props.id}
+       {t("Order ID")}: #{props.id}
       </Text>
       {props.isActive ? (
         <View style={[styles.rightHalfContainer]}>
           <View>
             <Text
               style={[styles.receiptText, {fontSize: 14, color: textColor}]}>
-              Food ready in:
+              {t("Food ready in")}:
             </Text>
             <View style={[styles.durationContainer]}>
               <View style={[styles.numberContainer]}>

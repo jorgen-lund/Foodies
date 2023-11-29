@@ -1,29 +1,23 @@
 import React from 'react';
 import {SafeAreaView, ScrollView, StyleSheet, Text, View} from 'react-native';
-import FeatherIcons from 'react-native-vector-icons/Feather';
 import ShoppingCartItem from '../components/shoppingCartComponents/ShoppingCartItem';
 import OrderInfo from '../components/shoppingCartComponents/OrderInfo';
 import PageHeader from '../components/PageHeader';
 import {useSelector} from 'react-redux';
 import {shoppingCartState} from '../redux/store';
-import { Order } from '../redux/shoppingCartSlice';
+import {Order} from '../redux/shoppingCartSlice';
+import {useTranslation} from 'react-i18next';
 
 const ShoppingCartPage = () => {
-  const shoppingCart = useSelector((state: shoppingCartState) => state.shoppingCart);
+  const shoppingCart = useSelector(
+    (state: shoppingCartState) => state.shoppingCart,
+  );
+  const {t} = useTranslation();
 
   return (
     <SafeAreaView style={[styles.outerContainer]}>
       <PageHeader headerText={'Your order'} />
       <ScrollView>
-        <View style={[styles.innerContainer]}>
-          <View style={[styles.waitingTimeContainer]}>
-            <FeatherIcons name={'clock'} size={30} />
-            <Text style={[styles.waitingTimeText]}>
-              Estimert ventetid: 20min
-            </Text>
-          </View>
-        </View>
-        {/*Here I have to map over the state list which is in redux, along with the extras*/}
         {shoppingCart.map((item: Order) => (
           <ShoppingCartItem
             id={item.id}

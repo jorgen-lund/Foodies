@@ -17,23 +17,19 @@ const SectionText = (props: SectionTextProps) => {
       {hasText ? (
         <>
           <View
-            style={[
-              styles.line,
-              {backgroundColor: props.backgroundColor, marginHorizontal: 20},
-            ]}></View>
+            style={[styles.line,
+              {backgroundColor: props.backgroundColor, marginHorizontal: 20}]}>
+          </View>
           <Text style={[styles.text]}>{props.text}</Text>
           <View
-            style={[
-              styles.line,
-              {backgroundColor: props.backgroundColor, marginHorizontal: 20},
-            ]}></View>
+            style={[styles.line,
+              {backgroundColor: props.backgroundColor, marginHorizontal: 20}]}>
+          </View>
         </>
       ) : (
         <View
-          style={[
-            styles.line,
-            {backgroundColor: props.backgroundColor},
-          ]}></View>
+          style={[styles.line,{backgroundColor: props.backgroundColor}]}>
+        </View>
       )}
     </View>
   );

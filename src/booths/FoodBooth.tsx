@@ -1,12 +1,16 @@
 import React, {useEffect, useState} from 'react';
-import {ScrollView, StyleSheet, View} from 'react-native';
+import {ScrollView, View} from 'react-native';
 import BoothNavbar from '../components/BoothPageComponents/BoothNavbar';
 import BoothDescription from '../components/BoothPageComponents/BoothDescription';
 import Categories from '../components/BoothPageComponents/Categories';
 import DishCard from '../components/BoothPageComponents/DishCard';
 import {DishCardProps, FoodBoothProps} from '../interfaces/interfaces';
+import { useTranslation } from 'react-i18next';
 
+/* The component that creates all of the booths. Handles the changing 
+   of categories and which dishes are displayed */
 const FoodBooth = (props: FoodBoothProps) => {
+  const {t} = useTranslation();
   const {dishes = [], category1, category2, category3} = props;
   const [showAll, setShowAll] = useState(true);
   const [showCategory1, setShowCategory1] = useState(false);
@@ -30,9 +34,9 @@ const FoodBooth = (props: FoodBoothProps) => {
   return (
     <View style={{backgroundColor: 'white'}}>
       <ScrollView>
-        <BoothNavbar activeBoothName={props.boothName} />
+        <BoothNavbar activeBoothName={t(props.boothName)} />
         <BoothDescription
-          boothName={props.boothName}
+          boothName={t(props.boothName)}
           boothImage={props.boothImage}
           boothDescription={props.boothDescription}
         />
@@ -61,13 +65,11 @@ const FoodBooth = (props: FoodBoothProps) => {
             id={dish.id}
             category={dish.category}
             extraItems={dish.extraItems}
-          /> 
+          />
         ))}
       </ScrollView>
     </View>
   );
 };
-
-const styles = StyleSheet.create({});
 
 export default FoodBooth;

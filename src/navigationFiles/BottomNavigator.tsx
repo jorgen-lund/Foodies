@@ -10,6 +10,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {useSelector} from 'react-redux';
 import {Text, View} from 'react-native';
 import {shoppingCartState} from '../redux/store';
+import SettingsPage from '../pages/SettingsPage';
 
 const Tab = createBottomTabNavigator();
 
@@ -22,7 +23,7 @@ const BottomNavigator = () => {
     (total, item) => total + item.amount,
     0,
   );
-  
+
   return (
     <NavigationContainer>
       <Tab.Navigator
@@ -36,6 +37,7 @@ const BottomNavigator = () => {
           tabBarStyle: {
             borderTopColor: '#ED6232',
             borderTopWidth: 4,
+            height: 85,
           },
         }}>
         <Tab.Screen
@@ -69,8 +71,8 @@ const BottomNavigator = () => {
                 {totalItems > 0 && (
                   <View
                     style={{
-                      height: 22,
-                      width: 22,
+                      height: 17,
+                      width: 17,
                       backgroundColor: 'red',
                       borderRadius: 50,
                       justifyContent: 'center',
@@ -80,7 +82,7 @@ const BottomNavigator = () => {
                       style={{
                         color: 'white',
                         fontWeight: 'bold',
-                        fontSize: 14,
+                        fontSize: 10,
                       }}>
                       {totalItems}
                     </Text>
@@ -104,6 +106,19 @@ const BottomNavigator = () => {
             tabBarIcon: ({focused}) => (
               <IonIcons
                 name={'receipt-outline'}
+                size={25}
+                color={focused ? '#ED6232' : 'black'}
+              />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Settings"
+          component={SettingsPage}
+          options={{
+            tabBarIcon: ({focused}) => (
+              <FeatherIcons
+                name={'settings'}
                 size={25}
                 color={focused ? '#ED6232' : 'black'}
               />

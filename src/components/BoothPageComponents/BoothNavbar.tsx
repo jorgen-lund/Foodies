@@ -3,12 +3,14 @@ import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {RootNavigationProp} from '../../navigationFiles/navigationTypes';
 import BoothNavbarButton from './BoothNavbarButton';
+import { useTranslation } from 'react-i18next';
 
 interface BoothNavbarProps {
   activeBoothName: string;
 }
 
 const BoothNavbar = (props: BoothNavbarProps) => {
+  const {t} = useTranslation();
   const navigation = useNavigation<RootNavigationProp>();
 
   const goToItalianBooth = () =>
@@ -22,17 +24,17 @@ const BoothNavbar = (props: BoothNavbarProps) => {
     <View style={[styles.container]}>
       <BoothNavbarButton
         onPress={goToItalianBooth}
-        boothName={'Italian'}
+        boothName={t('Italian')}
         activeBoothName={props.activeBoothName}
       />
       <BoothNavbarButton
         onPress={goToIndianBooth}
-        boothName={'Indian'}
+        boothName={t('Indian')}
         activeBoothName={props.activeBoothName}
       />
       <BoothNavbarButton
         onPress={goToMexicanBooth}
-        boothName={'Mexican'}
+        boothName={t('Mexican')}
         activeBoothName={props.activeBoothName}
       />
     </View>

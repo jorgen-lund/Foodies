@@ -4,10 +4,11 @@ import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import FeatherIcons from 'react-native-vector-icons/Feather';
 import {useSelector} from 'react-redux';
 import {shoppingCartState} from '../../redux/store';
+import { useTranslation } from 'react-i18next';
 
 const OrderInfo = () => {
   const shoppingCart = useSelector((state: shoppingCartState) => state.shoppingCart);
-
+  const {t} = useTranslation();
   /**Calculates the total price of the cart.
    * reduce() iterates over every item in the cart, and adds its price to the total.
    * The 0 means that it should display zero when the cart is empty.
@@ -30,13 +31,13 @@ const OrderInfo = () => {
       </View>
       <View style={[styles.totalPriceContainer]}>
         <Text style={[styles.totalPriceText]}>
-          Total price: {totalPrice} kr
+          {t("Total price")}: {totalPrice} kr
         </Text>
       </View>
       <TouchableOpacity>
         <View style={[styles.buttonContainer]}>
           <FeatherIcons name={'credit-card'} size={28} color={'white'} />
-          <Text style={[styles.buttonText]}>Betal</Text>
+          <Text style={[styles.buttonText]}>{t("Pay")}</Text>
         </View>
       </TouchableOpacity>
     </View>

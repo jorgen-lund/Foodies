@@ -2,15 +2,17 @@ import React from 'react';
 import {SafeAreaView, ScrollView, StyleSheet, Text, View} from 'react-native';
 import PageHeader from '../components/PageHeader';
 import Receipt from '../components/receiptPageComponents/Receipt';
-import SectionText from '../components/LandingPageComponents/SectionText';
+import {useTranslation} from 'react-i18next';
 
 const ReceiptPage = () => {
+  const {t} = useTranslation();
+
   return (
     <SafeAreaView style={[styles.outerContainer]}>
       <PageHeader headerText={'Order History'} />
       <ScrollView>
         <View style={[styles.currentOrderContainer]}>
-          <Text style={[styles.sectionHeader]}>Active order</Text>
+          <Text style={[styles.sectionHeader]}>{t('Active order')}</Text>
           <Receipt
             id={1998}
             date={'8.nov.23 19:33'}
@@ -20,7 +22,7 @@ const ReceiptPage = () => {
           />
         </View>
         <View style={[styles.currentOrderContainer]}>
-          <Text style={[styles.sectionHeader]}>Previous orders</Text>
+          <Text style={[styles.sectionHeader]}>{t('Previous orders')}</Text>
           <Receipt
             id={2023}
             date={'4.nov.23 15:02'}
