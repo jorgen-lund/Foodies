@@ -1,34 +1,61 @@
 import React from 'react';
-import {SafeAreaView, ScrollView, StyleSheet, Text, View} from 'react-native';
+import {SafeAreaView, ScrollView, StyleSheet} from 'react-native';
 import ShoppingCartItem from '../components/shoppingCartComponents/ShoppingCartItem';
 import OrderInfo from '../components/shoppingCartComponents/OrderInfo';
 import PageHeader from '../components/PageHeader';
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
 import {shoppingCartState} from '../redux/store';
-import {Order} from '../redux/shoppingCartSlice';
-import {useTranslation} from 'react-i18next';
+import {OrderItem, clearCart} from '../redux/shoppingCartSlice';
+import {createReceiptData} from '../receiptUtils';
+import {deactivatePreviousReceipt, postReceiptData} from '../apiCalls/api';
+import emitter from '../receiptUtils';
 
 const ShoppingCartPage = () => {
   const shoppingCart = useSelector(
     (state: shoppingCartState) => state.shoppingCart,
   );
-  const {t} = useTranslation();
+  const dispatch = useDispatch();
+
+  /* When the user "pays" it checks that shoppingCart is not empty, deactivates
+    previos receipt by updating isActive = false. 
+    Then a new receipt is created using the items in the shoppingCart which is 
+    posted to the mock db. An event is then run to let receiptPage know a new 
+    receipt has been made, and that it should rerender the page. Then clears 
+    the cart. The ts-error on newReceiptData has not been prioritized */
+  const handlePayButtonClick = async () => {
+    if (totalPrice > 0) {
+      await deactivatePreviousReceipt();
+      const newReceiptData = createReceiptData(shoppingCart);
+      await postReceiptData(newReceiptData);
+      emitter.emit('purchase-made');
+      dispatch(clearCart());
+    }
+  };
+
+  /* Calculates the total price of the cart.
+     reduce() iterates over every item in the cart, and adds its price to the total.
+     The 0 means that it should display zero when the cart is empty.
+   */
+  const totalPrice = shoppingCart.reduce(
+    (total, item) => total + item.price,
+    0,
+  );
 
   return (
     <SafeAreaView style={[styles.outerContainer]}>
       <PageHeader headerText={'Your order'} />
       <ScrollView>
-        {shoppingCart.map((item: Order) => (
+        {shoppingCart.map((item: OrderItem) => (
           <ShoppingCartItem
             id={item.id}
             key={item.id}
-            dishName={item.name}
+            name={item.name}
             price={item.price}
             amount={item.amount}
           />
         ))}
       </ScrollView>
-      <OrderInfo />
+      <OrderInfo totalPrice={totalPrice} onPress={handlePayButtonClick} />
     </SafeAreaView>
   );
 };

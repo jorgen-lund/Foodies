@@ -1,11 +1,41 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {SafeAreaView, ScrollView, StyleSheet, Text, View} from 'react-native';
 import PageHeader from '../components/PageHeader';
 import Receipt from '../components/receiptPageComponents/Receipt';
 import {useTranslation} from 'react-i18next';
+import {ReceiptData, fetchReceipts} from '../apiCalls/api';
+import emitter from '../receiptUtils';
 
 const ReceiptPage = () => {
+  const [activeReceipts, setActiveReceipts] = useState<ReceiptData[]>([]);
+  const [inactiveReceipts, setInactiveReceipts] = useState<ReceiptData[]>([]);
   const {t} = useTranslation();
+
+  
+  useEffect(() => {
+    const loadReceipts = async () => {
+      try {
+        const receipts = await fetchReceipts();
+        console.log(receipts);
+        setActiveReceipts(
+          receipts.filter((receipt: {isActive: boolean}) => receipt.isActive),
+        );
+        setInactiveReceipts(
+          receipts.filter((receipt: {isActive: boolean}) => !receipt.isActive),
+        );
+      } catch (error) {
+        console.error('Failed to fetch receipts:', error);
+      }
+    };
+    const handlePurchaseMade = () => {
+      loadReceipts();
+    };
+
+    emitter.on('purchase-made', handlePurchaseMade);
+    return () => {
+      emitter.off('purchase-made', handlePurchaseMade);
+    };
+  }, []);
 
   return (
     <SafeAreaView style={[styles.outerContainer]}>
@@ -13,30 +43,33 @@ const ReceiptPage = () => {
       <ScrollView>
         <View style={[styles.currentOrderContainer]}>
           <Text style={[styles.sectionHeader]}>{t('Active order')}</Text>
-          <Receipt
-            id={1998}
-            date={'8.nov.23 19:33'}
-            totalCost={310}
-            isActive={true}
-            waitingTime={9}
-          />
+          {activeReceipts.map(receipt => (
+            <Receipt
+              key={receipt.id}
+              id={receipt.id}
+              waitingTime={2}
+              date={receipt.date}
+              totalCost={receipt.totalCost}
+              isActive={receipt.isActive}
+              items={receipt.items}
+            />
+          ))}
         </View>
         <View style={[styles.currentOrderContainer]}>
           <Text style={[styles.sectionHeader]}>{t('Previous orders')}</Text>
-          <Receipt
-            id={2023}
-            date={'4.nov.23 15:02'}
-            totalCost={310}
-            isActive={false}
-            waitingTime={0}
-          />
-          <Receipt
-            id={9189}
-            date={'1.nov.23 12:30'}
-            totalCost={150}
-            isActive={false}
-            waitingTime={0}
-          />
+          {inactiveReceipts
+            .map(receipt => (
+              <Receipt
+                key={receipt.id}
+                id={receipt.id}
+                waitingTime={2}
+                date={receipt.date}
+                totalCost={receipt.totalCost}
+                isActive={receipt.isActive}
+                items={receipt.items}
+              />
+            ))
+            .reverse()}
         </View>
       </ScrollView>
     </SafeAreaView>

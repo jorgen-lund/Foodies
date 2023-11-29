@@ -1,8 +1,7 @@
 import {PayloadAction, createSlice} from '@reduxjs/toolkit';
 import {ExtraItemProps} from '../interfaces/interfaces';
-import {shoppingCartState} from './store';
 
-export interface Order {
+export interface OrderItem {
   id: number;
   name: string;
   price: number;
@@ -10,14 +9,14 @@ export interface Order {
   extraItems?: ExtraItemProps[];
 }
 
-type ShoppingCartState = Order[];
+type ShoppingCartState = OrderItem[];
 const initialState: ShoppingCartState = [];
 
 export const shoppingCartSlice = createSlice({
   name: 'shoppingCart',
   initialState,
   reducers: {
-    addItem: (state, action: PayloadAction<Order>) => {
+    addItem: (state, action: PayloadAction<OrderItem>) => {
       const itemIndex = state.findIndex(item => item.id === action.payload.id);
       if (itemIndex >= 0) {
         const basePrice = state[itemIndex].price / state[itemIndex].amount;
@@ -41,7 +40,7 @@ export const shoppingCartSlice = createSlice({
       }
     },
 
-    decrementItem: (state, action: PayloadAction<{ id: number }>) => {
+    decrementItem: (state, action: PayloadAction<{id: number}>) => {
       const item = state.find(item => item.id === action.payload.id);
       if (item && item.amount > 1) {
         item.amount -= 1;

@@ -45,7 +45,7 @@ const ShopppingCartItem = (props: ShoppingCartItemProps) => {
         />
       </View>
       <View style={{width: '65%'}}>
-        <Text style={[styles.text]}>{props.dishName}</Text>
+        <Text style={[styles.text]}>{props.name}</Text>
         <Text>{price} kr</Text>
       </View>
       <View style={{width: '25%'}}>

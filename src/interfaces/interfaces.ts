@@ -49,7 +49,7 @@ export interface CategoryButtonProps {
 
 export interface ShoppingCartItemProps {
   id: number;
-  dishName: string;
+  name: string;
   price: number;
   amount: number;
 }

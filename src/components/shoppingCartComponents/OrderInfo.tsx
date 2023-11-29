@@ -2,18 +2,17 @@ import CheckBox from '@react-native-community/checkbox';
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import FeatherIcons from 'react-native-vector-icons/Feather';
-import {useSelector} from 'react-redux';
-import {shoppingCartState} from '../../redux/store';
-import { useTranslation } from 'react-i18next';
 
-const OrderInfo = () => {
-  const shoppingCart = useSelector((state: shoppingCartState) => state.shoppingCart);
+import {useTranslation} from 'react-i18next';
+
+interface OrderInfoProps {
+  totalPrice: number;
+  onPress: () => void;
+}
+
+const OrderInfo = (props: OrderInfoProps) => {
+
   const {t} = useTranslation();
-  /**Calculates the total price of the cart.
-   * reduce() iterates over every item in the cart, and adds its price to the total.
-   * The 0 means that it should display zero when the cart is empty.
-   */
-  const totalPrice = shoppingCart.reduce((total, item) => total + item.price, 0);
 
   return (
     <View style={[styles.outerContainer]}>
@@ -31,13 +30,13 @@ const OrderInfo = () => {
       </View>
       <View style={[styles.totalPriceContainer]}>
         <Text style={[styles.totalPriceText]}>
-          {t("Total price")}: {totalPrice} kr
+          {t('Total price')}: {props.totalPrice} kr
         </Text>
       </View>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={props.onPress}>
         <View style={[styles.buttonContainer]}>
           <FeatherIcons name={'credit-card'} size={28} color={'white'} />
-          <Text style={[styles.buttonText]}>{t("Pay")}</Text>
+          <Text style={[styles.buttonText]}>{t('Pay')}</Text>
         </View>
       </TouchableOpacity>
     </View>

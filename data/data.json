@@ -926,6 +926,48 @@
           ]
         }
       ]
-    }    
-  }
+    }
+  },
+  "receipts": [
+    {
+      "date": "29.nov.2023 19:21",
+      "totalCost": 345,
+      "isActive": false,
+      "id": 6626,
+      "items": [
+        {
+          "id": 65,
+          "name": "Tandoori Prawns",
+          "price": 190,
+          "amount": 1
+        },
+        {
+          "id": 71,
+          "name": "Butter Naan",
+          "price": 35,
+          "amount": 1
+        },
+        {
+          "id": 61,
+          "name": "Paneer Tikka",
+          "price": 120,
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "date": "29.nov.2023 20:9",
+      "totalCost": 120,
+      "isActive": true,
+      "items": [
+        {
+          "id": 77,
+          "name": "Taco Al Pastor",
+          "price": 120,
+          "amount": 1
+        }
+      ],
+      "id": 6627
+    }
+  ]
 }
