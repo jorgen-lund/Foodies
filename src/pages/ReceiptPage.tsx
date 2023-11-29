@@ -44,23 +44,8 @@ const ReceiptPage = () => {
       <ScrollView>
         <View style={[styles.currentOrderContainer]}>
           <Text style={[styles.sectionHeader]}>{t('Active order')}</Text>
-          {activeReceipts.map(receipt => (
-            <Receipt
-              key={receipt.id}
-              id={receipt.id}
-              waitingTime={2}
-              date={receipt.date}
-              totalCost={receipt.totalCost}
-              isActive={receipt.isActive}
-              items={receipt.items}
-              isTakeaway={receipt.isTakeaway}
-            />
-          ))}
-        </View>
-        <View style={[styles.currentOrderContainer]}>
-          <Text style={[styles.sectionHeader]}>{t('Previous orders')}</Text>
-          {inactiveReceipts
-            .map(receipt => (
+          {activeReceipts.length > 0 ? (
+            activeReceipts.map(receipt => (
               <Receipt
                 key={receipt.id}
                 id={receipt.id}
@@ -71,8 +56,29 @@ const ReceiptPage = () => {
                 items={receipt.items}
                 isTakeaway={receipt.isTakeaway}
               />
-            ))
-            .reverse()}
+            )).reverse()
+          ) : (
+            <Text style={[styles.text]}>{t('No active orders')}</Text>
+          )}
+        </View>
+        <View style={[styles.currentOrderContainer]}>
+          <Text style={[styles.sectionHeader]}>{t('Previous orders')}</Text>
+          {inactiveReceipts.length > 0 ? (
+            inactiveReceipts.map(receipt => (
+              <Receipt
+                key={receipt.id}
+                id={receipt.id}
+                waitingTime={2}
+                date={receipt.date}
+                totalCost={receipt.totalCost}
+                isActive={receipt.isActive}
+                items={receipt.items}
+                isTakeaway={receipt.isTakeaway}
+              />
+            )).reverse()
+          ) : (
+            <Text style={[styles.text]}>{t('No previous orders')}</Text>
+          )}
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -91,6 +97,9 @@ const styles = StyleSheet.create({
     fontFamily: 'Suwannaphum-Bold',
     fontSize: 22,
   },
+  text: {
+    fontFamily: "Suwannaphum-regular", marginTop: -5
+  }
 });
 
 export default ReceiptPage;
