@@ -69,6 +69,7 @@ const ReceiptPage = () => {
                 totalCost={receipt.totalCost}
                 isActive={receipt.isActive}
                 items={receipt.items}
+                isTakeaway={receipt.isTakeaway}
               />
             ))
             .reverse()}
