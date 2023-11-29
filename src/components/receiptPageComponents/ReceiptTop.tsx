@@ -2,11 +2,12 @@ import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import IonIcons from 'react-native-vector-icons/Ionicons';
-import { useTranslation } from 'react-i18next';
+import {useTranslation} from 'react-i18next';
 interface ReceiptTopProps {
   id: number;
   waitingTime: number;
   isActive: boolean;
+  isTakeaway: boolean;
 }
 
 const ReceiptTop = (props: ReceiptTopProps) => {
@@ -19,45 +20,32 @@ const ReceiptTop = (props: ReceiptTopProps) => {
   }
 
   return (
-    <View style={[styles.receiptTopContainer]}>
-      <Text style={[styles.receiptText, {fontSize: 18, color: textColor}]}>
-       {t("Order ID")}: #{props.id}
-      </Text>
-      {props.isActive ? (
-        <View style={[styles.rightHalfContainer]}>
-          <View>
-            <Text
-              style={[styles.receiptText, {fontSize: 14, color: textColor}]}>
-              {t("Food ready in")}:
-            </Text>
-            <View style={[styles.durationContainer]}>
-              <View style={[styles.numberContainer]}>
-                <Text
-                  style={[
-                    styles.receiptText,
-                    {fontSize: 19, color: textColor},
-                  ]}>
-                  {props.waitingTime}
-                </Text>
-              </View>
-              <Text
-                style={[
-                  styles.receiptText,
-                  {fontSize: 16, paddingLeft: 3, color: textColor},
-                ]}>
-                min
-              </Text>
-            </View>
-          </View>
-          <View>
-            <MaterialIcons name={'timer-sand'} color={'white'} size={42} />
-          </View>
+    <View>
+      <View style={[styles.receiptTopContainer]}>
+        <Text style={[styles.receiptText, {fontSize: 18, color: textColor}]}>
+          {t('Order ID')}: #{props.id}
+        </Text>
+        <View style={{flexDirection: 'row', alignItems: 'center'}}>
+          <Text style={[styles.receiptText, {fontSize: 17, color: textColor}]}>
+            Takeaway
+          </Text>
+          {props.isTakeaway ? (
+            <MaterialIcons
+              style={{marginLeft: 5}}
+              name={'checkbox-marked-circle-outline'}
+              color={textColor}
+              size={25}
+            />
+          ) : (
+            <MaterialIcons
+              style={{marginLeft: 5}}
+              name={'close'}
+              color={textColor}
+              size={25}
+            />
+          )}
         </View>
-      ) : (
-        <View style={[styles.receiptIconContainer]}>
-          <IonIcons name={'receipt-outline'} color={'black'} size={30} />
-        </View>
-      )}
+      </View>
     </View>
   );
 };
@@ -66,34 +54,12 @@ const styles = StyleSheet.create({
   receiptText: {
     fontFamily: 'Suwannaphum-Bold',
   },
-  rightHalfContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  receiptIconContainer: {
-    width: '20%',
-    height: 40,
-    alignContent: 'center',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
   receiptTopContainer: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    paddingVertical: 10,
+    justifyContent: 'space-around',
+    paddingTop: 10,
     paddingLeft: 15,
     paddingRight: 10,
-  },
-  numberContainer: {
-    backgroundColor: '#006385',
-    height: 30,
-    width: 30,
-    borderRadius: 20,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  durationContainer: {
-    flexDirection: 'row',
   },
 });
 export default ReceiptTop;

@@ -28,10 +28,8 @@ const ReceiptPage = () => {
 
   useEffect(() => {
     loadReceipts();
-    console.log('I ran');
     const handlePurchaseMade = () => {
       loadReceipts();
-      console.log('I ran aswell');
     };
 
     emitter.on('purchase-made', handlePurchaseMade);
@@ -55,6 +53,7 @@ const ReceiptPage = () => {
               totalCost={receipt.totalCost}
               isActive={receipt.isActive}
               items={receipt.items}
+              isTakeaway={receipt.isTakeaway}
             />
           ))}
         </View>

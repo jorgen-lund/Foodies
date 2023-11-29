@@ -11,6 +11,7 @@ interface ReceiptProps {
   date: string;
   totalCost: number;
   isActive: boolean;
+  isTakeaway: boolean;
   items: OrderItem[];
 }
 
@@ -18,7 +19,7 @@ const Receipt = (props: ReceiptProps) => {
   const [receiptColor, setReceiptColor] = useState('#F1F0F0');
   const [textColor, setTextColor] = useState('black');
   const [borderColor, setBorderColor] = useState('grey');
-  
+
   useEffect(() => {
     if (props.isActive) {
       setReceiptColor('#32BDED');
@@ -37,6 +38,7 @@ const Receipt = (props: ReceiptProps) => {
         id={props.id}
         isActive={props.isActive}
         waitingTime={props.waitingTime}
+        isTakeaway={props.isTakeaway}
       />
       <ReceiptMid
         textColor={textColor}

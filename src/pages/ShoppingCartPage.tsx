@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {SafeAreaView, ScrollView, StyleSheet} from 'react-native';
 import ShoppingCartItem from '../components/shoppingCartComponents/ShoppingCartItem';
 import OrderInfo from '../components/shoppingCartComponents/OrderInfo';
@@ -11,6 +11,8 @@ import {deactivatePreviousReceipt, postReceiptData} from '../apiCalls/api';
 import emitter from '../receiptUtils';
 
 const ShoppingCartPage = () => {
+  const [isTakeaway, setIsTakeaway] = useState(false);
+
   const shoppingCart = useSelector(
     (state: shoppingCartState) => state.shoppingCart,
   );
@@ -25,7 +27,7 @@ const ShoppingCartPage = () => {
   const handlePayButtonClick = async () => {
     if (totalPrice > 0) {
       await deactivatePreviousReceipt();
-      const newReceiptData = createReceiptData(shoppingCart);
+      const newReceiptData = createReceiptData(shoppingCart, isTakeaway);
       await postReceiptData(newReceiptData);
       emitter.emit('purchase-made');
       dispatch(clearCart());
@@ -55,7 +57,11 @@ const ShoppingCartPage = () => {
           />
         ))}
       </ScrollView>
-      <OrderInfo totalPrice={totalPrice} onPress={handlePayButtonClick} />
+      <OrderInfo
+        totalPrice={totalPrice}
+        onPress={handlePayButtonClick}
+        setIsTakeaway={setIsTakeaway}
+      />
     </SafeAreaView>
   );
 };

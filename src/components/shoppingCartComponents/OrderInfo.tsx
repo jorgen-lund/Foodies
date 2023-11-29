@@ -1,5 +1,5 @@
 import CheckBox from '@react-native-community/checkbox';
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import FeatherIcons from 'react-native-vector-icons/Feather';
 
@@ -7,12 +7,21 @@ import {useTranslation} from 'react-i18next';
 
 interface OrderInfoProps {
   totalPrice: number;
+  setIsTakeaway: React.Dispatch<React.SetStateAction<boolean>>;
   onPress: () => void;
 }
 
 const OrderInfo = (props: OrderInfoProps) => {
-
   const {t} = useTranslation();
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleCheckboxChange = (newValue: boolean) => {
+    setIsChecked(newValue);
+  };
+
+  useEffect(() => {
+    props.setIsTakeaway(isChecked);
+  }, [isChecked]);
 
   return (
     <View style={[styles.outerContainer]}>
@@ -25,6 +34,8 @@ const OrderInfo = (props: OrderInfoProps) => {
           onTintColor="black"
           tintColor={'black'}
           lineWidth={2}
+          value={isChecked}
+          onValueChange={handleCheckboxChange}
         />
         <Text style={[styles.takeAwayText]}>Takeaway</Text>
       </View>

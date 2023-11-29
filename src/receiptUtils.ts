@@ -34,11 +34,12 @@ const formattedDate = formatDate();
     receipt will be saved to data.json, and later displayed in the receiptPage.
     Id is automatically given, as putting one manually leads to a bunch of errors.
 */
-export const createReceiptData = (shoppingCart: OrderItem[]) => {
+export const createReceiptData = (shoppingCart: OrderItem[], isTakeaway: boolean) => {
   return {
     date: formattedDate,
     totalCost: shoppingCart.reduce((total, item) => total + item.price, 0),
     isActive: true,
+    isTakeaway: isTakeaway,
     items: shoppingCart.map(item => ({
       id: item.id,
       name: item.name,

@@ -7,6 +7,7 @@ export interface ReceiptData {
   date: string;
   totalCost: number;
   isActive: boolean;
+  isTakeaway: boolean;
   items: OrderItem[];
 }
 
