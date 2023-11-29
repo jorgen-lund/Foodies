@@ -3,6 +3,7 @@ import {StyleSheet, Text, View} from 'react-native';
 import ExtraItem from './CheckboxItem';
 import DishButton from './DishButton';
 import {ExtraItemProps} from '../../../interfaces/interfaces';
+import { t } from 'i18next';
 
 interface ExtrasProps {
   setIsExpanded: React.Dispatch<React.SetStateAction<boolean>>;
@@ -22,12 +23,12 @@ const Extras = (props: ExtrasProps) => {
       <View style={[styles.innerContainer]}>
         <View style={[styles.separatorLine]}></View>
         <View style={[styles.extrasContainer]}>
-          <Text style={[styles.addExtraText]}>Legg til ekstra:</Text>
+          <Text style={[styles.addExtraText]}>{t("Add")}:</Text>
           {extrasList.map((item: ExtraItemProps, index: number) => (
             <ExtraItem key={index} itemName={item.name} price={item.price} />
           ))}
 
-          <Text style={[styles.addExtraText]}>Tilpass:</Text>
+          <Text style={[styles.addExtraText]}>{t("Adapt")}:</Text>
           {adaptList.map((item: ExtraItemProps, index: number) => (
             <ExtraItem key={index}itemName={item.name} price={item.price} />
           ))}

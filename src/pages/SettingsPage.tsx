@@ -1,7 +1,6 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   FlatList,
-  Modal,
   SafeAreaView,
   StyleSheet,
   Text,
@@ -12,42 +11,52 @@ import PageHeader from '../components/PageHeader';
 import i18next, {languageResources} from '../../services/i18next';
 import {useTranslation} from 'react-i18next';
 import languagesList from '../../services/languagesList.json';
+import * as RNLocalize from 'react-native-localize';
+
+interface LanguageInfo {
+  name: string;
+  nativeName: string;
+}
+
+interface LanguagesList {
+  [key: string]: LanguageInfo;
+}
 
 const SettingsPage = () => {
   const {t} = useTranslation();
   const [visible, setVisible] = useState(false);
+  const [activeLanguage, setActiveLanguage] = useState("");
+  const typedLanguagesList: LanguagesList = languagesList;
 
   const changeLng = (lng: string) => {
     i18next.changeLanguage(lng);
+    setActiveLanguage(lng);
     setVisible(false);
   };
+
+  useEffect(() => {
+    const deviceLanguage = RNLocalize.getLocales()[0].languageCode;
+    if (languageResources.hasOwnProperty(deviceLanguage)) {
+      setActiveLanguage(deviceLanguage);
+    }
+  }, []);
 
   return (
     <SafeAreaView style={{backgroundColor: 'white', flex: 1}}>
       <PageHeader headerText={'Settings'} />
-      <View>
-        <Text
-          style={{
-            fontFamily: 'Suwannaphum-bold',
-            fontSize: 20,
-          }}>
-          {t('Language')}:{' '}
-        </Text>
-        <Modal visible={visible} onRequestClose={() => setVisible(false)}>
-          <View style={styles.modalContainer}>
-            <FlatList
+      <View> 
+        <View style={{flexDirection: 'row', padding: 7, borderBottomWidth: 1, justifyContent: 'center'}}>
+        
+        <Text style={{fontSize: 17, fontFamily: "Suwannaphum-bold"}}>{t("Change Language")}</Text>
+        </View>
+      <FlatList
               data={Object.keys(languageResources)}
               renderItem={({item}) => (
-                <TouchableOpacity onPress={() => changeLng(item)}>
-                  <Text>{languagesList[item].nativeName}</Text>
+                <TouchableOpacity style={[styles.languageBtn, item === activeLanguage ? styles.activeLanguage : null]} onPress={() => changeLng(item)}>
+                  <Text style={{fontFamily: "Suwannaphum-regular"}}>{typedLanguagesList[item]?.nativeName}</Text>
                 </TouchableOpacity>
               )}
             />
-          </View>
-        </Modal>
-        <TouchableOpacity onPress={() => setVisible(true)}>
-          <Text>{t('Change Language')}</Text>
-        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );
@@ -60,6 +69,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     margin: 100,
   },
+  languageBtn:{
+    padding:10,
+    borderBottomColor: '#dddddd',
+    borderBottomWidth: 1,
+  },
+  activeLanguage: {
+    backgroundColor: '#e0e0e0',
+  }
 });
 
 export default SettingsPage;
