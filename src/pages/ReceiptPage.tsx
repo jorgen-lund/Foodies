@@ -11,24 +11,27 @@ const ReceiptPage = () => {
   const [inactiveReceipts, setInactiveReceipts] = useState<ReceiptData[]>([]);
   const {t} = useTranslation();
 
-  
+  const loadReceipts = async () => {
+    try {
+      const receipts = await fetchReceipts();
+      console.log(receipts);
+      setActiveReceipts(
+        receipts.filter((receipt: {isActive: boolean}) => receipt.isActive),
+      );
+      setInactiveReceipts(
+        receipts.filter((receipt: {isActive: boolean}) => !receipt.isActive),
+      );
+    } catch (error) {
+      console.error('Failed to fetch receipts:', error);
+    }
+  };
+
   useEffect(() => {
-    const loadReceipts = async () => {
-      try {
-        const receipts = await fetchReceipts();
-        console.log(receipts);
-        setActiveReceipts(
-          receipts.filter((receipt: {isActive: boolean}) => receipt.isActive),
-        );
-        setInactiveReceipts(
-          receipts.filter((receipt: {isActive: boolean}) => !receipt.isActive),
-        );
-      } catch (error) {
-        console.error('Failed to fetch receipts:', error);
-      }
-    };
+    loadReceipts();
+    console.log('I ran');
     const handlePurchaseMade = () => {
       loadReceipts();
+      console.log('I ran aswell');
     };
 
     emitter.on('purchase-made', handlePurchaseMade);

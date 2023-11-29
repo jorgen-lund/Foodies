@@ -1,4 +1,4 @@
-import {OrderItem} from './redux/shoppingCartSlice'
+import {OrderItem} from './redux/shoppingCartSlice';
 import mitt from 'mitt';
 
 /* Small event listener, used to check and update receiptPage when a new 
@@ -17,14 +17,13 @@ const formatDate = () => {
   const hours = now.getHours();
   let minutes = now.getMinutes();
 
-  let minutesInString = minutes.toString()
+  let minutesInString = minutes.toString();
   if (minutes < 10) {
-    minutesInString = `0${minutes}`
-
+    minutesInString = `0${minutes}`;
   }
 
   const formattedDate = `${day}.${month}.${year} ${hours}:${minutesInString}`;
-  
+
   return formattedDate;
 };
 
@@ -36,7 +35,6 @@ const formattedDate = formatDate();
     Id is automatically given, as putting one manually leads to a bunch of errors.
 */
 export const createReceiptData = (shoppingCart: OrderItem[]) => {
-
   return {
     date: formattedDate,
     totalCost: shoppingCart.reduce((total, item) => total + item.price, 0),
