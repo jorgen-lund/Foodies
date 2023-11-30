@@ -2,7 +2,7 @@ import React from 'react';
 import {SafeAreaView} from 'react-native';
 import FoodBooth from './FoodBooth';
 import data from '../../data/data.json';
-import { useTranslation } from 'react-i18next';
+import {useTranslation} from 'react-i18next';
 
 const mexicanBooth = require('../../images/mexicanBooth.png');
 

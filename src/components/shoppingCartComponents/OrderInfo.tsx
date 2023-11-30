@@ -2,23 +2,25 @@ import CheckBox from '@react-native-community/checkbox';
 import React, {useEffect, useState} from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import FeatherIcons from 'react-native-vector-icons/Feather';
-
 import {useTranslation} from 'react-i18next';
+import { OrderInfoProps } from '../../interfaces/shoppingCartInterfaces';
 
-interface OrderInfoProps {
-  totalPrice: number;
-  setIsTakeaway: React.Dispatch<React.SetStateAction<boolean>>;
-  onPress: () => void;
-}
-
+/** Contains the takeaway checkbox, display of total price of the shoppingCart
+ * and the pay button. 
+*/
 const OrderInfo = (props: OrderInfoProps) => {
   const {t} = useTranslation();
   const [isChecked, setIsChecked] = useState(false);
 
+  /* This function runs when the checkbox for takeaway is 
+     pressed. Sets its isChecked value to true */
   const handleCheckboxChange = (newValue: boolean) => {
     setIsChecked(newValue);
   };
 
+  /* useEffect for catching if the checkbox has been checked, and 
+     tells the parent component (shoppingCartPage) that the 
+     isTakeaway = true. Runs every time the checkbox is clicked */
   useEffect(() => {
     props.setIsTakeaway(isChecked);
   }, [isChecked]);

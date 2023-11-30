@@ -1,7 +1,9 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import { CategoryButtonProps } from '../../interfaces/interfaces';
+import { CategoryButtonProps } from '../../interfaces/boothComponentInterfaces';
 
+/* The styling of the different category buttons. Changes 
+   depending on if a button is active or not */
 const CategoryButton = (props: CategoryButtonProps) => {
   return (
     <TouchableOpacity style={styles.button} onPress={props.onPress}>

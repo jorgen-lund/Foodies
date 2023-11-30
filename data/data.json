@@ -322,41 +322,6 @@
     "indian": {
       "dishes": [
         {
-          "id": 37,
-          "name": "Chicken Tikka Masala",
-          "description": "Rich, creamy curry with marinated grilled chicken in a tomato sauce, seasoned with garam masala.",
-          "allergies": "Allergens: Dairy & Nuts",
-          "price": 180,
-          "imageUrl": "https://as2.ftcdn.net/v2/jpg/03/13/35/73/1000_F_313357375_eI3nubCLdKLGOIbgNU6oDurVWg0u7j4b.jpg",
-          "category": "Curry",
-          "extraItems": [
-            {
-              "id": 38,
-              "name": "Extra Chicken",
-              "category": "Extras",
-              "price": 20
-            },
-            {
-              "id": 39,
-              "name": "Paneer",
-              "category": "Extras",
-              "price": 15
-            },
-            {
-              "id": 40,
-              "name": "Spicy Level Hot",
-              "category": "Adapt",
-              "price": 5
-            },
-            {
-              "id": 41,
-              "name": "Dairy-free",
-              "category": "Adapt",
-              "price": 25
-            }
-          ]
-        },
-        {
           "id": 42,
           "name": "Tandoori Chicken",
           "description": "Chicken marinated in yogurt and spices, cooked in a tandoor oven for a smoky flavor.",
@@ -487,6 +452,41 @@
               "name": "Spicy Level Hot",
               "category": "Adapt",
               "price": 5
+            }
+          ]
+        },
+        {
+          "id": 37,
+          "name": "Chicken Tikka Masala",
+          "description": "Rich, creamy curry with marinated grilled chicken in a tomato sauce, seasoned with garam masala.",
+          "allergies": "Allergens: Dairy & Nuts",
+          "price": 180,
+          "imageUrl": "https://as2.ftcdn.net/v2/jpg/03/13/35/73/1000_F_313357375_eI3nubCLdKLGOIbgNU6oDurVWg0u7j4b.jpg",
+          "category": "Curry",
+          "extraItems": [
+            {
+              "id": 38,
+              "name": "Extra Chicken",
+              "category": "Extras",
+              "price": 20
+            },
+            {
+              "id": 39,
+              "name": "Paneer",
+              "category": "Extras",
+              "price": 15
+            },
+            {
+              "id": 40,
+              "name": "Spicy Level Hot",
+              "category": "Adapt",
+              "price": 5
+            },
+            {
+              "id": 41,
+              "name": "Dairy-free",
+              "category": "Adapt",
+              "price": 25
             }
           ]
         },
@@ -930,44 +930,19 @@
   },
   "receipts": [
     {
-      "date": "29.nov.2023 19:21",
-      "totalCost": 345,
-      "isActive": false,
-      "id": 6626,
-      "items": [
-        {
-          "id": 65,
-          "name": "Tandoori Prawns",
-          "price": 190,
-          "amount": 1
-        },
-        {
-          "id": 71,
-          "name": "Butter Naan",
-          "price": 35,
-          "amount": 1
-        },
-        {
-          "id": 61,
-          "name": "Paneer Tikka",
-          "price": 120,
-          "amount": 1
-        }
-      ]
-    },
-    {
-      "date": "29.nov.2023 20:9",
-      "totalCost": 120,
+      "date": "30.nov.2023 0:17",
+      "totalCost": 80,
       "isActive": true,
+      "isTakeaway": true,
       "items": [
         {
-          "id": 77,
-          "name": "Taco Al Pastor",
-          "price": 120,
+          "id": 8,
+          "name": "Panna Cotta",
+          "price": 80,
           "amount": 1
         }
       ],
-      "id": 6627
+      "id": 8
     }
   ]
 }

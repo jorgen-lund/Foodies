@@ -4,11 +4,11 @@ import {StyleSheet, View} from 'react-native';
 import {RootNavigationProp} from '../../navigationFiles/navigationTypes';
 import BoothNavbarButton from './BoothNavbarButton';
 import { useTranslation } from 'react-i18next';
+import { BoothNavbarProps } from '../../interfaces/boothComponentInterfaces';
 
-interface BoothNavbarProps {
-  activeBoothName: string;
-}
-
+/** The navigation bar at the top of each booth. Contains navigation buttons
+ *  for quick access to the different booths, and highlights current booth.
+ */
 const BoothNavbar = (props: BoothNavbarProps) => {
   const {t} = useTranslation();
   const navigation = useNavigation<RootNavigationProp>();

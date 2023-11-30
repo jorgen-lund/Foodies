@@ -1,13 +1,11 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
+import { ReceiptOrderProps } from '../../interfaces/receiptInterfaces';
 
-interface ReceiptOrderProps {
-  amount: number;
-  dish: string;
-  price: number;
-  isActive: boolean;
-}
-
+/* Bottom part of the receipt. Shows the amount, name and 
+   price of the dish. Changes styling depending if it is 
+   an active receipt or not.
+*/
 const ReceiptOrder = (props: ReceiptOrderProps) => {
   let textColor = 'black';
 

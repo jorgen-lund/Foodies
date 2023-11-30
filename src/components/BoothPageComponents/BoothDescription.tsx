@@ -1,12 +1,9 @@
 import React from 'react';
-import {Image, ImageSourcePropType, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, View} from 'react-native';
+import { BoothDescriptionProps } from '../../interfaces/boothComponentInterfaces';
 
-interface BoothDescriptionProps {
-  boothName: string;
-  boothImage: ImageSourcePropType;
-  boothDescription: string;
-}
-
+/** Styling of a the top part of a booths page. Displays a booth-image,
+ *  name of the booth, and an introduction to the booth */
 const BoothDescription = (props: BoothDescriptionProps) => {
   return (
     <View>

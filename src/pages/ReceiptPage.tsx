@@ -6,15 +6,20 @@ import {useTranslation} from 'react-i18next';
 import {ReceiptData, fetchReceipts} from '../apiCalls/api';
 import emitter from '../receiptUtils';
 
+/** Displays both active and inactive receipts. Fetches the receipts from
+ *  the mock api server in the loadReceipts function. Displays placeholder
+ *  text in case there are no active or previous orders. 
+ */
 const ReceiptPage = () => {
   const [activeReceipts, setActiveReceipts] = useState<ReceiptData[]>([]);
   const [inactiveReceipts, setInactiveReceipts] = useState<ReceiptData[]>([]);
   const {t} = useTranslation();
 
+  /* Fetcehs all receipts, and then filters them into two categories, based on
+     the orders isActive state. */
   const loadReceipts = async () => {
     try {
       const receipts = await fetchReceipts();
-      console.log(receipts);
       setActiveReceipts(
         receipts.filter((receipt: {isActive: boolean}) => receipt.isActive),
       );
@@ -26,6 +31,9 @@ const ReceiptPage = () => {
     }
   };
 
+  /* Executes the loadReceipts once when loading the component mounts, and
+     then every time a new order has been made, because of the emitter which
+     triggers on that specific event. */
   useEffect(() => {
     loadReceipts();
     const handlePurchaseMade = () => {

@@ -5,6 +5,7 @@ import MexicanBooth from '../booths/MexicanBooth';
 
 const BoothStack = createNativeStackNavigator();
 
+/* Navigator for all the booths*/
 const BoothNavigator = () => {
   return (
     <BoothStack.Navigator

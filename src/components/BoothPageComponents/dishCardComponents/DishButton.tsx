@@ -1,20 +1,13 @@
 import React from 'react';
 import {StyleSheet, TouchableOpacity, View} from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import { DishButtonProps } from '../../../interfaces/boothComponentInterfaces';
 
-interface DishButtonProps {
-  handleEditPress?: () => void;
-  handleAddToCart?: () => void;
-  handleCloseEdit?: () => void;
-  MaterialIconName: string;
-}
-
+/* Styling of a DishButton. At the moment only used for add-dish-to-cart
+   button. Later for edit-dish and hide-extras buttons as well */
 const DishButton = (props: DishButtonProps) => {
-  const onPressHandler =
-    props.handleAddToCart || props.handleEditPress || props.handleCloseEdit;
-
   return (
-    <TouchableOpacity onPress={onPressHandler} style={[styles.buttonIncrease]}>
+    <TouchableOpacity onPress={props.onPress} style={[styles.buttonIncrease]}>
       <View style={[styles.buttonContainer]}>
         <MaterialIcons name={props.MaterialIconName} size={28} color={"white"}/>
       </View>
@@ -24,9 +17,10 @@ const DishButton = (props: DishButtonProps) => {
 
 const styles = StyleSheet.create({
   buttonContainer: {
-    alignContent: 'space-between',
+    alignSelf: "flex-end",
     alignItems: 'center',
     justifyContent: 'center',
+    marginRight: 10,
     borderRadius: 10,
     height: 35,
     width: 35,

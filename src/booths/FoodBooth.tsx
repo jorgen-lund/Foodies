@@ -4,11 +4,17 @@ import BoothNavbar from '../components/BoothPageComponents/BoothNavbar';
 import BoothDescription from '../components/BoothPageComponents/BoothDescription';
 import Categories from '../components/BoothPageComponents/Categories';
 import DishCard from '../components/BoothPageComponents/DishCard';
-import {DishCardProps, FoodBoothProps} from '../interfaces/interfaces';
+
 import { useTranslation } from 'react-i18next';
+import { DishCardProps, FoodBoothProps } from '../interfaces/boothComponentInterfaces';
 
 /* The component that creates all of the booths. Handles the changing 
-   of categories and which dishes are displayed */
+   of categories and which dishes are displayed. Consists of 
+   1) BoothNavbar
+   2) BoothDescription
+   3) Categories
+   4) Collection of DishCards
+*/
 const FoodBooth = (props: FoodBoothProps) => {
   const {t} = useTranslation();
   const {dishes = [], category1, category2, category3} = props;
@@ -20,10 +26,13 @@ const FoodBooth = (props: FoodBoothProps) => {
     '',
   );
 
+  /* Filters what dishes are shown, based on the selected category */
   const filteredDishes = currentCategory
     ? dishes.filter(dish => dish.category === currentCategory)
     : dishes;
 
+    /* Makes sure that when a category changes, the changes happen
+       within the same render */
   useEffect(() => {
     if (showCategory1) setCurrentCategory(category1);
     else if (showCategory2) setCurrentCategory(category2);

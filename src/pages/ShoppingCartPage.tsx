@@ -9,21 +9,35 @@ import {OrderItem, clearCart} from '../redux/shoppingCartSlice';
 import {createReceiptData} from '../receiptUtils';
 import {deactivatePreviousReceipt, postReceiptData} from '../apiCalls/api';
 import emitter from '../receiptUtils';
+import { useNavigation } from '@react-navigation/native';
+import { RootNavigationProp } from '../navigationFiles/navigationTypes';
 
+/** Displays all the dishes in redux' globally accessible shoppingCart, 
+ *  and creates an order / receipt by clicking the pay button.
+*/
 const ShoppingCartPage = () => {
   const [isTakeaway, setIsTakeaway] = useState(false);
+  const navigation = useNavigation<RootNavigationProp>();
 
   const shoppingCart = useSelector(
     (state: shoppingCartState) => state.shoppingCart,
   );
   const dispatch = useDispatch();
 
-  /* When the user "pays" it checks that shoppingCart is not empty, deactivates
-    previos receipt by updating isActive = false. 
-    Then a new receipt is created using the items in the shoppingCart which is 
-    posted to the mock db. An event is then run to let receiptPage know a new 
-    receipt has been made, and that it should rerender the page. Then clears 
-    the cart. The ts-error on newReceiptData has not been prioritized */
+  const redirectToReceiptPage = () => {
+    navigation.navigate("Receipts");
+  }
+
+  /* Checks that the shopping cart is not empty before executing the commands:
+  1) Deactivates current active receipt by sending a patch request saying
+    isActive = false
+  2) Creates a new receipt of the dishes inside, and checks if takeaway is 
+    checked 
+  3) Sends a post request with this receipt
+  4) Runs an event that purchase has been made. Is used for receiptPage to 
+    know a new receipt has been made, and it should rerender the component
+  5) Clears the redux state of the cart, so it is now empty 
+  6) Redirects the user to the receipt page */
   const handlePayButtonClick = async () => {
     if (totalPrice > 0) {
       await deactivatePreviousReceipt();
@@ -31,12 +45,14 @@ const ShoppingCartPage = () => {
       await postReceiptData(newReceiptData);
       emitter.emit('purchase-made');
       dispatch(clearCart());
+      redirectToReceiptPage();
     }
   };
 
   /* Calculates the total price of the cart.
      reduce() iterates over every item in the cart, and adds its price to the total.
-     The 0 means that it should display zero when the cart is empty.
+     The 0 means that it should display zero when the cart is empty. Sends the amount 
+     to the OrderInfo component.
    */
   const totalPrice = shoppingCart.reduce(
     (total, item) => total + item.price,

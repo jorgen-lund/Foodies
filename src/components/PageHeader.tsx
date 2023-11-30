@@ -2,7 +2,7 @@ import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {useTranslation} from 'react-i18next';
 
-/* A reusable header used for shoppingCartPage and receiptPage */
+/* A reusable header used in shoppingCart, receipt and settings tabs */
 const PageHeader = ({headerText}: {headerText: string}) => {
   const {t} = useTranslation();
 

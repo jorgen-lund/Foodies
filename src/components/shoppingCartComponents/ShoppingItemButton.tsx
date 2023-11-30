@@ -1,15 +1,10 @@
 import React from 'react';
 import {StyleSheet, TouchableOpacity, View} from 'react-native';
 import AntDesignIcons from 'react-native-vector-icons/AntDesign';
+import { ShoppingItemButtonProps } from '../../interfaces/shoppingCartInterfaces';
 
-interface ShoppingItemButtonProps {
-  name: string;
-  size: number;
-  color: string;
-  onPress: () => void;
-  isRemoveButton: boolean;
-}
-
+/* Styles the different buttons used, and increases their touchable area.
+   Used for the removeDish button, and increment / decrement amount buttons */
 const ShoppingItemButton = (props: ShoppingItemButtonProps) => {
   return (
     <TouchableOpacity onPress={props.onPress}>

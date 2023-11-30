@@ -14,11 +14,19 @@ import SettingsPage from '../pages/SettingsPage';
 
 const Tab = createBottomTabNavigator();
 
+/** A navigator for landingPage, shoppingCartPage, receiptPage, settingsPage, 
+ * and the booths. In order for the bottom navbar to be displayed in the
+ * different booths, they have been included in the screen BoothNavigator, 
+ * which can only be accessed through the home page. 
+ */
 const BottomNavigator = () => {
   const shoppingCart = useSelector(
     (state: shoppingCartState) => state.shoppingCart,
   );
 
+  /* When an item has been added to the shoppingCart, a counter
+     is shown next to the shoppingCart icon in the bottom navbar.
+     The reduce keyword accumulates  */
   const totalItems = shoppingCart.reduce(
     (total, item) => total + item.amount,
     0,

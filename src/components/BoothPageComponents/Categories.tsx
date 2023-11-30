@@ -1,13 +1,17 @@
 import React, {useState} from 'react';
 import {StyleSheet, View} from 'react-native';
-import {CategoriesProps} from '../../interfaces/interfaces';
 import CategoryButton from './CategoryButton';
 import { useTranslation } from 'react-i18next';
+import { CategoriesProps } from '../../interfaces/boothComponentInterfaces';
 
+/* Displays the dishes that fit under the chosen category */
 const Categories = (props: CategoriesProps) => {
   const {t} = useTranslation();
   const [activeCategory, setActiveCategory] = useState('All');
 
+  /* Sets the state of all categories to be false. Is used at
+     the start of chosenCategory function to ensure it works
+     properly, and only one category's state is active at a time */
   const resetCategoryStates = () => {
     props.setShowCategory1(false);
     props.setShowCategory2(false);
@@ -17,7 +21,9 @@ const Categories = (props: CategoriesProps) => {
     }
   };
 
-  const choosenCategory = (name: string) => {
+  /* Takes in the name of a category as parameter, and displays the
+     category that fits the name, by updating its state to true */
+  const chosenCategory = (name: string) => {
     resetCategoryStates();
     setActiveCategory(name);
     if (name === props.category1) {
@@ -34,23 +40,23 @@ const Categories = (props: CategoriesProps) => {
   return (
     <View style={[styles.categoryContainer]}>
       <CategoryButton
-        onPress={() => choosenCategory('All')}
+        onPress={() => chosenCategory('All')}
         isActive={activeCategory === 'All'}
         categoryName={t('All')}
       />
       <CategoryButton
-        onPress={() => choosenCategory(props.category1)}
+        onPress={() => chosenCategory(props.category1)}
         isActive={activeCategory === props.category1}
         categoryName={props.category1}
       />
       <CategoryButton
-        onPress={() => choosenCategory(props.category2)}
+        onPress={() => chosenCategory(props.category2)}
         isActive={activeCategory === props.category2}
         categoryName={props.category2}
       />
       {props.category3 && (
         <CategoryButton
-          onPress={() => choosenCategory(props.category3!)}
+          onPress={() => chosenCategory(props.category3!)}
           isActive={activeCategory === props.category3}
           categoryName={props.category3}
         />

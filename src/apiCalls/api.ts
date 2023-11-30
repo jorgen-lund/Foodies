@@ -11,6 +11,8 @@ export interface ReceiptData {
   items: OrderItem[];
 }
 
+/* Posts the order as a receipt to the data.json file, which acts
+   as the json-mockserver  */
 export const postReceiptData = async (data: ReceiptData) => {
   try {
     console.log('TRYING TO SAVE RECEIPT....');
@@ -32,6 +34,7 @@ export const postReceiptData = async (data: ReceiptData) => {
   }
 };
 
+/* Turns the previous active receipt into an inactive one */
 export const deactivatePreviousReceipt = async () => {
   try {
     const receipts = await fetchReceipts();
@@ -54,6 +57,7 @@ export const deactivatePreviousReceipt = async () => {
   }
 };
 
+/* Gets all the receipts */
 export const fetchReceipts = async () => {
   try {
     const response = await fetch(`${API_BASE_URL}/receipts`);

@@ -1,20 +1,16 @@
 import React from 'react';
 import {
   Image,
-  ImageSourcePropType,
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
 } from 'react-native';
+import { DealCardProps } from '../../interfaces/landingPageInterfaces';
 
-interface DealCardProps {
-  image: ImageSourcePropType;
-  country: string;
-  dishName: string;
-  onPress?: () => void;
-}
 
+/* Has no functionality yet, but is still active due to the 
+   look of the landing page. Displays a set of dishes */
 const DealCard = (props: DealCardProps) => {
   return (
     <View style={[styles.container]}>

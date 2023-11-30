@@ -1,5 +1,5 @@
 import {PayloadAction, createSlice} from '@reduxjs/toolkit';
-import {ExtraItemProps} from '../interfaces/interfaces';
+import { ExtraItemProps } from '../interfaces/boothComponentInterfaces';
 
 export interface OrderItem {
   id: number;
@@ -12,6 +12,12 @@ export interface OrderItem {
 type ShoppingCartState = OrderItem[];
 const initialState: ShoppingCartState = [];
 
+/** Redux reducer with the actions addItem, that adds a dish to the 
+ * shoppingCart. Checks if there already is one of these dishes, inside
+ * and if, increments the amount instead. 
+ * Also has the possiblity to remove an item, increment the amount, or 
+ * decrement the amount. Lastly, an action that clears the entire shoppingCart.
+*/
 export const shoppingCartSlice = createSlice({
   name: 'shoppingCart',
   initialState,

@@ -1,12 +1,8 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
+import { DishInformationProps } from '../../../interfaces/boothComponentInterfaces';
 
-interface DishInformationProps {
-  name: string;
-  description: string;
-  allergies: string;
-}
-
+/* Displays the name, description and what allergens a dish contains*/
 const DishInformation = (props: DishInformationProps) => {
   return (
     <View style={[styles.textContainer]}>

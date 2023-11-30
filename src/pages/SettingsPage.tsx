@@ -12,26 +12,20 @@ import i18next, {languageResources} from '../../services/i18next';
 import {useTranslation} from 'react-i18next';
 import languagesList from '../../services/languagesList.json';
 import * as RNLocalize from 'react-native-localize';
+import { LanguagesList } from '../interfaces/settingsPageInterfaces';
 
-interface LanguageInfo {
-  name: string;
-  nativeName: string;
-}
 
-interface LanguagesList {
-  [key: string]: LanguageInfo;
-}
-
+/* Changes the language of the app. Uses i18next to change this. 
+   Also uses localize to initialize the phones language on launching
+   the app */
 const SettingsPage = () => {
   const {t} = useTranslation();
-  const [visible, setVisible] = useState(false);
   const [activeLanguage, setActiveLanguage] = useState("");
   const typedLanguagesList: LanguagesList = languagesList;
 
   const changeLng = (lng: string) => {
     i18next.changeLanguage(lng);
     setActiveLanguage(lng);
-    setVisible(false);
   };
 
   useEffect(() => {

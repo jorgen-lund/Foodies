@@ -1,11 +1,10 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
+import { SectionTextProps } from '../../interfaces/landingPageInterfaces';
 
-interface SectionTextProps {
-  text?: string;
-  backgroundColor: string;
-}
 
+/* Component for adding some extra styling to the 
+   home page's section texts. Accepts text and color*/
 const SectionText = (props: SectionTextProps) => {
   let hasText: boolean = false;
   if (props.text) {
@@ -14,23 +13,15 @@ const SectionText = (props: SectionTextProps) => {
 
   return (
     <View style={[styles.container]}>
-      {hasText ? (
-        <>
-          <View
-            style={[styles.line,
-              {backgroundColor: props.backgroundColor, marginHorizontal: 20}]}>
-          </View>
-          <Text style={[styles.text]}>{props.text}</Text>
-          <View
-            style={[styles.line,
-              {backgroundColor: props.backgroundColor, marginHorizontal: 20}]}>
-          </View>
-        </>
-      ) : (
-        <View
-          style={[styles.line,{backgroundColor: props.backgroundColor}]}>
-        </View>
-      )}
+      <View
+        style={[styles.line,
+          {backgroundColor: props.backgroundColor, marginHorizontal: 20}]}>
+      </View>
+      <Text style={[styles.text]}>{props.text}</Text>
+      <View
+        style={[styles.line,
+          {backgroundColor: props.backgroundColor, marginHorizontal: 20}]}>
+      </View>
     </View>
   );
 };

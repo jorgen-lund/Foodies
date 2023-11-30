@@ -2,13 +2,11 @@ import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {useTranslation} from 'react-i18next';
-interface ReceiptTopProps {
-  id: number;
-  waitingTime: number;
-  isActive: boolean;
-  isTakeaway: boolean;
-}
+import { ReceiptTopProps } from '../../interfaces/receiptInterfaces';
 
+/* Top part of the receipt. Shows the ID of the order, and displays
+   whether the order was for takeaway or not. Styling changes based
+   on if the receipt is active or not */
 const ReceiptTop = (props: ReceiptTopProps) => {
   const {t} = useTranslation();
 

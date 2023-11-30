@@ -1,12 +1,8 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import { BoothNavbarButtonProps } from '../../interfaces/boothComponentInterfaces';
 
-interface BoothNavbarButtonProps {
-  onPress: () => void;
-  boothName: string;
-  activeBoothName: string;
-}
-
+/**  Styles the ooth-navigation buttons, and increases their touchable area*/
 const BoothNavbarButton = (props: BoothNavbarButtonProps) => {
   return (
     <TouchableOpacity onPress={props.onPress} style={[styles.buttonSize]}>

@@ -8,6 +8,7 @@ export type BoothStackParamList = {
 
 export type RootStackParamList = {
   BoothNavigator: NavigatorScreenParams<BoothStackParamList> | undefined;
+  Receipts: undefined;
 };
 
 export type RootNavigationProp = NavigationProp<RootStackParamList>;

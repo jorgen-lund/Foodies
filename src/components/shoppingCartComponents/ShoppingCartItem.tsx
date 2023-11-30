@@ -1,6 +1,5 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import {ShoppingCartItemProps} from '../../interfaces/interfaces';
 import {useSelector, useDispatch} from 'react-redux';
 import {
   decrementItem,
@@ -9,10 +8,18 @@ import {
 } from '../../redux/shoppingCartSlice';
 import {shoppingCartState} from '../../redux/store';
 import ShoppingItemButton from './ShoppingItemButton';
+import { ShoppingCartItemProps } from '../../interfaces/shoppingCartInterfaces';
 
+/** Displays a single item in the shoppingCart. It receives this item / dish from
+ *  redux global shoppingCart, where the items are saved after being added. 
+ *  Gives the option to either remove the dish, increment the amount of the dish,
+ *  or decrease the amount of the selected dish (but not past 0). 
+ *  Displays both the name and price of the dish.
+ */
 const ShopppingCartItem = (props: ShoppingCartItemProps) => {
   const dispatch = useDispatch();
 
+  /* Finds the item using the id received as a prop*/
   const item = useSelector((state: shoppingCartState) =>
     state.shoppingCart.find(item => item.id === props.id),
   );

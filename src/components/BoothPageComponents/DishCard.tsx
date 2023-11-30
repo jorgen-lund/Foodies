@@ -1,25 +1,35 @@
 import React, {useState} from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
 import DishInformation from './dishCardComponents/DishInformation';
-import Extras from './dishCardComponents/Extras';
 import DishButton from './dishCardComponents/DishButton';
-import {DishCardProps} from '../../interfaces/interfaces';
 import {useDispatch} from 'react-redux';
 import {addItem} from '../../redux/shoppingCartSlice';
+import { DishCardProps } from '../../interfaces/boothComponentInterfaces';
 
+/** Displays a dish, and with this an image, description, price and 
+ *  a button that places it in a redux global shoppingCart with other
+ *  DishCards. Contains functionality for opening an extra part (changing
+ *  the styling of the card dynamically), where one has the option to adapt
+ *  or add extras to the dish. This has not yet been implemented properly,
+ *  and is therefore commented out.
+ */
 const DishCard = (props: DishCardProps) => {
   const dispatch = useDispatch();
 
-  const [isExpanded, setIsExpanded] = useState<boolean>(false);
+  // const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
+    /**  These two functions are not being used yet
   const checkIfExtras = () => {
     return props.extraItems !== undefined ? true : false;
   };
-
   const handleEditPress = () => {
     checkIfExtras() && setIsExpanded(true);
   };
+  */
+  
 
+  /* Creates an Order object,which is then placed in a globally
+     accessible shoppingCart, using Redux. */
   const handleAddToCart = () => {
     const order = {
       id: props.id,
@@ -30,16 +40,17 @@ const DishCard = (props: DishCardProps) => {
     dispatch(addItem(order));
   };
 
-  const dynamicTopCardStyle = {
-    ...styles.topCardContainer,
-    borderRadius: isExpanded ? 0 : 8,
-    borderTopLeftRadius: 8,
-    borderTopRightRadius: 8,
-  };
+
+  // const dynamicTopCardStyle = {
+  //   ...styles.topCardContainer,
+  //   borderRadius: isExpanded ? 0 : 8,
+  //   borderTopLeftRadius: 8,
+  //   borderTopRightRadius: 8,
+  // };
 
   return (
     <View>
-      <View style={dynamicTopCardStyle}>
+      <View style={[styles.topCardContainer]}>
         <View style={[styles.imageContainer]}>
           <Image source={{uri: props.imageUrl}} style={[styles.image]} />
         </View>
@@ -51,26 +62,27 @@ const DishCard = (props: DishCardProps) => {
           />
           <View style={[styles.priceAndButtonsContainer]}>
             <Text style={[styles.priceText]}>{props.price} kr</Text>
-            {!isExpanded && (
+            {/* {!isExpanded && (
               <View style={[styles.dishButtonContainer]}>
                 {checkIfExtras() && (
                   <DishButton
-                    handleEditPress={handleEditPress}
+                    onPress={handleEditPress}
                     MaterialIconName={'edit'}
                   />
-                )}
+                )} */}
                 <DishButton
                   MaterialIconName={'add-shopping-cart'}
-                  handleAddToCart={handleAddToCart}
+                  onPress={handleAddToCart}
                 />
-              </View>
-            )}
+              {/* </View>
+            )} */}
           </View>
         </View>
       </View>
-      {isExpanded && checkIfExtras() && (
+      
+      {/* {isExpanded && checkIfExtras() && (
         <Extras setIsExpanded={setIsExpanded} extraItems={props.extraItems!} />
-      )}
+      )} */}
     </View>
   );
 };
@@ -82,13 +94,14 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
     alignItems: 'center',
     marginTop: 20,
+    borderRadius: 8,
   },
-  expanded: {
-    borderTopLeftRadius: 8,
-    borderTopRightRadius: 8,
-    borderBottomLeftRadius: 0,
-    borderBottomRightRadius: 0,
-  },
+  // expanded: {
+  //   borderTopLeftRadius: 8,
+  //   borderTopRightRadius: 8,
+  //   borderBottomLeftRadius: 0,
+  //   borderBottomRightRadius: 0,
+  // },
   collapsed: {
     borderRadius: 8,
   },

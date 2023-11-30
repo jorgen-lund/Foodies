@@ -3,18 +3,13 @@ import {StyleSheet, View} from 'react-native';
 import ReceiptOrder from './ReceiptOrder';
 import ReceiptTop from './ReceiptTop';
 import ReceiptMid from './ReceiptMid';
-import {OrderItem} from '../../redux/shoppingCartSlice';
+import { ReceiptProps } from '../../interfaces/receiptInterfaces';
 
-interface ReceiptProps {
-  id: number;
-  waitingTime: number;
-  date: string;
-  totalCost: number;
-  isActive: boolean;
-  isTakeaway: boolean;
-  items: OrderItem[];
-}
-
+/* Represents a single purchase. Is built up by three components.
+ ReceiptTop, ReceiptMid and a list of orders. 
+ Changes styling depending on if it is an active receipt or not. 
+ Gets all its values from receiptPage component.
+ */
 const Receipt = (props: ReceiptProps) => {
   const [receiptColor, setReceiptColor] = useState('#F1F0F0');
   const [textColor, setTextColor] = useState('black');

@@ -1,14 +1,10 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import { useTranslation } from 'react-i18next';
-interface ReceiptMidProps {
-  textColor: string;
-  borderColor: string;
-  date: string;
-  totalCost: number;
-  isActive: boolean;
-}
+import { ReceiptMidProps } from '../../interfaces/receiptInterfaces';
 
+/* Middle part of the receipt. SHows Date and total cost. Changes
+   styling based on if it is active or not. */
 const ReceiptMid = (props: ReceiptMidProps) => {
   const {t} = useTranslation();
 

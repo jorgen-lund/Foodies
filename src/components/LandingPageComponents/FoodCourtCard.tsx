@@ -1,19 +1,16 @@
 import React from 'react';
 import {
   Image,
-  ImageSourcePropType,
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
 } from 'react-native';
+import { FoodCourtCardProps } from '../../interfaces/landingPageInterfaces';
 
-interface FoodCourtCardProps {
-  country: string;
-  image: ImageSourcePropType;
-  onPress?: () => void;
-}
 
+/* Represents the clickable cards that directs the user to the
+   different foodbooths */
 const FoodCourtCard = (props: FoodCourtCardProps) => {
   return (
     <View style={styles.container}>

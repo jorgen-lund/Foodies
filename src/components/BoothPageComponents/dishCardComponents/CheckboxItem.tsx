@@ -1,11 +1,11 @@
 import CheckBox from '@react-native-community/checkbox';
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
+import { CheckboxItemProps } from '../../../interfaces/boothComponentInterfaces';
 
-interface CheckboxItemProps {
-  itemName: string;
-  price: number;
-}
+/** ______THIS COMPONENT IS NOT YET BEING USED_____ 
+    Will be used when editing / adding extras to a dish,
+*/
 
 const CheckboxItem = (props: CheckboxItemProps) => {
   return (

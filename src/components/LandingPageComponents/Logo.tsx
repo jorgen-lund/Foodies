@@ -1,10 +1,10 @@
 import React from 'react';
-import {Dimensions, StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import {SvgXml} from 'react-native-svg';
 import foodCartIcon from './foodCartIcon';
 
-const {height} = Dimensions.get('window');
-
+/* The top part of the home / landing page. This is where the 
+   icon is displayed, and the tilted black background is created */
 const Logo = () => {
   return (
     <View style={[styles.container]}>

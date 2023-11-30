@@ -7,6 +7,8 @@ import SectionText from '../components/LandingPageComponents/SectionText';
 import {useNavigation} from '@react-navigation/native';
 import {RootNavigationProp} from '../navigationFiles/navigationTypes';
 import { useTranslation } from 'react-i18next';
+
+/* Images used in the landingPage*/
 const italyBooth = require('../../images/italyBooth.png');
 const indianBooth = require('../../images/indianBooth.png');
 const mexicanBooth = require('../../images/mexicanBooth.png');
@@ -14,6 +16,8 @@ const pastaCarbonara = require('../../images/pastaCarbonara.png');
 const tikkaMasala = require('../../images/tikkaMasala.jpeg');
 const enchiladas = require('../../images/enchiladas.jpeg');
 
+/* The home page of the app. This is where the user can select what booth
+   it wants to visit. */
 const LandingPage = () => {
   const navigation = useNavigation<RootNavigationProp>();
   const {t} = useTranslation();
