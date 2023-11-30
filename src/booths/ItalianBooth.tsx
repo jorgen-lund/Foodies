@@ -1,14 +1,30 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {SafeAreaView} from 'react-native';
 import FoodBooth from './FoodBooth';
-import data from '../../data/data.json';
-import { useTranslation } from 'react-i18next';
+import {useTranslation} from 'react-i18next';
+import {fetchItalianDishes} from '../apiCalls/api';
 
 const italyBooth = require('../../images/italyBooth.png');
 
+/* Fetches and displays the italian dishes from the mockapi / json server,
+   and provides the neccesary information to create the italian booth, */
 const ItalianBoothPage = () => {
-  const italianDishes = data.booths.italian.dishes;
   const {t} = useTranslation();
+  const [italianDishes, setItalianDishes] = useState([]);
+
+  const loadItalianDishes = async () => {
+    try {
+      const italianDishes = await fetchItalianDishes();
+      console.log("italianDishes", italianDishes);
+      setItalianDishes(italianDishes);
+    } catch (error) {
+      console.error('Failed to get italian dishes:', error);
+    }
+  };
+
+  useEffect(() => {
+    loadItalianDishes();
+  }, []);
 
   return (
     <SafeAreaView>

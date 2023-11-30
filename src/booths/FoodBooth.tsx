@@ -4,7 +4,6 @@ import BoothNavbar from '../components/BoothPageComponents/BoothNavbar';
 import BoothDescription from '../components/BoothPageComponents/BoothDescription';
 import Categories from '../components/BoothPageComponents/Categories';
 import DishCard from '../components/BoothPageComponents/DishCard';
-
 import { useTranslation } from 'react-i18next';
 import { DishCardProps, FoodBoothProps } from '../interfaces/boothComponentInterfaces';
 

@@ -70,3 +70,46 @@ export const fetchReceipts = async () => {
     throw error;
   }
 };
+
+export const fetchItalianDishes = async () => {
+  try {
+    const response = await fetch(`${API_BASE_URL}/italianDishes`);
+    console.log(response);
+    if (!response.ok) {
+      throw new Error('Failed to fetch italian dishes');
+    }
+    return await response.json();
+  } catch (error) {
+    console.error('Error:', error);
+    throw error;
+  }
+};
+
+export const fetchIndianDishes = async () => {
+  try {
+    const response = await fetch(`${API_BASE_URL}/indianDishes`);
+    console.log(response);
+    if (!response.ok) {
+      throw new Error('Failed to fetch indian dishes');
+    }
+    return await response.json();
+  } catch (error) {
+    console.error('Error:', error);
+    throw error;
+  }
+};
+
+export const fetchMexicanDishes = async () => {
+  try {
+    const response = await fetch(`${API_BASE_URL}/mexicanDishes`);
+    console.log(response);
+    if (!response.ok) {
+      throw new Error('Failed to fetch mexican dishes');
+    }
+    return await response.json();
+  } catch (error) {
+    console.error('Error:', error);
+    throw error;
+  }
+};
+
