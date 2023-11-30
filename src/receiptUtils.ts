@@ -32,7 +32,6 @@ const formatDate = () => {
   return formattedDate;
 };
 
-const formattedDate = formatDate();
 
 /* This function takes the orders in the shoppingCart and creates a receipt 
    containing a list of the items with total cost, isActive, isTakeaway and date.
@@ -40,6 +39,8 @@ const formattedDate = formatDate();
     Id is automatically given, as assigning one manually lead to errors.
 */
 export const createReceiptData = (shoppingCart: OrderItem[], isTakeaway: boolean) => {
+  const formattedDate = formatDate();
+
   return {
     date: formattedDate,
     totalCost: shoppingCart.reduce((total, item) => total + item.price, 0),
