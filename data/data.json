@@ -6,7 +6,7 @@
       "description": "Spicy Italian pizza with salami, 'nduja and onion",
       "allergies": "Allergens: Gluten & Lactose",
       "price": 160,
-      "imageUrl": "https://res.cloudinary.com/norgesgruppen/images/c_scale,dpr_auto,f_auto,q_auto:eco,w_1600/axcdfcfmyahxjmmj99pe/pizza-diavola",
+      "imageUrl": "https://www.maestrella.com/wp-content/uploads/2021/09/PIZZA-DIAVOLAv2-1024x770-1.jpg",
       "category": "Pizza",
       "extraItems": [
         {
@@ -920,21 +920,5 @@
       ]
     }
   ],
-  "receipts": [
-    {
-      "date": "30.nov.2023 13:30",
-      "totalCost": 170,
-      "isActive": true,
-      "isTakeaway": false,
-      "items": [
-        {
-          "id": 42,
-          "name": "Tandoori Chicken",
-          "price": 170,
-          "amount": 1
-        }
-      ],
-      "id": 14
-    }
-  ]
+  "receipts": []
 }

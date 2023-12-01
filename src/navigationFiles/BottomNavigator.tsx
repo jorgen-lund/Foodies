@@ -26,7 +26,7 @@ const BottomNavigator = () => {
 
   /* When an item has been added to the shoppingCart, a counter
      is shown next to the shoppingCart icon in the bottom navbar.
-     The reduce keyword accumulates  */
+     The reduce keyword accumulates the prices */
   const totalItems = shoppingCart.reduce(
     (total, item) => total + item.amount,
     0,
